@@ -1,0 +1,6 @@
+total 4
+-rw-rw-r-- 1 raajamanickam raajamanickam  0 Jan 26 21:09 sorted_files.txt
+-rw-rw-r-- 1 raajamanickam raajamanickam  0 Jan 26 21:06 file2.txt
+-rw-rw-r-- 1 raajamanickam raajamanickam  0 Jan 26 21:06 file3.txt
+-rw-rw-r-- 1 raajamanickam raajamanickam  0 Jan 26 21:06 file4.txt
+-rwxr-x--x 2 raajamanickam raajamanickam 29 Jan 25 23:50 file1.sh

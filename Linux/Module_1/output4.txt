@@ -1,0 +1,206 @@
+raajamanickam@raajamanickam-VirtualBox:/media/sf_Raaja/GIT/Linux/Raja-Manickam/Linux/Module_1$ ps -aux > output4.txt
+raajamanickam@raajamanickam-VirtualBox:/media/sf_Raaja/GIT/Linux/Raja-Manickam/Linux/Module_1$ cat output4.txt
+
+
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.4 166672  8120 ?        Ss   18:53   0:01 /sbin/init splash
+root           2  0.0  0.0      0     0 ?        S    18:53   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    18:53   0:00 [pool_workqueue_release]
+root           4  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-rcu_g]
+root           5  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-rcu_p]
+root           6  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-slub_]
+root           7  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-netns]
+root          10  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/0:0H-events_highpri]
+root          12  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-mm_pe]
+root          13  0.0  0.0      0     0 ?        I    18:53   0:00 [rcu_tasks_kthread]
+root          14  0.0  0.0      0     0 ?        I    18:53   0:00 [rcu_tasks_rude_kthread]
+root          15  0.0  0.0      0     0 ?        I    18:53   0:00 [rcu_tasks_trace_kthread]
+root          16  0.0  0.0      0     0 ?        S    18:53   0:00 [ksoftirqd/0]
+root          17  0.0  0.0      0     0 ?        I    18:53   0:02 [rcu_preempt]
+root          18  0.0  0.0      0     0 ?        S    18:53   0:00 [migration/0]
+root          19  0.0  0.0      0     0 ?        S    18:53   0:00 [idle_inject/0]
+root          20  0.0  0.0      0     0 ?        S    18:53   0:00 [cpuhp/0]
+root          21  0.0  0.0      0     0 ?        S    18:53   0:00 [kdevtmpfs]
+root          22  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-inet_]
+root          24  0.0  0.0      0     0 ?        S    18:53   0:00 [kauditd]
+root          25  0.0  0.0      0     0 ?        S    18:53   0:00 [khungtaskd]
+root          26  0.0  0.0      0     0 ?        S    18:53   0:00 [oom_reaper]
+root          28  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-write]
+root          29  0.0  0.0      0     0 ?        S    18:53   0:00 [kcompactd0]
+root          30  0.0  0.0      0     0 ?        SN   18:53   0:00 [ksmd]
+root          31  0.0  0.0      0     0 ?        SN   18:53   0:00 [khugepaged]
+root          32  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-kinte]
+root          33  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-kbloc]
+root          34  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-blkcg]
+root          35  0.0  0.0      0     0 ?        S    18:53   0:00 [irq/9-acpi]
+root          36  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-tpm_d]
+root          37  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-ata_s]
+root          38  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-md]
+root          39  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-md_bi]
+root          40  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-edac-]
+root          41  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-devfr]
+root          42  0.0  0.0      0     0 ?        S    18:53   0:00 [watchdogd]
+root          43  0.0  0.0      0     0 ?        I<   18:53   0:01 [kworker/0:1H-kblockd]
+root          44  0.0  0.0      0     0 ?        S    18:53   0:02 [kswapd0]
+root          45  0.0  0.0      0     0 ?        S    18:53   0:00 [ecryptfs-kthread]
+root          46  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-kthro]
+root          47  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-acpi_]
+root          48  0.0  0.0      0     0 ?        S    18:53   0:00 [scsi_eh_0]
+root          49  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-scsi_]
+root          50  0.0  0.0      0     0 ?        S    18:53   0:00 [scsi_eh_1]
+root          51  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-scsi_]
+root          55  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-mld]
+root          56  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-ipv6_]
+root          64  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-kstrp]
+root          66  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/u3:0-ttm]
+root          79  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-charg]
+root         118  0.0  0.0      0     0 ?        S    18:53   0:00 [scsi_eh_2]
+root         119  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-scsi_]
+root         149  0.0  0.0      0     0 ?        S    18:53   0:00 [jbd2/sda3-8]
+root         150  0.0  0.0      0     0 ?        I<   18:53   0:00 [kworker/R-ext4-]
+root         189  0.0  0.5  48156 11780 ?        S<s  18:53   0:00 /lib/systemd/systemd-journald
+root         220  0.0  0.0      0     0 ?        S    18:54   0:00 [irq/18-vmwgfx]
+root         221  0.0  0.0      0     0 ?        I<   18:54   0:00 [kworker/R-ttm]
+root         227  0.1  0.0      0     0 ?        I    18:54   0:05 [kworker/u2:6-events_power_efficient]
+root         235  0.0  0.1  27808  2632 ?        Ss   18:54   0:00 /lib/systemd/systemd-udevd
+root         294  0.0  0.0      0     0 ?        I<   18:54   0:00 [kworker/R-crypt]
+systemd+     514  0.0  0.1  14936  3840 ?        Ss   18:54   0:03 /lib/systemd/systemd-oomd
+systemd+     515  0.0  0.2  25928  5632 ?        Ss   18:54   0:00 /lib/systemd/systemd-resolved
+systemd+     516  0.0  0.2  89388  4352 ?        Ssl  18:54   0:00 /lib/systemd/systemd-timesyncd
+root         557  0.0  0.3 248564  6996 ?        Ssl  18:54   0:00 /usr/libexec/accounts-daemon
+root         558  0.0  0.0   2816  1920 ?        Ss   18:54   0:00 /usr/sbin/acpid
+avahi        561  0.0  0.1   7628  3456 ?        Ss   18:54   0:00 avahi-daemon: running [raajamanickam-VirtualBox.local]
+root         562  0.0  0.1  18152  2816 ?        Ss   18:54   0:00 /usr/sbin/cron -f -P
+message+     563  0.0  0.2  10984  5248 ?        Ss   18:54   0:01 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         564  0.0  0.5 269684 10348 ?        Ssl  18:54   0:00 /usr/sbin/NetworkManager --no-daemon
+root         571  0.0  0.3  49724  7040 ?        Ss   18:54   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root         572  0.0  0.4 251708  8232 ?        Ssl  18:54   0:00 /usr/libexec/polkitd --no-debug
+root         573  0.0  0.3 248752  6272 ?        Ssl  18:54   0:00 /usr/libexec/power-profiles-daemon
+syslog       574  0.0  0.1 222404  3840 ?        Ssl  18:54   0:00 /usr/sbin/rsyslogd -n -iNONE
+root         576  0.0  0.6 1321440 12600 ?       Ssl  18:54   0:03 /usr/lib/snapd/snapd
+root         577  0.0  0.2 245160  6016 ?        Ssl  18:54   0:00 /usr/libexec/switcheroo-control
+root         578  0.0  0.2  23664  4976 ?        Ss   18:54   0:00 /lib/systemd/systemd-logind
+root         579  0.0  0.3 393092  7108 ?        Ssl  18:54   0:00 /usr/libexec/udisks2/udisksd
+root         581  0.0  0.1  16504  3200 ?        Ss   18:54   0:00 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+avahi        615  0.0  0.0   7444  1024 ?        S    18:54   0:00 avahi-daemon: chroot helper
+root         673  0.0  0.3 244236  6180 ?        Ssl  18:54   0:00 /usr/sbin/ModemManager
+root         683  0.0  0.4  81668  8320 ?        Ss   18:54   0:00 /usr/sbin/cupsd -l
+root         686  0.0  0.3 126836  7424 ?        Ssl  18:54   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+kernoops     742  0.0  0.0  13092  1952 ?        Ss   18:54   0:00 /usr/sbin/kerneloops --test
+kernoops     744  0.0  0.0  13092  1952 ?        Ss   18:54   0:00 /usr/sbin/kerneloops
+lp           791  0.0  0.1  16288  3968 ?        S    18:54   0:00 /usr/lib/cups/notifier/dbus dbus://
+root         792  0.0  0.3 172060  7168 ?        Ssl  18:54   0:00 /usr/sbin/cups-browsed
+root        1469  0.0  0.1 350156  2048 ?        Sl   18:54   0:02 /usr/bin/VBoxDRMClient
+root        1472  0.0  0.1 290192  3208 ?        Sl   18:54   0:00 /usr/sbin/VBoxService --pidfile /var/run/vboxadd-service.sh
+root        1976  0.0  0.3 249880  7552 ?        Ssl  18:54   0:00 /usr/sbin/gdm3
+root        1981  0.0  0.3 326568  7552 ?        Sl   18:54   0:00 gdm-session-worker [pam/gdm-autologin]
+raajama+    1986  0.0  0.3  17976  6400 ?        Ss   18:54   0:00 /lib/systemd/systemd --user
+raajama+    1987  0.0  0.0 104156  1856 ?        S    18:54   0:00 (sd-pam)
+raajama+    1993  0.0  0.1  48236  3712 ?        S<sl 18:54   0:00 /usr/bin/pipewire
+raajama+    1994  0.0  0.1  32112  3584 ?        Ssl  18:54   0:00 /usr/bin/pipewire-media-session
+raajama+    1995  0.0  0.4 1432992 9112 ?        S<sl 18:54   0:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+raajama+    2012  0.0  0.4  13492  8800 ?        Ss   18:54   0:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+raajama+    2014  0.0  0.3 397044  7068 ?        SLl  18:54   0:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+rtkit       2017  0.0  0.1 154004  3072 ?        SNsl 18:54   0:00 /usr/libexec/rtkit-daemon
+raajama+    2022  0.0  0.2 171048  5504 tty2     Ssl+ 18:54   0:00 /usr/libexec/gdm-wayland-session env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --session=ubuntu
+raajama+    2026  0.0  0.3 636724  6784 ?        Ssl  18:54   0:00 /usr/libexec/xdg-document-portal
+raajama+    2027  0.0  0.5 231700 11264 tty2     Sl+  18:54   0:00 /usr/libexec/gnome-session-binary --session=ubuntu
+raajama+    2039  0.0  0.2 244808  5888 ?        Ssl  18:54   0:00 /usr/libexec/xdg-permission-store
+root        2046  0.0  0.0   2796  1792 ?        Ss   18:54   0:00 fusermount3 -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/1000/doc
+raajama+    2107  0.0  0.2 100568  5120 ?        Ssl  18:54   0:00 /usr/libexec/gnome-session-ctl --monitor
+raajama+    2117  0.0  0.3 249300  6912 ?        Ssl  18:54   0:00 /usr/libexec/gvfsd
+raajama+    2128  0.0  0.2 455660  5760 ?        Sl   18:54   0:00 /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f
+raajama+    2129  0.0  0.6 667112 13056 ?        Ssl  18:54   0:00 /usr/libexec/gnome-session-binary --systemd-service --session=ubuntu
+raajama+    2160  0.0  0.3 309624  6912 ?        Sl   18:54   0:00 /usr/libexec/at-spi-bus-launcher --launch-immediately
+raajama+    2163  4.6 22.0 3988528 444044 ?      Ssl  18:54   3:04 /usr/bin/gnome-shell
+raajama+    2171  0.0  0.1   8564  3840 ?        S    18:54   0:00 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 11 --address=unix:path=/run/user/1000/at-spi/bus
+raajama+    2236  0.0  0.0  39128   256 ?        Ss   18:55   0:00 /snap/snapd-desktop-integration/253/usr/bin/snapd-desktop-integration
+raajama+    2284  0.0  0.2 432100  4544 ?        Sl   18:55   0:00 /snap/snapd-desktop-integration/253/usr/bin/snapd-desktop-integration
+raajama+    2298  0.0  0.4 582804  9216 ?        Sl   18:55   0:00 /usr/libexec/gnome-shell-calendar-server
+root        2301  0.0  0.3 250984  6656 ?        Ssl  18:55   0:00 /usr/libexec/upowerd
+raajama+    2312  0.0  0.8 691324 16852 ?        Ssl  18:55   0:00 /usr/libexec/evolution-source-registry
+raajama+    2313  0.0  0.4 398400  8320 ?        Ssl  18:55   0:00 /usr/libexec/gvfs-udisks2-volume-monitor
+raajama+    2325  0.0  0.2 323868  5888 ?        Ssl  18:55   0:00 /usr/libexec/gvfs-afc-volume-monitor
+raajama+    2330  0.0  0.2 246072  6016 ?        Ssl  18:55   0:00 /usr/libexec/gvfs-gphoto2-volume-monitor
+raajama+    2334  0.0  0.3 245904  6784 ?        Ssl  18:55   0:00 /usr/libexec/gvfs-goa-volume-monitor
+raajama+    2337  0.0  0.7 596904 14184 ?        SLl  18:55   0:00 /usr/libexec/goa-daemon
+raajama+    2340  0.0  0.2 157064  5504 ?        Ssl  18:55   0:00 /usr/libexec/dconf-service
+raajama+    2346  0.0  0.7 726272 15616 ?        Ssl  18:55   0:00 /usr/libexec/evolution-calendar-factory
+raajama+    2355  0.0  0.5 347060 11392 ?        Sl   18:55   0:00 /usr/libexec/goa-identity-service
+raajama+    2361  0.0  0.2 245116  6016 ?        Ssl  18:55   0:00 /usr/libexec/gvfs-mtp-volume-monitor
+raajama+    2364  0.0  0.4 680924  9600 ?        Ssl  18:55   0:00 /usr/libexec/evolution-addressbook-factory
+root        2381  0.2  0.4 381644  9204 ?        Ssl  18:55   0:10 /usr/libexec/packagekitd
+raajama+    2391  0.0  0.3 323528  7680 ?        Sl   18:55   0:00 /usr/libexec/gvfsd-trash --spawner :1.14 /org/gtk/gvfs/exec_spaw/0
+raajama+    2398  0.0  0.6 2534432 14088 ?       Sl   18:55   0:00 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.Shell.Notifications
+raajama+    2400  0.0  0.3 162688  6784 ?        Sl   18:55   0:00 /usr/libexec/at-spi2-registryd --use-gnome-session
+raajama+    2405  0.0  0.0   2892  1536 ?        Ss   18:55   0:00 sh -c /usr/bin/ibus-daemon --panel disable $([ "$XDG_SESSION_TYPE" = "x11" ] && echo "--xim")
+raajama+    2407  0.0  0.3 319080  6272 ?        Ssl  18:55   0:00 /usr/libexec/gsd-a11y-settings
+raajama+    2409  0.0  0.3 323948  7620 ?        Sl   18:55   0:00 /usr/bin/ibus-daemon --panel disable
+raajama+    2415  0.0  0.8 610536 17568 ?        Ssl  18:55   0:00 /usr/libexec/gsd-color
+raajama+    2418  0.0  0.5 384124 11904 ?        Ssl  18:55   0:00 /usr/libexec/gsd-datetime
+raajama+    2419  0.0  0.3 320584  6912 ?        Ssl  18:55   0:00 /usr/libexec/gsd-housekeeping
+raajama+    2424  0.0  0.8 352476 16996 ?        Ssl  18:55   0:00 /usr/libexec/gsd-keyboard
+raajama+    2425  0.0  0.8 728672 17008 ?        Ssl  18:55   0:00 /usr/libexec/gsd-media-keys
+raajama+    2427  0.0  0.9 536216 18228 ?        Ssl  18:55   0:00 /usr/libexec/gsd-power
+raajama+    2431  0.0  0.4 258512  8448 ?        Ssl  18:55   0:00 /usr/libexec/gsd-print-notifications
+raajama+    2432  0.0  0.2 466516  6016 ?        Ssl  18:55   0:00 /usr/libexec/gsd-rfkill
+raajama+    2433  0.0  0.2 244948  6016 ?        Ssl  18:55   0:00 /usr/libexec/gsd-screensaver-proxy
+raajama+    2434  0.0  0.3 474472  7168 ?        Ssl  18:55   0:00 /usr/libexec/gsd-sharing
+raajama+    2435  0.0  0.3 394692  6528 ?        Ssl  18:55   0:00 /usr/libexec/gsd-smartcard
+raajama+    2439  0.0  0.3 327996  7680 ?        Ssl  18:55   0:00 /usr/libexec/gsd-sound
+raajama+    2440  0.0  0.9 426860 18288 ?        Ssl  18:55   0:00 /usr/libexec/gsd-wacom
+raajama+    2461  0.0  1.0 838492 20612 ?        Sl   18:55   0:00 /usr/libexec/evolution-data-server/evolution-alarm-notify
+raajama+    2485  0.0  0.2 232272  5632 ?        Sl   18:55   0:00 /usr/libexec/gsd-disk-utility-notify
+raajama+    2495  0.0  0.2 245968  6016 ?        Sl   18:55   0:00 /usr/libexec/ibus-dconf
+raajama+    2516  0.0  0.9 357516 19996 ?        Sl   18:55   0:01 /usr/libexec/ibus-extension-gtk3
+raajama+    2523  0.0  0.3 245916  6400 ?        Sl   18:55   0:00 /usr/libexec/ibus-portal
+raajama+    2526  0.0  0.5 351016 11776 ?        Sl   18:55   0:00 /usr/libexec/gsd-printer
+raajama+    2581  0.2  1.9 250972 38860 ?        S    18:55   0:10 /usr/bin/Xwayland :0 -rootless -noreset -accessx -core -auth /run/user/1000/.mutter-Xwaylandauth.520Z02 -listen 4 -listen 5 -displayfd 6 -initfd 7
+raajama+    2582  0.1  0.4 722460  9372 ?        Sl   18:55   0:05 /snap/snap-store/1113/usr/bin/snap-store --gapplication-service
+raajama+    2618  0.0  0.3 172140  6528 ?        Sl   18:55   0:00 /usr/libexec/ibus-engine-simple
+raajama+    2626  0.0  0.2 171716  6016 ?        Ssl  18:55   0:00 /usr/libexec/gvfsd-metadata
+raajama+    2701  0.0  0.4 632436  9216 ?        Ssl  18:55   0:00 /usr/libexec/xdg-desktop-portal
+raajama+    2705  0.0  0.6 672132 13884 ?        Ssl  18:55   0:00 /usr/libexec/xdg-desktop-portal-gnome
+colord      2712  0.0  0.3 253984  7496 ?        Ssl  18:55   0:00 /usr/libexec/colord
+raajama+    2716  0.0  1.2 740356 25408 ?        SNsl 18:55   0:00 /usr/libexec/tracker-miner-fs-3
+raajama+    2748  0.0  0.7 2608148 15112 ?       Sl   18:55   0:00 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.ScreenSaver
+raajama+    2759  0.0  0.9 539944 18948 ?        Ssl  18:55   0:00 /usr/libexec/gsd-xsettings
+raajama+    2793  0.0  0.9 353676 18148 ?        Ssl  18:55   0:00 /usr/libexec/xdg-desktop-portal-gtk
+raajama+    2801  0.0  0.7 202792 15220 ?        Sl   18:55   0:00 /usr/libexec/ibus-x11
+raajama+    2811  0.0  0.0  28224   944 ?        S    18:55   0:00 /usr/bin/VBoxClient --clipboard
+raajama+    2813  0.0  0.1 227048  3376 ?        Sl   18:55   0:00 /usr/bin/VBoxClient --clipboard
+raajama+    2842  0.0  0.0  28224   944 ?        S    18:55   0:00 /usr/bin/VBoxClient --vmsvga-session
+raajama+    2844  0.0  0.0 160328  1456 ?        Sl   18:55   0:00 /usr/bin/VBoxClient --vmsvga-session
+root        2891  0.0  0.4 402640  9400 ?        Ssl  18:55   0:00 /usr/libexec/fwupd/fwupd
+raajama+    4503  0.0  1.1 503376 24112 ?        Sl   18:56   0:00 update-notifier
+root        5016  0.0  0.0      0     0 ?        I<   19:00   0:00 [kworker/u3:2]
+raajama+    5048  0.4  4.5 1214485896 91584 ?    SLl  19:02   0:16 /usr/share/code/code
+raajama+    5054  0.0  0.6 33798576 12416 ?      S    19:02   0:00 /usr/share/code/code --type=zygote --no-zygote-sandbox
+raajama+    5055  0.0  0.6 33798568 13952 ?      S    19:02   0:00 /usr/share/code/code --type=zygote
+raajama+    5060  0.0  0.1 33798592 2832 ?       S    19:02   0:00 /usr/share/code/code --type=zygote
+raajama+    5098  0.0  0.1 33576948 2560 ?       Sl   19:02   0:00 /usr/share/code/chrome_crashpad_handler --monitor-self-annotation=ptype=crashpad-handler --no-rate-limit --database=/home/raajamanickam/.config/Code/Crashpad --url=appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=d3d08913-d407-474b-a016-ded64dcc835d&iid=d3d08913-d407-474b-a016-ded64dcc835d&sid=d3d08913-d407-474b-a016-ded64dcc835d --annotation=_companyName=Microsoft --annotation=_productName=VSCode --annotation=_version=1.96.4 --annotation=lsb-release=Ubuntu 22.04.5 LTS --annotation=plat=Linux --annotation=prod=Electron --annotation=ver=32.2.6 --initial-client-fd=46 --shared-client-connection
+raajama+    5130  0.3  2.1 34080420 43316 ?      Sl   19:02   0:12 /usr/share/code/code --type=gpu-process --crashpad-handler-pid=5098 --enable-crash-reporter=f77a5a8e-7b56-44dc-8a00-b370dd008926,no_channel --user-data-dir=/home/raajamanickam/.config/Code --gpu-preferences=UAAAAAAAAAAgAAAEAAAAAAAAAAAAAAAAAABgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAABAAAAAAAAAAEAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAA --shared-files --field-trial-handle=3,i,16740334181027775335,6839200538454763611,262144 --disable-features=CalculateNativeWinOcclusion,PlzDedicatedWorker,SpareRendererForSitePerProcess --variations-seed-version
+raajama+    5140  0.0  1.2 33848840 26124 ?      Sl   19:02   0:00 /usr/share/code/code --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-GB --service-sandbox-type=none --crashpad-handler-pid=5098 --enable-crash-reporter=f77a5a8e-7b56-44dc-8a00-b370dd008926,no_channel --user-data-dir=/home/raajamanickam/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,16740334181027775335,6839200538454763611,262144 --disable-features=CalculateNativeWinOcclusion,PlzDedicatedWorker,SpareRendererForSitePerProcess --variations-seed-version
+raajama+    5176  1.7  8.8 1213992668 178176 ?   Dl   19:02   0:59 /usr/share/code/code --type=renderer --crashpad-handler-pid=5098 --enable-crash-reporter=f77a5a8e-7b56-44dc-8a00-b370dd008926,no_channel --user-data-dir=/home/raajamanickam/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-path=/usr/share/code/resources/app --enable-sandbox --enable-blink-features=HighlightAPI --disable-blink-features=FontMatchingCTMigration,StandardizedBrowserZoom, --lang=en-GB --num-raster-threads=1 --renderer-client-id=4 --time-ticks-at-unix-epoch=-1737897833947953 --launch-time-ticks=535007226 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,16740334181027775335,6839200538454763611,262144 --disable-features=CalculateNativeWinOcclusion,PlzDedicatedWorker,SpareRendererForSitePerProcess --variations-seed-version --vscode-window-config=vscode:eab890df-c493-49ed-abdc-0714a78cafdd
+root        5197  0.0  0.0      0     0 ?        I    19:02   0:00 [kworker/0:0-cgroup_destroy]
+raajama+    5223  0.0  2.0 1213951808 42188 ?    Sl   19:02   0:02 /usr/share/code/code --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-GB --service-sandbox-type=none --crashpad-handler-pid=5098 --enable-crash-reporter=f77a5a8e-7b56-44dc-8a00-b370dd008926,no_channel --user-data-dir=/home/raajamanickam/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,16740334181027775335,6839200538454763611,262144 --disable-features=CalculateNativeWinOcclusion,PlzDedicatedWorker,SpareRendererForSitePerProcess --variations-seed-version
+raajama+    5225  0.0  1.5 1213968696 30276 ?    Sl   19:02   0:01 /usr/share/code/code --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-GB --service-sandbox-type=none --crashpad-handler-pid=5098 --enable-crash-reporter=f77a5a8e-7b56-44dc-8a00-b370dd008926,no_channel --user-data-dir=/home/raajamanickam/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,16740334181027775335,6839200538454763611,262144 --disable-features=CalculateNativeWinOcclusion,PlzDedicatedWorker,SpareRendererForSitePerProcess --variations-seed-version
+raajama+    5228  0.1  2.5 1213953444 50876 ?    Dl   19:02   0:04 /usr/share/code/code --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-GB --service-sandbox-type=none --dns-result-order=ipv4first --inspect-port=0 --crashpad-handler-pid=5098 --enable-crash-reporter=f77a5a8e-7b56-44dc-8a00-b370dd008926,no_channel --user-data-dir=/home/raajamanickam/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,16740334181027775335,6839200538454763611,262144 --disable-features=CalculateNativeWinOcclusion,PlzDedicatedWorker,SpareRendererForSitePerProcess --variations-seed-version
+raajama+    5318  0.1  1.9 1213960556 39408 ?    Dl   19:03   0:06 /usr/share/code/code --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-GB --service-sandbox-type=none --crashpad-handler-pid=5098 --enable-crash-reporter=f77a5a8e-7b56-44dc-8a00-b370dd008926,no_channel --user-data-dir=/home/raajamanickam/.config/Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,16740334181027775335,6839200538454763611,262144 --disable-features=CalculateNativeWinOcclusion,PlzDedicatedWorker,SpareRendererForSitePerProcess --variations-seed-version
+raajama+    5408  0.0  1.1 1211968396 23448 ?    Sl   19:03   0:00 /usr/share/code/code /usr/share/code/resources/app/extensions/markdown-language-features/dist/serverWorkerMain --node-ipc --clientProcessId=5228
+raajama+    5497  0.0  0.3 397380  7808 ?        Sl   19:05   0:00 /usr/libexec/gvfsd-network --spawner :1.14 /org/gtk/gvfs/exec_spaw/1
+raajama+    5514  0.0  0.3 325484  7936 ?        Sl   19:05   0:00 /usr/libexec/gvfsd-dnssd --spawner :1.14 /org/gtk/gvfs/exec_spaw/3
+raajama+    5527  0.0  2.4 751396 49768 ?        Sl   19:06   0:02 /usr/bin/nautilus --gapplication-service
+raajama+    5588  0.0  0.1  20084  3968 pts/0    Ss   19:07   0:00 /usr/bin/bash --init-file /usr/share/code/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh
+raajama+    5968  0.0  1.7 561732 35768 ?        Ssl  19:11   0:00 /usr/libexec/gnome-terminal-server
+raajama+    5986  0.0  0.1  19924  3968 pts/1    Ss+  19:11   0:00 bash
+root        6511  0.0  0.0      0     0 ?        I    19:23   0:00 [kworker/u2:0-events_unbound]
+root        6616  0.0  0.0      0     0 ?        I    19:24   0:00 [kworker/0:1-events]
+raajama+    6765  0.0  1.4 844956 28940 ?        Sl   19:33   0:00 /usr/bin/gnome-calendar --gapplication-service
+raajama+    6767  0.0  1.3 475716 28172 ?        SLl  19:33   0:00 /usr/bin/seahorse --gapplication-service
+root        6962  0.0  0.0      0     0 ?        I    19:47   0:00 [kworker/u2:2-writeback]
+root        6978  0.0  0.0      0     0 ?        I    19:57   0:00 [kworker/u2:1-events_power_efficient]
+raajama+    7019  0.5  3.0 2799384 61332 ?       Sl   19:59   0:00 gjs /usr/share/gnome-shell/extensions/ding@rastersoft.com/ding.js -E -P /usr/share/gnome-shell/extensions/ding@rastersoft.com -M 0 -D 0:0:1920:975:1:27:0:0:0:0
+root        7073  0.0  0.0      0     0 ?        I    19:59   0:00 [kworker/u2:3]
+root        7083  0.0  0.0      0     0 ?        I    20:00   0:00 [kworker/0:2-rcu_gp]
+raajama+    7232  0.0  0.1  21588  3712 pts/0    R+   20:00   0:00 ps -aux
