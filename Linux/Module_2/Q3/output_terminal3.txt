@@ -1,2 +1,13 @@
-raajamanickam@raajamanickam-VirtualBox:/media/sf_Raaja/GIT/Raja-Manickam/Linux/Module_2/Q3$ echo "DEBUG: Starting the application initialization.^KERROR: Unable to connect to the database.^KINFO: User 'admin' logged in successfully.^KDEBUG: Fetching configuration settings from the server.^KERROR: DEBUG - Configuration settings could not be applied.^KINFO: Scheduled job 'backup' completed successfully.^KDEBUG: Connection to server timed out. Retrying...^KERROR: Failed to fetch data from API endpoint '/users'.^KINFO: Maintenance mode activated.^KERROR: DEBUG - Query execution failed due to a syntax error.^KDEBUG: Reloading application modules.^KERROR: Missing required parameter in the request.^KINFO: Shutting down the system gracefully.^KDEBUG: Closing unused network connections.^KERROR: DEBUG - Unexpected server response received.
-" | grep "ERROR" | grep -v "DEBUG" >filtered_log.txt 
+raajamanickam@raajamanickam-VirtualBox:/media/sf_Raaja/GIT/Raja-Manickam/Linux/Module_2/Q3$ echo "DEBUG: Starting the application initialization.
+ERROR: Unable to connect to the database.
+INFO: User 'admin' logged in successfully.DEBUG: Fetching configuration settings from the server.
+ERROR: DEBUG - Configuration settings could not be applied.
+INFO: Scheduled job 'backup' completed successfully.
+DEBUG: Connection to server timed out. Retrying...
+ERROR: Failed to fetch data from API endpoint '/users'.
+INFO: Maintenance mode activated.
+ERROR: DEBUG - Query execution failed due to a syntax error.
+DEBUG: Reloading application modules.
+ERROR: Missing required parameter in the request.
+INFO: Shutting down the system gracefully
+DEBUG: Closing unused network connections.ERROR: DEBUG - Unexpected server response received."|grep "ERROR" | grep -v "DEBUG" >filtered_log.txt
