@@ -1,0 +1,15 @@
+./AIL - Mani Report.pdf
+./clisp-2.49-win32-mingw-big/clisp-2.49/base/libiconv-2.dll
+./clisp-2.49-win32-mingw-big/clisp-2.49/base/lisp.exe
+./clisp-2.49-win32-mingw-big/clisp-2.49/base/lispinit.mem
+./clisp-2.49-win32-mingw-big/clisp-2.49/data/UnicodeDataFull.txt
+./clisp-2.49-win32-mingw-big/clisp-2.49/doc/impnotes.html
+./clisp-2.49-win32-mingw-big/clisp-2.49/full/libiconv-2.dll
+./clisp-2.49-win32-mingw-big/clisp-2.49/full/lisp.exe
+./clisp-2.49-win32-mingw-big/clisp-2.49/full/lispinit.mem
+./clisp-2.49-win32-mingw-big/clisp-2.49/syscalls/calls.o
+./clisp-2.49-win32-mingw-big/clisp-2.49/syscalls/libgnu_sc.a
+./clisp-2.49-win32-mingw-big.zip
+./spacy_env/Lib/site-packages/pygame/SDL2.dll
+./spacy_env/Lib/site-packages/pygame/SDL2_ttf.dll
+./swipl-9.0.4-1.x64.exe

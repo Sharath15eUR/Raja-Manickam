@@ -1,0 +1,34 @@
+# Configuration file for MyApp
+
+[server]
+# The hostname where the server will run
+hostname=127.0.0.1
+# The port number for the server to listen on
+port=8080
+
+[database]
+# Database connection settings
+database host =127.0.0.1
+port =3306
+api url= http://127.0.0.1:8080 log_path=/var/log/127.0.0.1
+timeout = 30
+
+
+[logging]
+# Log level setting: debug, info, warning, error
+log_level=debug
+# Path to the log file
+log_file=/var/log/myapp.log
+
+[security]
+# Enable or disable SSL
+ssl_enabled=true
+# Path to SSL certificate
+ssl_cert=/path/to/cert.pem
+# Path to SSL private key
+ssl_key=/path/to/key.pem
+
+[features]
+# Enable or disable certain features in the application
+feature_x_enabled=true
+feature_y_enabled=false

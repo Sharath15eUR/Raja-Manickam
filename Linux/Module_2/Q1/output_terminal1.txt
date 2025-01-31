@@ -1,0 +1,56 @@
+raajamanickam@raajamanickam-VirtualBox:/media/sf_Raaja$ cd ai
+raajamanickam@raajamanickam-VirtualBox:/media/sf_Raaja/ai$ ls -l
+total 25198
+drwxrwx--- 1 root vboxsf     4096 Jan 28 23:05  2
+-rwxrwx--- 1 root vboxsf     9727 Jan 28 23:30  2.zip
+-rwxrwx--- 1 root vboxsf    18377 Jan 28 23:26 'AI_LAB[1].docx'
+-rwxrwx--- 1 root vboxsf  1897619 Sep 19 14:33 'AIL - Mani Report.pdf'
+-rwxrwx--- 1 root vboxsf     3629 Jan 29 11:15  AOSTAR.py
+-rwxrwx--- 1 root vboxsf     2678 Dec  6 11:54  ASTAR.py
+-rwxrwx--- 1 root vboxsf   586551 Oct  2 21:49  board.png
+-rwxrwx--- 1 root vboxsf   311743 Oct  2 21:41  car.png
+-rwxrwx--- 1 root vboxsf     3403 Oct  2 21:40  CAR.py
+-rwxrwx--- 1 root vboxsf     1375 Oct 24 19:05  CERTAINTY_FACTOR.py
+drwxrwx--- 1 root vboxsf        0 Jan 28 22:03  clisp-2.49-win32-mingw-big
+-rwxrwx--- 1 root vboxsf  9702564 Oct 24 22:07  clisp-2.49-win32-mingw-big.zip
+-rwxrwx--- 1 root vboxsf     2514 Oct 24 22:34  CROSSWORD.lisp
+-rwxrwx--- 1 root vboxsf     1563 Oct 24 18:59  CRYPTARITHMETIC.py
+drwxrwx--- 1 root vboxsf        0 Jan 28 22:03 'Disease descriptions'
+-rwxrwx--- 1 root vboxsf        8 Oct 24 23:01  diseases.txt
+drwxrwx--- 1 root vboxsf        0 Jan 28 22:03 'Disease symptoms'
+drwxrwx--- 1 root vboxsf        0 Jan 28 22:03 'Disease treatments'
+-rwxrwx--- 1 root vboxsf     1421 Oct 24 19:02  ENGLISH_SYNTAX_CHECKING.py
+-rwxrwx--- 1 root vboxsf     8624 Oct 25 01:19  EXPERT_SYSTEM_MEDICAL.py
+-rwxrwx--- 1 root vboxsf     4460 Oct 25 01:21  expert_system_remaining_disease_code.txt
+-rwxrwx--- 1 root vboxsf     1260 Dec  6 12:39  guess.py
+-rwxrwx--- 1 root vboxsf     1549 Oct 24 22:17  KNIGHT_TOUR.lisp
+-rwxrwx--- 1 root vboxsf     4500 Jan 29 11:17  newAO.py
+-rwxrwx--- 1 root vboxsf     2337 Dec  6 12:14  new_ASTAR.py
+-rwxrwx--- 1 root vboxsf     1007 Oct 24 22:41  PREDICATE_LOGIC.pl
+-rwxrwx--- 1 root vboxsf      635 Oct 24 22:55  PROPOSITIONAL_LOGIC.pl
+-rwxrwx--- 1 root vboxsf     2564 Sep 18 20:24  PUZZLE8.py
+-rwxrwx--- 1 root vboxsf     3157 Oct 24 19:35  RULE_BASED.py
+-rwxrwx--- 1 root vboxsf     3304 Oct  2 21:54  SNAKE.py
+drwxrwx--- 1 root vboxsf        0 Jan 28 22:04  spacy_env
+-rwxrwx--- 1 root vboxsf 13163366 Apr 23  2023  swipl-9.0.4-1.x64.exe
+-rwxrwx--- 1 root vboxsf     2076 Sep 26 12:04  WATERJUG.py
+
+raajamanickam@raajamanickam-VirtualBox:/media/sf_Raaja/ai$ find . -type f -size +1M > largefiles.txt 
+
+raajamanickam@raajamanickam-VirtualBox:/media/sf_Raaja/ai$ cat largefiles.txt
+
+./AIL - Mani Report.pdf
+./clisp-2.49-win32-mingw-big/clisp-2.49/base/libiconv-2.dll
+./clisp-2.49-win32-mingw-big/clisp-2.49/base/lisp.exe
+./clisp-2.49-win32-mingw-big/clisp-2.49/base/lispinit.mem
+./clisp-2.49-win32-mingw-big/clisp-2.49/data/UnicodeDataFull.txt
+./clisp-2.49-win32-mingw-big/clisp-2.49/doc/impnotes.html
+./clisp-2.49-win32-mingw-big/clisp-2.49/full/libiconv-2.dll
+./clisp-2.49-win32-mingw-big/clisp-2.49/full/lisp.exe
+./clisp-2.49-win32-mingw-big/clisp-2.49/full/lispinit.mem
+./clisp-2.49-win32-mingw-big/clisp-2.49/syscalls/calls.o
+./clisp-2.49-win32-mingw-big/clisp-2.49/syscalls/libgnu_sc.a
+./clisp-2.49-win32-mingw-big.zip
+./spacy_env/Lib/site-packages/pygame/SDL2.dll
+./spacy_env/Lib/site-packages/pygame/SDL2_ttf.dll
+./swipl-9.0.4-1.x64.exe

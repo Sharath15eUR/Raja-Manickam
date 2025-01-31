@@ -1,6 +1,9 @@
 raajamanickam@raajamanickam-VirtualBox:/media/sf_Raaja/GIT/Linux/Raja-Manickam/Linux/Module_1$ touch ~/Documents/file2.txt ~/Documents/file3.txt ~/Documents/file4.txt
+
 raajamanickam@raajamanickam-VirtualBox:/media/sf_Raaja/GIT/Linux/Raja-Manickam/Linux/Module_1$ cd ~/Documents
+
 raajamanickam@raajamanickam-VirtualBox:~/Documents$ ls -lt ~/Documents > sorted_files.txt
+
 raajamanickam@raajamanickam-VirtualBox:~/Documents$ cat sorted_files.txt
 total 4
 -rw-rw-r-- 1 raajamanickam raajamanickam  0 Jan 26 21:09 sorted_files.txt

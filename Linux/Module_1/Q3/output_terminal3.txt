@@ -1,9 +1,11 @@
 raajamanickam@raajamanickam-VirtualBox:~$ cd Documents
 raajamanickam@raajamanickam-VirtualBox:~/Documents$ ls
 file1.sh
+
 raajamanickam@raajamanickam-VirtualBox:~/Documents$ cd ~/Desktop
 raajamanickam@raajamanickam-VirtualBox:~/Desktop$ ls
+
 raajamanickam@raajamanickam-VirtualBox:~/Desktop$ ln ~/Documents/file1.sh ~/Desktop/file1_softlink.sh
+
 raajamanickam@raajamanickam-VirtualBox:~/Desktop$ ls
 file1_softlink.sh
-raajamanickam@raajamanickam-VirtualBox:~/Desktop$ 
