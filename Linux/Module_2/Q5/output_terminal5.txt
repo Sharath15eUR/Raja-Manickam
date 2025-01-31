@@ -1,0 +1,9 @@
+raajamanickam@raajamanickam-VirtualBox:/media/sf_Raaja/GIT/Raja-Manickam/Linux/Module_2/Q3$ netstat -rn | awk '{print $2}' | sort | uniq
+0.0.0.0
+10.0.2.2
+Gateway
+IP
+
+raajamanickam@raajamanickam-VirtualBox:/media/sf_Raaja/GIT/Raja-Manickam/Linux/Module_2/Q3$ netstat -rn | awk 'NR>2 {print $2}' | sort | uniq
+0.0.0.0
+10.0.2.2
