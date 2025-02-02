@@ -1,0 +1,11 @@
+raajamanickam@raajamanickam-VirtualBox:/media/sf_Raaja/GIT/Raja-Manickam/Linux/Module_5$ ./file_analyzer.sh -d /media/sf_Raaja/GIT/Raja-Manickam/Linux -k frame
+Keyword found in file: /media/sf_Raaja/GIT/Raja-Manickam/Linux/Module_4/extract.sh
+Keyword found in file: /media/sf_Raaja/GIT/Raja-Manickam/Linux/Module_4/output.txt
+Script executed with exit status: 0
+
+raajamanickam@raajamanickam-VirtualBox:/media/sf_Raaja/GIT/Raja-Manickam/Linux/Module_5$ ./file_analyzer.sh -d /media/sf_Raaja/GIT/Raja-Manickam/Linux -k frame.time
+ERROR: Invalid or empty keyword.
+
+raajamanickam@raajamanickam-VirtualBox:/media/sf_Raaja/GIT/Raja-Manickam/Linux/Module_5$ ./file_analyzer.sh -f /media/sf_Raaja/GIT/Raja-Manickam/Linux/Module_4/output.txt -k frame
+Keyword found in file: /media/sf_Raaja/GIT/Raja-Manickam/Linux/Module_4/output.txt
+Script executed with exit status: 0

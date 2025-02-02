@@ -1,0 +1,13 @@
+raajamanickam@raajamanickam-VirtualBox:/media/sf_Raaja/GIT/Raja-Manickam/Linux/Module_3$ ./backup_manager.sh ~/Documents ~/Desktop/new ".txt"
+Files to be backedup
+/home/raajamanickam/Documents/file2.txt - 0 bytes
+/home/raajamanickam/Documents/file3.txt - 0 bytes
+/home/raajamanickam/Documents/file4.txt - 0 bytes
+/home/raajamanickam/Documents/input.txt - 162538952 bytes
+/home/raajamanickam/Documents/sorted_files.txt - 349 bytes
+No change : file2.txt
+No change : file3.txt
+No change : file4.txt
+Backed up input.txt
+No change : sorted_files.txt
+Backup completed and report saved to /home/raajamanickam/Desktop/new/backup_report.log

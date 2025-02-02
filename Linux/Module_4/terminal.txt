@@ -1,0 +1,2 @@
+raajamanickam@raajamanickam-VirtualBox:/media/sf_Raaja/GIT/Raja-Manickam/Linux/Module_4$ ./extract.sh /home/raajamanickam/Desktop/new/input.txt 
+Extraction completed. Output saved in '/home/raajamanickam/Desktop/output.txt'
