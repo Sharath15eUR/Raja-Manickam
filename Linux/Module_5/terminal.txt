@@ -9,3 +9,16 @@ ERROR: Invalid or empty keyword.
 raajamanickam@raajamanickam-VirtualBox:/media/sf_Raaja/GIT/Raja-Manickam/Linux/Module_5$ ./file_analyzer.sh -f /media/sf_Raaja/GIT/Raja-Manickam/Linux/Module_4/output.txt -k frame
 Keyword found in file: /media/sf_Raaja/GIT/Raja-Manickam/Linux/Module_4/output.txt
 Script executed with exit status: 0
+
+raajamanickam@raajamanickam-VirtualBox:/media/sf_Raaja/GIT/Raja-Manickam/Linux/Module_5$ ./file_analyzer.sh --help
+Usage: ./file_analyzer.sh [OPTIONS]
+
+Options:
+  -d <directory>  Search for a keyword recursively in a directory.
+  -f <file>       Search for a keyword in a specific file.
+  -k <keyword>    Keyword to search.
+  --help          Display this help menu.
+
+Examples:
+  ./file_analyzer.sh -d logs -k error
+  ./file_analyzer.sh -f script.sh -k TODO
