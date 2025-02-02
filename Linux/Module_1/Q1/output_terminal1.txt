@@ -1,3 +1,4 @@
+raajamanickam@raajamanickam-VirtualBox:~/Documents$ touch file1.sh
 raajamanickam@raajamanickam-VirtualBox:~/Documents$ ls -l
 total 4
 -rwxrwx--- 1 raajamanickam raajamanickam 29 Jan 25 23:50 file1.sh
