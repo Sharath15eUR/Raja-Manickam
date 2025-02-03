@@ -1,0 +1,5 @@
+Process with highest memory usage:
+PID: 2163
+Memory Usage: 16.2%
+Process Name: gnome-shell
+Process 2163 (gnome-shell) has been terminated.
