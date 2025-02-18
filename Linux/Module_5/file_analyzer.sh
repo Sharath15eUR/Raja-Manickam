@@ -26,7 +26,7 @@ validate_input(){
     local file=$1
     local keyword=$2
 
-    # Check if file exists
+    # Checking if file exists
     if [[ -n "$file" && ! -f "$file" ]]; then
         echo "ERROR: File '$file' does not exist." | tee -a "$ERROR_LOG"
         exit 1
@@ -39,13 +39,13 @@ validate_input(){
     fi
 }
 
-# Check if --help is provided separately
+#checking if help is given
 if [[ "$1" == "--help" ]]; then 
     show_help
     exit 0
 fi
 
-# Parsing command-line arguments using getopts
+# parsing command-line arguments using getopts
 while getopts ":d:f:k:h" opt; do
     case "$opt" in
         d) directory=$OPTARG ;;
