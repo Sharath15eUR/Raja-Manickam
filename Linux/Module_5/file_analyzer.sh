@@ -73,7 +73,7 @@ search_recursive(){
         if [[ -d "$file" ]]; then
             search_recursive "$file" "$keyword"  # Recursively search subdirectories
         elif [[ -f "$file" ]]; then
-            if grep -q "$keyword" "$file" 2>> "$ERROR_LOG"; then
+            if grep -q "$keyword" <<<"$(cat "$file")" 2>> "$ERROR_LOG"; then
                 echo "Keyword found in file: $file"
             fi
         fi
