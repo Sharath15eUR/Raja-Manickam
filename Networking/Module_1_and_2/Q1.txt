@@ -1,0 +1,44 @@
+1.Copying the folder named "new" from my Desktop to the Downloads directory using the cp -r command. This command recursively copies the folder and its contents.
+
+raajamanickam@raajamanickam-VirtualBox:~$ cp -r ~/Desktop/new ~/Downloads
+raajamanickam@raajamanickam-VirtualBox:~$ cd ~/Downloads
+raajamanickam@raajamanickam-VirtualBox:~/Downloads$ ls
+code_1.96.4-1736991114_amd64.deb  google-chrome-stable_current_amd64.deb  new
+raajamanickam@raajamanickam-VirtualBox:~/Downloads$ cd new
+raajamanickam@raajamanickam-VirtualBox:~/Downloads/new$ ls
+backup_report.log  file2.txt  file3.txt  file4.txt  input.txt  sorted_files.txt
+
+2.Copying the folder to separate machine using Secure shell protocol 
+
+raajamanickam@raajamanickam-VirtualBox:$ scp -r ~/Desktop/new raaj@192.168.1.8:/Documents
+raaj@192.168.1.8's password: 
+input.txt                                     100%  155MB  19.0MB/s   00:08    
+sorted_files.txt                              100%  349     8.8KB/s   00:00    
+file4.txt                                     100%    0     0.0KB/s   00:00    
+file2.txt                                     100%    0     0.0KB/s   00:00    
+backup_report.log                             100%  159     3.4KB/s   00:00    
+file3.txt                                     100%    0     0.0KB/s   00:00    
+raajamanickam@raajamanickam-VirtualBox:~$ ssh raaj@192.168.1.8
+raaj@192.168.1.8's password: 
+Linux kali 6.11.2-amd64 #1 SMP PREEMPT_DYNAMIC Kali 6.11.2-1kali1 (2024-10-15) x86_64
+
+The programs included with the Kali GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Kali GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Sun Mar  2 04:58:44 2025 from 192.168.1.7
+┌──(raaj㉿kali)-[~]
+└─$ cd ~/Documents                  
+                                                                                
+┌──(raaj㉿kali)-[~/Documents]
+└─$ ls               
+new
+                                                                                
+┌──(raaj㉿kali)-[~/Documents]
+└─$ cd new        
+                                                                                
+┌──(raaj㉿kali)-[~/Documents/new]
+└─$ ls
+backup_report.log  file2.txt  file3.txt  file4.txt  input.txt  sorted_files.txt
