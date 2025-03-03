@@ -1,0 +1,72 @@
+1.Using ftp
+
+┌──(raaj㉿kali)-[~]
+└─$ ftp 192.168.1.7
+Connected to 192.168.1.7.
+220 (vsFTPd 3.0.5)
+Name (192.168.1.7:raaj): raajamanickam
+331 Please specify the password.
+Password: 
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> !ls
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos  vscode.deb  wget-log
+ftp> lcd /home/kali/Documents
+Local directory now: /home/kali/Documents
+ftp> put sample.txt
+local: sample.txt remote: sample.txt
+229 Entering Extended Passive Mode (|||16960|)
+150 Ok to send data.
+     0        0.00 KiB/s 
+226 Transfer complete.
+ftp> ls
+229 Entering Extended Passive Mode (|||45381|)
+150 Here comes the directory listing.
+-rwxr-x--x    2 1000     1000           29 Jan 25 23:50 file1.sh
+-rwxrwxr-x    1 1000     1000            0 Jan 26 21:06 file2.txt
+-rw-rw-r--    1 1000     1000            0 Jan 26 21:06 file3.txt
+-rw-rw-r--    1 1000     1000            0 Jan 26 21:06 file4.txt
+-rwxrwx---    1 1000     1000     162538952 Feb 01 12:02 input.txt
+drwxrwxr-x    2 1000     1000         4096 Feb 19 19:30 modules
+-rw-------    1 1000     1000            0 Mar 03 21:02 sample.txt
+-rw-rw-r--    1 1000     1000          349 Jan 26 21:09 sorted_files.txt
+226 Directory send OK.
+ftp> get file1.sh
+local: file1.sh remote: file1.sh
+229 Entering Extended Passive Mode (|||58021|)
+150 Opening BINARY mode data connection for file1.sh (29 bytes).
+100% |**********************************************************************************************************************************************************************************************|    29        0.09 KiB/s    00:00 ETA
+226 Transfer complete.
+29 bytes received in 00:00 (0.09 KiB/s)
+ftp> !ls
+Documents  file1.sh  new  sample.txt
+
+2.Using Sftp
+
+┌──(raaj㉿kali)-[~]
+└─$ sftp raajamanickam@192.168.1.7
+raajamanickam@192.168.1.7's password: 
+Connected to 192.168.1.7.
+sftp> ls
+Desktop        Documents      Downloads      Music          Pictures       Public         Raja-Manickam  Templates      Videos         linux          sample.txt     snap           y              y.pub          
+sftp> cd /home/raajamanickam/Documents
+sftp> ls
+file1.sh          file2.txt         file3.txt         file4.txt         input.txt         modules           sample.txt        sorted_files.txt  
+sftp> !pwd
+/home/kali
+sftp> lcd /home/kali/Documents
+sftp> !ls
+Documents  file1.sh  new  sample1.txt  sample.txt
+sftp> put sample1.txt
+Uploading sample1.txt to /home/raajamanickam/Documents/sample1.txt
+sample1.txt                                                                                                                                                                                              100%    0     0.0KB/s   00:00    
+sftp> pwd
+Remote working directory: /home/raajamanickam/Documents
+sftp> ls
+file1.sh          file2.txt         file3.txt         file4.txt         input.txt         modules           sample.txt        sample1.txt       sorted_files.txt  
+sftp> get file2.txt
+Fetching /home/raajamanickam/Documents/file2.txt to file2.txt
+sftp> !ls
+Documents  file1.sh  file2.txt  new  sample1.txt  sample.txt
+sftp> 
