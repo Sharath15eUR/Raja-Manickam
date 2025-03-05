@@ -1,0 +1,22 @@
+A default gateway is the router or device that your computer uses to communicate with devices outside your local network (like the internet). 
+It acts as an exit point for all network traffic that is not meant for local devices.
+
+┌──(raaj㉿kali)-[/media/sf_LINUX/GIT/Raja-Manickam]
+└─$ ip route | grep default        
+default via 192.168.1.1 dev eth0 proto dhcp src 192.168.1.129 metric 100 
+
+We can check if the default gateway is reachable by pinging it.
+
+                                                                                                                                                                                                
+┌──(raaj㉿kali)-[/media/sf_LINUX/GIT/Raja-Manickam]
+└─$ ping -c 4 192.168.1.1
+
+PING 192.168.1.1 (192.168.1.1) 56(84) bytes of data.
+64 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=4.87 ms
+64 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=2.47 ms
+64 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=3.84 ms
+64 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=4.14 ms
+
+--- 192.168.1.1 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3006ms
+rtt min/avg/max/mdev = 2.471/3.832/4.872/0.870 ms

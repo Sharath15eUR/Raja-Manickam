@@ -1,0 +1,3 @@
+When duplicate IP's are assigned in a network it leads to IP conflict.
+It leads to inconsistent or loss of connectivity or loss of packets and also causes disruption in arp table.
+We can avoid this by dynamically assigning IP address through DHCP.

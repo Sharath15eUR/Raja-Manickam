@@ -1,0 +1,35 @@
+1.Wireshark
+
+Wireshark is a GUI-based network protocol analyzer that captures and filters packets.
+Wireshark provides two types of filters:
+Capture Filters – Applied before capturing packets.
+Display Filters – Applied after packets are captured to focus on specific packets.
+
+2.TCPDump is a command-line tool and packet sniffing tool for capturing network packets.
+    1.	Capture all packets on interface eth0:
+     sudo tcpdump -i eth0
+    This command captures all network packets on the eth0 interface.
+
+    2.	Capture only ICMP (ping) packets:
+    sudo tcpdump -i eth0 icmp
+    Filters packets to only capture ICMP (ping) traffic.
+
+    3.	Capture packets from a specific IP:
+    sudo tcpdump -i eth0 src 192.168.1.100
+    Only captures packets originating from the IP address 192.168.1.100.
+
+    4.	Capture packets to a specific IP:
+    sudo tcpdump -i eth0 dst 192.168.1.200
+    Only captures packets that are being sent to the IP address 192.168.1.200.
+
+    5.	Capture TCP traffic on port 443 (HTTPS):
+    sudo tcpdump -i eth0 port 443
+    Filters packets to only capture traffic on port 443, which is used for HTTPS communication.
+
+    6.	Save captured packets to a file for later analysis:
+    sudo tcpdump -i eth0 -w capture.pcap
+    Writes the captured packets to a file named capture.pcap for further analysis.
+
+    7.	Read captured packets from a file:
+    sudo tcpdump -r capture.pcap
+    Reads and displays the packets stored in the capture.pcap file.
