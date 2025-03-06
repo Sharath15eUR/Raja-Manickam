@@ -1,0 +1,25 @@
+A Dynamic Host Configuration Protocol (DHCP) server automatically assigns IP addresses and other network settings to devices on a network.
+This helps devices communicate without needing manual configuration.
+
+Process:
+    1.Discovery: Client sends DHCPDISCOVER request.
+    2.Offer: Server responds with an IP offer (DHCPOFFER).
+    3.Request: Client requests the offered IP (DHCPREQUEST).
+    4.Acknowledgment: Server assigns IP and confirms (DHCPACK).
+    
+The process follows a DORA (Discover, Offer, Request, Acknowledge) sequence:
+
+1.DHCP Discover (Broadcast from Client)
+    1.When a new device (client) connects to the network, it does not have an IP address.
+    2.The device broadcasts a DHCP Discover message across the network, looking for a DHCP server.
+
+2.DHCP Offer (Server Responds)
+    1.The DHCP server receives the Discover message and checks its available IP address pool.
+    2.It sends a DHCP Offer to the client, suggesting an available IP address, subnet mask, default gateway, and DNS server.
+
+3.DHCP Request (Client Accepts)
+    1.The client responds with a DHCP Request, confirming that it accepts the offered IP address.
+
+4.DHCP Acknowledge (Server Confirms)
+    1.The DHCP server sends a DHCP Acknowledge (ACK) message, confirming the lease of the IP address to the client.
+    2.The client now has a valid IP address, and it can communicate on the network.

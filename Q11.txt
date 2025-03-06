@@ -1,0 +1,65 @@
+1.SSH:
+SSH (Secure Shell) is a secure protocol used for remote login and command execution on another machine.
+It encrypts the data, ensuring a safe connection over an unsecured network.
+
+┌──(raaj㉿kali)-[~]
+└─$ ssh raajamanickam@192.168.1.8
+The authenticity of host '192.168.1.8 (192.168.1.8)' can't be established.
+ED25519 key fingerprint is SHA256:TCxtYc0rebArR1t4p62yWtijLfGj+9MsyPhw8qisp0s.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:4: [hashed name]
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.1.8' (ED25519) to the list of known hosts.
+raajamanickam@192.168.1.8's password: 
+Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 6.8.0-52-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+8 additional security updates can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+raajamanickam@raajamanickam-VirtualBox:~$ ls
+Desktop  Documents  Downloads  linux  Music  Pictures  Public  Raja-Manickam  sample.txt  snap  Templates  Videos  y  y.pub
+raajamanickam@raajamanickam-VirtualBox:~$ 
+
+2.telnet
+Telnet is a protocol used to remotely access and manage devices over a network.
+It sends data in plain text, making it insecure.
+
+                                                                                                                                                                                                                                           
+┌──(raaj㉿kali)-[~]
+└─$ telnet 192.168.1.8
+Trying 192.168.1.8...
+Connected to 192.168.1.8.
+Escape character is '^]'.
+
+Linux 6.8.0-52-generic (raajamanickam-VirtualBox) (pts/1)
+
+raajamanickam-VirtualBox login: raajamanickam
+Password: 
+Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 6.8.0-52-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+9 updates can be applied immediately.
+7 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+8 additional security updates can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+New release '24.04.2 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Last login: Thu Mar  6 22:41:44 IST 2025 from 192.168.1.5 on pts/1
+raajamanickam@raajamanickam-VirtualBox:~$ 
