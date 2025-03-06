@@ -1,22 +1,54 @@
-A default gateway is the router or device that your computer uses to communicate with devices outside your local network (like the internet). 
-It acts as an exit point for all network traffic that is not meant for local devices.
+1. Using VNC (Virtual Network Computing)
+    On the Remote Linux System (Server - the machine to be accessed)
+        1.	Install the VNC server: 
+            sudo apt update && sudo apt install tightvncserver -y
+        2.	Start the VNC server and set a password: 
+            vncserver
+        3.	The server will start and provide an output like :1, indicating the display number.
 
-┌──(raaj㉿kali)-[/media/sf_LINUX/GIT/Raja-Manickam]
-└─$ ip route | grep default        
-default via 192.168.1.1 dev eth0 proto dhcp src 192.168.1.129 metric 100 
+    On the Local Machine (Client - the machine accessing the remote system)
+        1.	Install a VNC viewer: 
+            sudo apt install tigervnc-viewer -y
+        2.	Open the VNC viewer and enter the remote system’s IP with the display number (<remote_IP>:1) to connect.
 
-We can check if the default gateway is reachable by pinging it.
+2. Using AnyDesk
+    On the Remote Linux System 
+        1.	Download AnyDesk: 
+            wget -O anydesk.deb https://download.anydesk.com/linux/anydesk_6.3.0-1_amd64.deb
+        2.	Install AnyDesk: 
+            sudo dpkg -i anydesk.deb
+            sudo apt --fix-broken install
+        3.	Open AnyDesk and copy the address in the "Your Desk" section.
 
-                                                                                                                                                                                                
-┌──(raaj㉿kali)-[/media/sf_LINUX/GIT/Raja-Manickam]
-└─$ ping -c 4 192.168.1.1
+    On the Local Machine 
+        1.	Open AnyDesk, paste the remote machine's address in the "Remote Desk" section, and connect.
+        2.	The user at the remote end must accept the connection.
+        3.	For unattended access, set up a password on the remote system.
 
-PING 192.168.1.1 (192.168.1.1) 56(84) bytes of data.
-64 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=4.87 ms
-64 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=2.47 ms
-64 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=3.84 ms
-64 bytes from 192.168.1.1: icmp_seq=4 ttl=64 time=4.14 ms
+3. Using TeamViewer
+    On the Remote Linux System 
+        1.	Download TeamViewer: 
+            wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
+        2.	Install TeamViewer: 
+            sudo dpkg -i teamviewer_amd64.deb
+            sudo apt --fix-broken install
+        3.	Open TeamViewer and note the ID & Password displayed.
 
---- 192.168.1.1 ping statistics ---
-4 packets transmitted, 4 received, 0% packet loss, time 3006ms
-rtt min/avg/max/mdev = 2.471/3.832/4.872/0.870 ms
+    On the Local Machine 
+        1.	Open TeamViewer, enter the remote ID & Password, and connect.
+        2.	The remote machine must accept the connection for access to be granted.
+
+4. Using RDP (Remote Desktop Protocol)
+    On the Remote Linux System
+        1.	Install xRDP : 
+        	sudo apt update && sudo apt install xrdp -y
+        2.	Start the xRDP service: 
+        	sudo systemctl start xrdp
+        	sudo systemctl enable xrdp
+        3.	Allow RDP through the firewall (if enabled): 
+        	sudo ufw allow 3389/tcp
+    On the Local Machine 
+        1.	Install an RDP client (e.g. Remmina for Linux): 
+        	sudo apt install remmina -y
+        2.	Open Remmina, select RDP, enter the remote IP, and click Connect.
+        3.	Log in using the credentials of the remote Linux system

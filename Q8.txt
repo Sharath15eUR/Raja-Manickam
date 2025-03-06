@@ -1,0 +1,44 @@
+1.ifconfig:
+    1.	Displays details of active network interfaces.
+    2.	Configures IP addresses, subnet masks, and broadcast addresses.
+    3.	Enables or disables network interfaces.
+    4.	Shows transmitted and received packets, errors, and collisions.
+    5.	Supports changing MAC addresses and MTU size.
+
+    Example Commands:
+        1.	View network interfaces and assigned IP addresses: 
+            ifconfig
+        2.	Assign an IP address to an interface: 
+            sudo ifconfig eth0 192.168.1.100 netmask 255.255.255.0
+        3.	Enable or disable an interface: 
+            sudo ifconfig eth0 up   # Enable
+            sudo ifconfig eth0 down # Disable
+        4.	Change the MAC address of an interface: 
+            sudo ifconfig eth0 hw ether 00:1A:2B:3C:4D:
+            
+2.iwconfig:
+It is used to configure and manage wireless network interfaces. 
+Unlike ifconfig, which deals with all network interfaces, iwconfig focuses only on Wi-Fi settings.
+
+    1.	Displays and modifies wireless network parameters.
+    2.	Shows SSID, frequency, signal strength, and link quality.
+    3.	Configures Wi-Fi mode (Managed, Ad-hoc, Monitor, etc.).
+    4.	Adjusts transmission power 
+    5.	Useful for troubleshooting wireless connectivity.
+
+    Example Commands
+    1.	View wireless network details: 
+        iwconfig
+    2.	Set the SSID of a wireless network: 
+        sudo iwconfig wlan0 essid "MyNetwork"
+    3.	Set the mode of operation (Managed, Monitor, Ad-hoc): 
+        sudo iwconfig wlan0 mode Managed
+    4.	Check signal strength and link quality: 
+        iwconfig wlan0
+
+
+1.MTU (Maximum Transmission Unit): The largest size (in bytes) of a packet that can be sent over the network interface.The default value is 1500 bytes for Ethernet.
+    Change MTU:
+    sudo ifconfig eth0 mtu 1400
+2.Interface speed : The rate at which data is transmitted over a network interface (measured in Mbps or Gbps).
+    iwconfig wlan0

@@ -2,7 +2,7 @@
 
 Wireshark is a GUI-based network protocol analyzer that captures and filters packets.
 Wireshark provides two types of filters:
-Capture Filters – Applied before capturing packets.
+Capture Filters – Applied before capturing packets in specific network interface.
 Display Filters – Applied after packets are captured to focus on specific packets.
 
 2.TCPDump is a command-line tool and packet sniffing tool for capturing network packets.
