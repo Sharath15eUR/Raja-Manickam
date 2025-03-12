@@ -1,0 +1,5 @@
+1.I have created a network with 3 pc and a switch in cisco packet tracer.
+2.Configured unique ip address to each pc and started simulation mode.
+3.I have pinged pc3 from pc1 and observed the traffic.
+4.Also while analysing the ethernet frame (layer2) ,we can see the source and destination MAC address.
+5.Also checked the MAC address table of the switch to see the connected devices.

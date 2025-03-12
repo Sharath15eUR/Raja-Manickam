@@ -1,0 +1,90 @@
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+┌──(raaj㉿kali)-[~]
+└─$ sudo ip link add name br0 type bridge
+                                                                                                                                                                                                                                           
+┌──(raaj㉿kali)-[~]
+└─$ sudo ip link set br0 up              
+                                                                                                                                                                                                                                           
+┌──(raaj㉿kali)-[~]
+└─$ sudo ip link add dummy1 type dummy   
+                                                                                                                                                                                                                                           
+┌──(raaj㉿kali)-[~]
+└─$ sudo ip link set dummy1 up        
+                                                                                                                                                                                                                                           
+┌──(raaj㉿kali)-[~]
+└─$ sudo ip link set dummy0 up
+                                                                                                                                                                                                                                           
+┌──(raaj㉿kali)-[~]
+└─$ sudo ip link set dummy0 master br0
+                                                                                                                                                                                                                                           
+┌──(raaj㉿kali)-[~]
+└─$ sudo ip link set dummy1 master br0
+                                                                                                                                                                                                                                           
+┌──(raaj㉿kali)-[~]
+└─$ sudo bridge link show                
+
+4: dummy0: <BROADCAST,NOARP,UP,LOWER_UP> mtu 1500 master br0 state forwarding priority 32 cost 100 
+6: dummy1: <BROADCAST,NOARP,UP,LOWER_UP> mtu 1500 master br0 state forwarding priority 32 cost 100 
+                                                                                                                                                                                                                                           
+┌──(raaj㉿kali)-[~]
+└─$ sudo ip addr add 192.168.100.1/24 dev br0
+
+                                                                                                                                                                                                                                           
+┌──(raaj㉿kali)-[~]
+└─$ ip addr show br0
+
+5: br0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 32:73:cd:c0:47:e2 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.100.1/24 scope global br0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::7844:cff:fe2d:6a73/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+                                                                                                                                                                                                                                           
+┌──(raaj㉿kali)-[~]
+└─$ sudo bridge fdb show
+
+01:00:5e:00:00:01 dev eth0 self permanent
+01:00:5e:7f:66:12 dev eth0 self permanent
+33:33:00:00:00:01 dev eth0 self permanent
+33:33:ff:9a:dd:43 dev eth0 self permanent
+fa:bf:92:fa:e0:a5 dev dummy0 vlan 1 master br0 permanent
+fa:bf:92:fa:e0:a5 dev dummy0 master br0 permanent
+01:00:5e:00:00:01 dev dummy0 self permanent
+33:33:00:00:00:01 dev dummy0 self permanent
+33:33:00:00:00:01 dev br0 self permanent
+01:00:5e:00:00:6a dev br0 self permanent
+33:33:00:00:00:6a dev br0 self permanent
+01:00:5e:00:00:01 dev br0 self permanent
+33:33:ff:2d:6a:73 dev br0 self permanent
+32:73:cd:c0:47:e2 dev dummy1 vlan 1 master br0 permanent
+32:73:cd:c0:47:e2 dev dummy1 master br0 permanent
+33:33:00:00:00:01 dev dummy1 self permanent
+01:00:5e:00:00:01 dev dummy1 self permanent
+                                                                                                                                                                                                                                           
+┌──(raaj㉿kali)-[~]
+└─$ sudo tcpdump -i br0 -e
+
+tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+listening on br0, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+0 packets captured
+0 packets received by filter
+0 packets dropped by kernel
+                                                                                                                                                                                                                                           
+┌──(raaj㉿kali)-[~]
+└─$ sudo ip addr add 192.168.100.1/24 dev dummy0
+
+                                                                                                                                                                                                                                           
+┌──(raaj㉿kali)-[~]
+└─$ sudo ip addr add 192.168.100.2/24 dev dummy1
+
+                                                                                                                                                                                                                                           
+┌──(raaj㉿kali)-[~]
+└─$ ping -I dummy0 192.168.100.2
+
+PING 192.168.100.2 (192.168.100.2) from 192.168.100.1 dummy0: 56(84) bytes of data.
+^C
+--- 192.168.100.2 ping statistics ---
+14 packets transmitted, 0 received, 100% packet loss, time 13440ms
+
+                                                                                                                                                                                                                                           
+ 

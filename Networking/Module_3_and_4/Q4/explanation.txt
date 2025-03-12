@@ -1,0 +1,3 @@
+1.I created LAN setup using 2 vpc and switch in cisco packet tracer.
+2.Assigned static ip addresses and pinged each pc's ip address and checked the configuration using ipconfig.
+3.Also tried tracert in both.

@@ -1,0 +1,17 @@
+1. I set  Up a Simple Network in GNS3 with 2 vpc and a switch.
+2. I configured ip addressess and started capturing the link between switch and each pc using Wireshark.
+3. I have pinged pc1 from pc0 and observed the packet transfer.
+4.First it send arp req in broadcast and resolves the destination mac address then it send ICMP requests and reply follows.
+5.In the Ethernet frame we can see details like 
+    Destination MAC Address: The MAC address of PC2.
+    Source MAC Address: The MAC address of PC1.
+    EtherType: Identifies the protocol (e.g., 0x0800 for IPv4).
+    Payload: Contains the ICMP (ping) request/reply.
+    FCS (Frame Check Sequence): Ensures data integrity.
+
+    Field	                 Value	                               Size
+    Destination MAC	        00:50:79:66:68:00	                 6 bytes
+    Source MAC	            00:50:79:66:68:01	                 6 bytes
+    EtherType	            0x0800 (IPv4)	                     2 bytes
+    Payload (ARP Data)      Address Resolution Protocol info	28 bytes (ARP)
+    Frame Check Sequence	Not shown (usually 4 bytes)	        (Captured later)

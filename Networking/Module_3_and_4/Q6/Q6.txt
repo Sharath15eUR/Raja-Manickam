@@ -1,0 +1,72 @@
+The process done to establishe a working LAN connection on a Linux machine:
+    1.Checked available network interfaces – Identified the active network interfaces on the system.
+    2.Assigned an IP address – Added a static IP address to the desired network interface.
+    3.Brought the interface up – Enabled and activated the network interface.
+    4.Set the default gateway – Configured the router IP address for external network access.
+    5.Verified the configuration – Checked the IP address, routing table, and tested connectivity.
+
+
+┌──(raaj㉿kali)-[~]
+└─$ ip link show
+
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether 08:00:27:6e:13:6e brd ff:ff:ff:ff:ff:ff
+                                                                                                                                                                                                                                           
+┌──(raaj㉿kali)-[~]
+└─$ sudo ip address add 192.168.1.100/24 dev eth0
+
+[sudo] password for raaj: 
+Sorry, try again.
+[sudo] password for raaj: 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                           
+┌──(raaj㉿kali)-[~]
+└─$ ip address show eth0
+
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:6e:13:6e brd ff:ff:ff:ff:ff:ff
+    inet 192.168.182.30/24 brd 192.168.182.255 scope global dynamic noprefixroute eth0
+       valid_lft 991sec preferred_lft 991sec
+    inet 192.168.1.100/24 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::a1e2:7f4e:239a:dd43/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+                                                                                                                                                                                                                                           
+┌──(raaj㉿kali)-[~]
+└─$ sudo ip link set eth0 up
+
+                                                                                                                                                                                                                                           
+┌──(raaj㉿kali)-[~]
+└─$ ip link show eth0
+
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether 08:00:27:6e:13:6e brd ff:ff:ff:ff:ff:ff
+                                                                                                                                                                                                                                           
+┌──(raaj㉿kali)-[~]
+└─$ sudo ip route add default via 192.168.1.1
+
+                                                                                                                                                                                                                                           
+┌──(raaj㉿kali)-[~]
+└─$ ip route show
+
+default via 192.168.1.1 dev eth0 
+default via 192.168.182.129 dev eth0 proto dhcp src 192.168.182.30 metric 100 
+192.168.1.0/24 dev eth0 proto kernel scope link src 192.168.1.100 
+192.168.182.0/24 dev eth0 proto kernel scope link src 192.168.182.30 metric 100 
+                                                                                                                                                                                                                                           
+┌──(raaj㉿kali)-[~]
+└─$ ip route get 8.8.8.8
+
+8.8.8.8 via 192.168.1.1 dev eth0 src 192.168.1.100 uid 1000 
+    cache 
+                                                                                                                                                                                                                                           
+┌──(raaj㉿kali)-[~]
+└─$ ip -s route
+
+default via 192.168.1.1 dev eth0 
+default via 192.168.182.129 dev eth0 proto dhcp src 192.168.182.30 metric 100 
+192.168.1.0/24 dev eth0 proto kernel scope link src 192.168.1.100 
+192.168.182.0/24 dev eth0 proto kernel scope link src 192.168.182.30 metric 100 
+                                                                                                                                                                                                                                           

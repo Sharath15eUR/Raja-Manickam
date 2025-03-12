@@ -1,0 +1,11 @@
+1.I created a virtual bridge br0 which acts as virtual switch which allows interfaces to communicate with each other.
+2.I created 2 new virtual dummy interfaces dummy0 and dummy1 and connected them to the bridge.
+3.I checked the bridge status using the bridge link show command. The output confirmed that both dummy interfaces were successfully added to br0
+4.I assigned the IP address 192.168.100.1/24 to the br0 bridge. This allowed the bridge itself to be reachable on the network.
+5.I used the bridge fdb show command to check the MAC address forwarding table. Both dummy interfaces were correctly listed as part of the bridge. 
+  This table shows how the bridge keeps track of which devices (MAC addresses) are connected to which interfaces
+6.To monitor traffic, I ran tcpdump on br0. However, no packets were being captured. 
+  This showed that the bridge was not forwarding traffic between the dummy interfaces.  
+7.I tried to ping dummy1 from dummy0 using their assigned IP addresses. but the ping failed with 100% packet loss
+
+8.I tried creating virtaul interface pairs veth and tried doing the same, still ping dosen't work.

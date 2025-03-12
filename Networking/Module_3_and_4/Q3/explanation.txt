@@ -1,0 +1,3 @@
+1.I configured static ip address for each vpc in cisco packet tracer .
+2.Also modified the MAC addressess.
+3.Checked for network connectivity using ping 
