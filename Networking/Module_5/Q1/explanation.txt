@@ -1,0 +1,16 @@
+I captured ARP (Address Resolution Protocol) packets on Wi-Fi interface using Wireshark.
+    1.ARP Request (Frame 14)
+      This is a broadcast message sent to the entire network because the  device does not  know the router’s MAC address as it was not in arp cache.
+
+    2. ARP Reply (Frame 15)
+    This is a unicast reply message from router containing its MAC address to the device.
+
+Role of sender's Ip and MAC addressess in these packets:
+    1.The sender’s IP and MAC uniquely identify a device on the local network.It enables devices to translate IP addresses (Layer 3) into MAC addresses (Layer 2) for communication.
+     When a device wants to send data , it needs the MAC address of that IP to create the Ethernet frame.
+
+    2.The sender’s IP and MAC address are stored in the ARP cache of receiving devices.
+
+    3.Helps in diagnosing network problems by analyzing the sender’s IP and MAC.
+     You can identify misconfigured devices, IP conflicts, or unresponsive devices.
+     If two devices send ARP replies with the same IP but different MACs, there may be an IP conflict.

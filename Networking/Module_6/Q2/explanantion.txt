@@ -1,0 +1,58 @@
+I configured communication between two routers and their connected PCs by assigning appropriate IP addresses and setting up static routes.
+PC1 Configuration:
+    IP Address: 192.168.1.10
+
+    Subnet Mask: 255.255.255.0 (/24)
+
+    Default Gateway: 192.168.1.1 (Router1’s interface)
+PC2 Configuration:
+
+    IP Address: 192.168.2.10
+
+    Subnet Mask: 255.255.255.0 (/24)
+
+    Default Gateway: 192.168.2.1 (Router2’s interface)
+I configured the router by assigning ip address and static route
+1.Router 1
+    enable
+    configure terminal
+
+    ! PC1 interface
+    interface gigabitEthernet 0/0/0
+    ip address 192.168.1.1 255.255.255.0
+    no shutdown
+
+    ! To Router2
+    interface gigabitEthernet 0/0/1
+    ip address 10.0.0.1 255.255.255.252
+    no shutdown
+
+    ! Static route to PC2 network
+    !This tells Router1 to send all traffic destined for the 192.168.2.0/24 network to Router2 through the 10.0.0.2 interface.
+    ip route 192.168.2.0 255.255.255.0 10.0.0.2
+2.Router 2
+    enable
+    configure terminal
+
+    ! PC2 interface
+    interface gigabitEthernet 0/0/0
+    ip address 192.168.2.1 255.255.255.0
+    no shutdown
+
+    ! From Router1
+    interface gigabitEthernet 0/0/1
+    ip address 10.0.0.2 255.255.255.252
+    no shutdown
+
+    ! Static route to PC1 network
+    !This tells Router2 to forward all traffic meant for the 192.168.1.0/24 network to Router1 via 10.0.0.1.
+    ip route 192.168.1.0 255.255.255.0 10.0.0.1
+
+For Router-to-Router Links (10.0.0.x/30):
+    I used a /30 subnet (255.255.255.252) for the connection between the routers. 
+    This subnet provides exactly 2 usable IP addresses—one for each router. 
+    It’s the most efficient choice since only two devices need to communicate.
+After configuring, we can view the interface status status by : show ip interface brief and route by show ip route.
+
+In PC , to check the connectivity I used ping and verified using tracert.
+

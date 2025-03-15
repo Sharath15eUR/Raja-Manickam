@@ -1,0 +1,61 @@
+1. IP Address: 10.1.1.1
+    Class: Class A
+    (IP addresses from 1.0.0.0 to 126.255.255.255)
+    Default Subnet Mask: 255.0.0.0 (or /8)
+    Range of Class A:
+        Network Range: 1.0.0.0 to 126.255.255.255
+        Usable IPs: 1.0.0.1 to 126.255.255.254 (excluding network and broadcast addresses)
+
+2. IP Address: 172.16.5.10
+    Class: Class B
+    (IP addresses from 128.0.0.0 to 191.255.255.255)
+    Default Subnet Mask: 255.255.0.0 (or /16)
+    Range of Class B:
+        Network Range: 128.0.0.0 to 191.255.255.255
+        Usable IPs: 128.0.0.1 to 191.255.255.254
+
+3. IP Address: 192.168.1.5
+    Class: Class C
+    (IP addresses from 192.0.0.0 to 223.255.255.255)
+    Default Subnet Mask: 255.255.255.0 (or /24)
+    Range of Class C:
+        Network Range: 192.0.0.0 to 223.255.255.255
+        Usable IPs: 192.0.0.1 to 223.255.255.254
+
+Generally they are  classified as: 
+1. Class A
+Range: 1.0.0.0 to 126.255.255.255
+Default Subnet Mask: 255.0.0.0 (/8)
+Supports: Large networks (up to 16 million hosts)
+First Octet (1st Byte) Range: 1-126
+Example: 10.1.1.1
+
+2. Class B
+Range: 128.0.0.0 to 191.255.255.255
+Default Subnet Mask: 255.255.0.0 (/16)
+Supports: Medium-sized networks (up to 65,000 hosts)
+First Octet Range: 128-191
+Example: 172.16.5.10
+
+3. Class C
+Range: 192.0.0.0 to 223.255.255.255
+Default Subnet Mask: 255.255.255.0 (/24)
+Supports: Small networks (up to 254 hosts)
+First Octet Range: 192-223
+Example: 192.168.1.5
+
+4. Class D (Multicast)
+Range: 224.0.0.0 to 239.255.255.255
+Used for: Multicasting (not for regular network hosts)
+Example: Used in streaming, VoIP, and multicast applications.
+5. Class E (Experimental/Reserved)
+Range: 240.0.0.0 to 255.255.255.255
+Used for: Experimental purposes (not used for general networking)
+
+Overall Table:
+Class	IP Range	                    Default Subnet      Mask	Usage
+A	    1.0.0.0 - 126.255.255.255	    255.0.0.0 (/8)	    Large networks
+B	    128.0.0.0 - 191.255.255.255	    255.255.0.0 (/16)	Medium networks
+C	    192.0.0.0 - 223.255.255.255	    255.255.255.0 (/24)	Small networks
+D	    224.0.0.0 - 239.255.255.255	    No subnet mask	    Multicasting
+E	    240.0.0.0 - 255.255.255.255	    No subnet mask	    Experimental

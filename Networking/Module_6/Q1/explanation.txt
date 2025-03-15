@@ -1,0 +1,16 @@
+I captured ARP (Address Resolution Protocol) packets on Wi-Fi interface using Wireshark.
+    1.ARP Request (Frame 14)
+      This is a broadcast message sent to the entire network because the  device does not  know the router’s MAC address as it was not in arp cache.
+
+    2. ARP Reply (Frame 15)
+    This is a unicast reply message from router containing its MAC address to the device.
+
+Importance of ARP in packet forwarding:
+
+    1.ARP translates Layer 3 (IP address) to Layer 2 (MAC address), enabling devices to communicate on a local network.
+
+    2.Without ARP, devices would not know where to send packets, and communication within a network would fail.
+
+    3.ARP dynamically resolves addresses without manual configuration, which is essential for large, complex networks.
+
+    4.For packets leaving a local network, ARP allows devices to discover the MAC address of the router (default gateway), ensuring packets are forwarded correctly.

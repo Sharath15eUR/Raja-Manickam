@@ -1,0 +1,44 @@
+If the device already has an IP address,so forcing a new DHCP request by releasing and renewing it:
+    On Linux (Kali/Ubuntu):
+
+    sudo dhclient -r && sudo dhclient
+
+    On Windows:
+
+    ipconfig /release && ipconfig /renew
+
+In wireshark select the network interface connected to the router ( Wi-Fi) and apply this filter:
+    udp.port == 67 || udp.port == 68
+
+The Dynamic Host Configuration Protocol (DHCP) uses UDP (User Datagram Protocol) for communication between clients (e.g., your device) and DHCP servers.
+
+    Port 67: Used by the DHCP server to receive requests from clients.
+    Port 68: Used by the DHCP client to receive responses from the server.    
+
+
+
+Observations :
+    
+DHCP Release:
+    Client → DHCP Server: Sends a DHCP Release message.
+    DHCP Server: Marks the IP as available in its pool for reuse.
+
+DHCP Discover:
+
+    Client broadcasts a request to find a DHCP server.
+    Source IP: 0.0.0.0 → Destination IP: 255.255.255.255 (Broadcast).
+
+DHCP Offer:
+
+    DHCP server responds with an available IP address and lease details.
+    Source: DHCP Server IP → Destination: Client MAC address.
+
+DHCP Request:
+
+    Client accepts the offered IP and requests to lease it.
+    Source: 0.0.0.0 → Destination: 255.255.255.255.
+
+DHCP Acknowledge (ACK):
+
+    DHCP server confirms the lease, and the client starts using the IP.
+    Source: DHCP Server IP → Destination: Client’s new IP.

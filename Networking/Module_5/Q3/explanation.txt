@@ -1,0 +1,6 @@
+I have assigned static ip address to 192.168.1.50/24 to the eth0 interface.
+    sudo ip addr add 192.168.1.50/24 dev eth0
+I added the default route (gateway) 192.168.1.1:
+To check connectivity:
+I have pinged the default gateway and google
+If this works, your IP address and routing are correct.
