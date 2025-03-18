@@ -1,0 +1,73 @@
+Extended ACL Configuration to Block HTTP and FTP Traffic
+
+1. Devices and Network Topology
+The following devices are required for this setup:
+- 1 Router (to apply the ACL)
+- 1 Switch (to connect the PCs)
+- 2 PCs:
+    - PC1 (Allowed Traffic)
+    - PC2 (Blocked Traffic)
+- 1 Server (Destination for HTTP and FTP traffic)
+
+Network Topology:
+1. PC1 → Switch (Fa0/1)
+2. PC2 → Switch (Fa0/2)
+3. Switch → Router (GigabitEthernet0/0)
+4. Server → Router (GigabitEthernet0/1)
+
+ Configuration :
+Step 1: Configure Router Interfaces
+Access the router and configure the interfaces to connect the switch and the server.
+
+    Router> enable
+    Router# configure terminal
+    ! Configure the interface connected to the switch
+    Router(config)# interface GigabitEthernet0/0
+    Router(config-if)# ip address 192.168.1.1 255.255.255.0
+    Router(config-if)# no shutdown
+    Router(config-if)# exit
+
+    ! Configure the interface connected to the server
+    Router(config)# interface GigabitEthernet0/1
+    Router(config-if)# ip address 192.168.2.1 255.255.255.0
+    Router(config-if)# no shutdown
+    Router(config-if)# exit
+
+Step 2: Update the Server’s IP Address
+Ensure the server has the following configuration:
+- IP Address: 192.168.2.100
+- Subnet Mask: 255.255.255.0
+- Default Gateway: 192.168.2.1
+
+Creating and Applying the ACL
+Create an Extended ACL to block HTTP and FTP traffic from PC2 while allowing all other traffic.
+
+    Router(config)# access-list 101 deny tcp host 192.168.1.20 host 192.168.2.100 eq 80
+    Router(config)# access-list 101 deny tcp host 192.168.1.20 host 192.168.2.100 eq 21
+    Router(config)# access-list 101 permit ip any any
+
+    ! Apply the ACL to incoming traffic on the router’s interface connected to the switch
+    Router(config)# interface GigabitEthernet0/0
+    Router(config-if)# ip access-group 101 in
+    Router(config-if)# exit
+    Router# write memory
+
+Step 4: Verify the ACL
+Use the following commands to verify the ACL is correctly applied and matches traffic:
+
+    Router# show access-lists 101
+    Extended IP access list 101
+        10 deny tcp host 192.168.1.20 192.168.2.100 eq www
+        20 deny tcp host 192.168.1.20 192.168.2.100 eq ftp
+        30 permit ip any any
+
+    ! Check the interface for applied ACLs
+    Router# show ip interface GigabitEthernet0/0
+
+
+ACL Matches
+The 'matches' output shows  packets have matched each ACL rule. 
+- This confirms that traffic from PC2 to HTTP and FTP is being successfully blocked.
+
+The ACL successfully restricts access to HTTP and FTP services from PC2 while allowing all other traffic.
+

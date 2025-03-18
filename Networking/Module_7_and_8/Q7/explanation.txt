@@ -1,0 +1,103 @@
+A Management VLAN is a dedicated VLAN (Virtual Local Area Network) used exclusively to manage and 
+access network devices (like switches and routers) without mixing with regular user traffic.
+
+
+Step 1: Set the Hostname and Domain Name
+
+    Switch> enable
+    Switch# configure terminal
+
+    ! Set hostname
+    Switch(config)# hostname Switch0
+
+    ! Set domain name
+    Switch0(config)# ip domain-name switch.com
+Explanation:
+    SSH requires both a hostname and domain name to generate encryption keys.
+	hostname: Defines a unique name for the switch.
+	ip domain-name: Required to generate RSA encryption keys for SSH.
+
+Step 2: Generate RSA Encryption Keys
+
+    Switch0(config)# crypto key generate rsa
+
+SSH uses RSA keys for encryption. Without encryption, your credentials could be intercepted.    
+When prompted, enter 2048 for key length:
+The name for the keys will be: Switch0.switch.com
+Choose the size of the key modulus (512-4096): 2048
+
+Explanation:
+	crypto key generate rsa: Creates RSA encryption keys needed for SSH.
+	2048-bit key size ensures stronger encryption.
+
+Step 3: Enable SSH Version 2
+
+    Switch0(config)# ip ssh version 2
+
+Explanation:
+	SSH version 2 is more secure and recommended over version 1.
+
+Step 4: Create a Local User Account
+
+    Switch0(config)# username admin secret MySecurePassword
+Explanation:
+	This creates a local user account (admin) with the password (MySecurePassword).
+	secret encrypts the password in the configuration file.
+
+Step 5: Configure Virtual Terminal (vty) Lines for SSH Access
+
+    Switch0(config)# line vty 0 4
+
+    ! Allow only SSH connections
+    Switch0(config-line)# transport input ssh
+
+    ! Use local user authentication
+    Switch0(config-line)# login local
+
+    ! Exit line configuration
+    Switch0(config-line)# exit
+
+Explanation:
+    VTY lines (Virtual Teletype lines) are virtual interfaces on a switch or router that allow remote access. 
+    Think of them as virtual "doors" that you connect through when using SSH or Telnet.
+    vty 0 4 means there are 5 virtual lines available (line 0, 1, 2, 3, and 4).
+    These lines allow up to 5 simultaneous remote users to access the switch.
+	line vty 0 4: Configures virtual terminal lines (used for remote access).
+	transport input ssh: Restricts access to SSH only (disables Telnet).
+	login local: Requires the switch to authenticate users with locally configured credentials.
+
+Step 6: Verify SSH Configuration
+
+! Check SSH status
+    Switch0# show ip ssh
+
+    ! Verify vty configuration
+    Switch0# show running-config | section line vty
+
+Explanation:
+	show ip ssh: Confirms SSH is enabled and displays settings.
+	show running-config | section line vty: Displays the vty line configuration.
+
+Step 7: Assign an IP Address to the Management VLAN
+
+    Switch0(config)# interface vlan 1
+    Switch0(config-if)# ip address 192.168.1.100 255.255.255.0
+    Switch0(config-if)# no shutdown
+    Switch0(config-if)# exit
+Explanation:
+	interface vlan 1: Configures VLAN 1 (default management interface).
+	ip address: Assigns an IP address to the switch.
+	no shutdown: Ensures the VLAN interface is active.
+
+Step 8: (Optional) Set Default Gateway (If Required)
+If the switch is accessed from another subnet, configure the default gateway:
+
+    Switch0(config)# ip default-gateway 192.168.1.1
+Explanation:
+	This sets the gateway IP address for traffic to leave the local subnet.
+
+Step 9: Test SSH Acc 
+    ssh admin@192.168.1.100
+
+1.	Ensure a PC is connected to the switch and on the same subnet.
+2.	From the PC, we can connect to the swich and verify.

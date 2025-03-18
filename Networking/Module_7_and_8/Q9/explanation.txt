@@ -1,0 +1,84 @@
+Why Can't VLAN 10 Communicate with VLAN 20?
+By design, VLANs create separate broadcast domains. Devices in different VLANs cannot communicate directly without a Layer 3 (Routing) device to forward traffic between VLANs. 
+If the switch is a Layer 2 switch, it cannot route packets between VLANs.
+
+1: Verify VLAN Configuration
+Check VLAN Existence on the Switch
+Ensure VLANs 10 and 20 are created on the switch.
+
+    Switch# show vlan brief
+
+Check for:
+
+    VLAN 10 and VLAN 20 are listed.
+    The correct ports are assigned to each VLAN.
+
+2: Verify Port Assignment
+Check if the ports connected to devices are properly assigned to the correct VLAN.
+
+    Switch# show running-config | section interface
+
+Check for:
+
+    Devices in VLAN 10 should be on access ports assigned to VLAN 10.
+    Devices in VLAN 20 should be on access ports assigned to VLAN 20.
+
+Example :
+
+    interface FastEthernet 0/1
+    switchport mode access
+    switchport access vlan 10
+
+    interface FastEthernet 0/2
+    switchport mode access
+    switchport access vlan 20
+
+3: Ensure Inter-VLAN Routing is Enabled
+If you want VLAN 10 and VLAN 20 to communicate:
+Use a Router (Router-on-a-Stick Method)
+If using a Layer 2 switch, a router is required to handle traffic between VLANs.
+
+Example Configuration (On a Router connected to a Trunk Port):
+
+    Router(config)# interface g0/0.10
+    Router(config-subif)# encapsulation dot1Q 10
+    Router(config-subif)# ip address 192.168.10.1 255.255.255.0
+
+    Router(config)# interface g0/0.20
+    Router(config-subif)# encapsulation dot1Q 20
+    Router(config-subif)# ip address 192.168.20.1 255.255.255.0
+
+4: Check Trunk Configuration
+Ensure the switch port connecting to the router or Layer 3 switch is configured as a trunk to carry both VLANs.
+
+Check trunk ports:
+
+    Switch# show interfaces trunk
+
+Expected Output:
+
+    The port connected to the router or Layer 3 switch should be in trunk mode.
+    Both VLAN 10 and VLAN 20 should be allowed on the trunk.
+
+Example trunk configuration:
+
+    interface FastEthernet 0/1
+    switchport mode trunk
+    switchport trunk allowed vlan 10,20
+
+5: Verify IP Addressing and Connectivity
+Ensure that:
+
+Devices in VLAN 10 and VLAN 20 have IP addresses in their respective subnets.
+Devices in VLAN 10 use the VLAN 10 gateway (e.g., 192.168.10.1), and devices in VLAN 20 use the VLAN 20 gateway (e.g., 192.168.20.1).
+
+
+Ensure the router or Layer 3 switch is correctly routing between VLANs.
+Ensure there are no access control lists (ACLs) blocking traffic.
+
+6: Check for VLAN Mismatches
+Ensure the devices and switch ports belong to the correct VLAN. Misconfiguration of access ports or trunks can block communication.
+
+    Switch# show vlan id 10
+    Switch# show vlan id 20
+

@@ -1,0 +1,62 @@
+to set up a switch port to support both:
+	Data traffic (VLAN 10) for a connected PC
+	Voice traffic (VLAN 20) for an IP Phone
+
+Connection Layout:
+1.	PC is connected to the IP Phone (via the PC Port on the phone).
+2.	IP Phone is connected to the Switch (via the SW Port on the phone).
+This allows the switch to handle data and voice traffic on the same physical port, while logically separating them using VLANs.
+
+When both a PC and an IP Phone share a switch port:
+1.	PC Traffic (VLAN 10) is untagged and treated as normal data traffic.
+2.	Voice Traffic (VLAN 20) is tagged using 802.1Q and prioritized using QoS (Quality of Service).
+
+The switch identifies which traffic belongs to which VLAN:
+	Untagged traffic goes to VLAN 10 (default access VLAN for the PC).
+	Tagged traffic from the IP Phone goes to VLAN 20 (voice VLAN).
+
+Configuration :
+    1.	Access the Cisco Switch
+            switch> enable
+            switch# configure terminal
+
+    2.	Select the Port Connected to the IP Phone
+            switch(config)# interface fastEthernet 0/1
+
+    3.	Configure the Port for Access Mode
+            switch(config-if)# switchport mode access
+
+    4.	Assign Data VLAN (VLAN 10)
+            switch(config-if)# switchport access vlan 10
+    This ensures all untagged traffic (from the PC) is placed on VLAN 10.
+
+    5.	Enable Voice VLAN (VLAN 20)
+            switch(config-if)# switchport voice vlan 20
+    This allows the switch to recognize tagged packets from the IP Phone as VLAN 20.
+
+    6.	Enable QoS for Voice Traffic Prioritization 
+        switch(config-if)# mls qos trust cos
+    mls qos enables Multi-Layer Switching Quality of Service (QoS) on the switch.
+    trust cos tells the switch to trust the Class of Service (CoS) value from incoming packets (set by the IP Phone) and prioritize voice traffic over regular data traffic.
+    It ensures voice packets (which are latency-sensitive) get higher priority in the switch’s internal processing.    
+
+ Verified the configuration by:
+    Switch#show vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/2, Fa0/3, Fa0/4, Fa0/5
+                                                Fa0/6, Fa0/7, Fa0/8, Fa0/9
+                                                Fa0/10, Fa0/11, Fa0/12, Fa0/13
+                                                Fa0/14, Fa0/15, Fa0/16, Fa0/17
+                                                Fa0/18, Fa0/19, Fa0/20, Fa0/21
+                                                Fa0/22, Fa0/23, Fa0/24, Gig0/1
+                                                Gig0/2
+10   DATA_VLAN                        active    Fa0/1
+20   VOICE_VLAN                       active    Fa0/1
+1002 fddi-default                     active    
+1003 token-ring-default               active    
+1004 fddinet-default                  active    
+1005 trnet-default                    active    
+Switch#
+

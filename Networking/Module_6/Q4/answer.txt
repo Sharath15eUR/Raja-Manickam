@@ -1,0 +1,49 @@
+Class of Each IP Address:
+The class of an IP address is determined by its first octet (the first 8 bits), and based on this, we categorize IP addresses into different classes (A, B, C, D, and E). The classes relevant to your question are A, B, and C.
+
+1. 192.168.10.5:
+First Octet: 192
+Class: Class C (IP addresses from 192.0.0.0 to 223.255.255.255)
+Private/Public: This is a private IP address because the range 192.168.0.0 to 192.168.255.255 is reserved for private use according to RFC 1918.
+
+2. 172.20.15.1:
+First Octet: 172
+Class: Class B (IP addresses from 128.0.0.0 to 191.255.255.255)
+Private/Public: This is a private IP address because the range 172.16.0.0 to 172.31.255.255 is reserved for private use according to RFC 1918.
+
+3. 8.8.8.8:
+First Octet: 8
+Class: Class A (IP addresses from 1.0.0.0 to 126.255.255.255)
+Private/Public: This is a public IP address because Class A addresses can be used for both private and public networks, but this specific IP (8.8.8.8) is assigned to Google's public DNS service.
+
+
+Network Address Translation (NAT) is a technique used to map private IP addresses to public IP addresses when devices on a private network access the internet. 
+
+NAT Device (Usually a Router):
+The NAT device, typically your router, is responsible for handling NAT. The router has:
+Private IP address on the internal network (e.g., 192.168.1.1).
+Public IP address on the external interface, which is provided by the Internet Service Provider (ISP) (e.g., 203.0.113.10).
+
+The Process of NAT:
+Step 1: Private Device Makes a Request:
+Let's say PC1 (with a private IP address 192.168.1.5) wants to access a website. It sends a request to the router.
+The packet contains the source IP (192.168.1.5) and the destination IP (the public IP of the website).
+
+Step 2: Router Modifies the Packet (Source NAT):
+The NAT-enabled router receives this packet and sees that the source IP address is private (192.168.1.5).
+The router replaces the source IP address of the packet with its own public IP address (203.0.113.10), because private IP addresses cannot be routed on the Internet.
+The router also keeps track of the connection (by maintaining a translation table) so it knows which internal private IP address (e.g., 192.168.1.5) the request came from.
+The router forwards the modified packet with its own public IP (203.0.113.10) as the source address.
+
+Step 3: Internet Communication:
+The modified packet, with the router's public IP as the source address, is now able to reach the destination website.
+The website responds to the router's public IP address.
+
+Step 4: Router Receives the Response:
+The response from the website comes back to the router's public IP address (203.0.113.10).
+The router looks up its NAT table and finds that the response was originally sent from PC1 (with private IP 192.168.1.5).
+The router then modifies the destination IP address of the response packet to PC1's private IP address (192.168.1.5), and sends it back to PC1.
+
+Step 5: PC1 Receives the Response:
+PC1 receives the response from the website, but it sees the packet as coming from its own private IP (192.168.1.5), as if the website directly communicated with it.
+

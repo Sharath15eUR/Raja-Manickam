@@ -42,19 +42,6 @@ To define which internal IP addresses are allowed for NAT.
     ! Create a standard ACL to match internal network (192.168.1.0/24)
     Router0(config)# access-list 1 permit 192.168.1.0 0.0.0.255
 
-    Wildcard Masks
-
-        Subnet Mask: 255.255.255.0 (CIDR: /24)
-
-        Wildcard Mask: 0.0.0.255 (Used in ACLs for IP matching)
-
-        Wildcard masks are the inverse of the subnet mask:
-
-        255.255.255.0 -> 0.0.0.255
-
-        Example:
-        access-list 1 permit 192.168.1.0 0.0.0.255 matches all IPs from 192.168.1.0 to 192.168.1.255.
-
 Configure NAT Overload (PAT)
     ! Define inside and outside interfaces
     Router0(config)# interface gigabitEthernet 0/0/0

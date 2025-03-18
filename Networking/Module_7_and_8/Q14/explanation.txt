@@ -1,0 +1,138 @@
+Static NAT, Dynamic NAT, and PAT Configuration
+1. Static NAT Configuration
+
+Static NAT maps one internal (private) IP address to one specific external (public) IP address. 
+It is useful when you want a device inside your network (like a server) to be accessible from outside.
+
+Topology:
+PC1 (192.168.1.10) → Switch → Router →server
+
+Configuration:
+1. Assign IP addresses to router interfaces:
+
+
+Router> enable
+Router# configure terminal
+
+! Configure Inside Interface (towards the LAN)
+Router(config)# interface GigabitEthernet0/0
+Router(config-if)# ip address 192.168.1.1 255.255.255.0
+Router(config-if)# ip nat inside
+Router(config-if)# no shutdown
+Router(config-if)# exit
+
+! Configure Outside Interface (towards the Internet)
+Router(config)# interface GigabitEthernet0/1
+Router(config-if)# ip address 203.0.113.1 255.255.255.0
+Router(config-if)# ip nat outside
+Router(config-if)# no shutdown
+Router(config-if)# exit
+
+2. Configure Static NAT Mapping:
+
+! Map internal IP to external IP
+Router(config)# ip nat inside source static 192.168.1.10 203.0.113.10
+
+3. Verify Static NAT:
+
+! Check NAT translations
+Router# show ip nat translations
+
+! Test from PC1 by pinging the external server:
+C:\> ping 8.8.8.8
+
+Static nat can be verified by analysing the simulation mode traffic
+
+2. Dynamic NAT Configuration
+
+Dynamic NAT allows multiple internal IP addresses to be translated to a pool of external IP addresses. 
+It is useful when you have multiple devices that need Internet access but do not require fixed public IPs.
+
+Topology:
+PC1, PC2 → Switch → Router → server
+
+Configuration:
+1. Assign IP addresses to router interfaces:
+
+
+Router> enable
+Router# configure terminal
+
+! Inside Interface
+Router(config)# interface GigabitEthernet0/0
+Router(config-if)# ip address 192.168.2.1 255.255.255.0
+Router(config-if)# ip nat inside
+Router(config-if)# no shutdown
+Router(config-if)# exit
+
+! Outside Interface
+Router(config)# interface GigabitEthernet0/1
+Router(config-if)# ip address 203.0.113.1 255.255.255.0
+Router(config-if)# ip nat outside
+Router(config-if)# no shutdown
+Router(config-if)# exit
+
+2. Configure Dynamic NAT:
+
+! Define NAT pool with a range of public IPs
+Router(config)# ip nat pool DYN_POOL 203.0.113.10 203.0.113.20 netmask 255.255.255.0
+
+! Allow internal IP range to be translated
+Router(config)# access-list 1 permit 192.168.2.0 0.0.0.255
+
+! Link ACL to NAT pool
+Router(config)# ip nat inside source list 1 pool DYN_POOL
+
+3. Verify Dynamic NAT:
+
+! Check NAT translations
+Router# show ip nat translations
+
+! Test from PC1 or PC2 by pinging the external server:
+C:\> ping 8.8.8.8
+
+3. PAT (Port Address Translation) Configuration
+
+PAT allows multiple internal IP addresses to share a single external IP address using unique port numbers. 
+This is commonly used for home networks and small offices to allow many devices to access the Internet.
+
+Topology:
+PC1, PC2 → Switch → Router → server
+
+Configuration:
+1. Assign IP addresses to router interfaces:
+
+
+Router> enable
+Router# configure terminal
+
+! Inside Interface
+Router(config)# interface GigabitEthernet0/0
+Router(config-if)# ip address 192.168.3.1 255.255.255.0
+Router(config-if)# ip nat inside
+Router(config-if)# no shutdown
+Router(config-if)# exit
+
+! Outside Interface
+Router(config)# interface GigabitEthernet0/1
+Router(config-if)# ip address 203.0.113.1 255.255.255.0
+Router(config-if)# ip nat outside
+Router(config-if)# no shutdown
+Router(config-if)# exit
+
+2. Configure PAT (Overload):
+
+! Allow internal IP range to be translated
+Router(config)# access-list 1 permit 192.168.3.0 0.0.0.255
+
+! Enable PAT using the outside interface
+Router(config)# ip nat inside source list 1 interface GigabitEthernet0/1 overload
+
+3. Verify PAT:
+
+! Check PAT translations
+Router# show ip nat translations
+
+! Test from PC1 or PC2 by pinging the external server:
+C:\> ping 8.8.8.8
+

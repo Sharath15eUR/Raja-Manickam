@@ -1,0 +1,31 @@
+The native VLAN is the VLAN on a trunk port that carries untagged traffic.
+By default, on Cisco switches, the native VLAN is VLAN 1.
+Both ends of a trunk must have the same native VLAN; otherwise, a VLAN mismatch occurs.
+
+Native VLAN importance :
+
+Ensures untagged traffic is processed correctly.
+Supports backward compatibility with devices that don’t support VLAN tagging.
+Required for management protocols like CDP (Cisco Discovery Protocol) and STP (Spanning Tree Protocol).
+
+Changing native vlan ,for that we have to ensure the native VLAN is the same on both sides of the trunk.
+
+On Switch 1:
+
+    Switch1(config)# interface fa0/2
+    Switch1(config-if)# switchport mode trunk
+    Switch1(config-if)# switchport trunk native vlan 99
+On Switch 2:
+
+    Switch2(config)# interface fa0/2
+    Switch2(config-if)# switchport mode trunk
+    Switch2(config-if)# switchport trunk native vlan 99
+
+Check if the fix works:
+
+    Switch1# show interfaces trunk
+
+TO simulate mismatch, we can change the navtive vlan on one of the switches and we can see the error as:
+    %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch detected on Fa0/2 (99), with Switch2 Fa0/2 (88).
+
+For troubleshootingwe can revert the native vlan.

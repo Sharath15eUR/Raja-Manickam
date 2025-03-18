@@ -1,0 +1,62 @@
+An Access Control List (ACL) is a set of rules used to filter traffic on a Cisco device (such as a router or switch). 
+It controls which packets are permitted (allowed) and denied (blocked) based on specific conditions like IP addresses, protocols, and ports.
+
+Implementing and Testing ACLs to Restrict Traffic Based on Source and Destination Ports
+
+ACL on a router to:
+1.	Allow HTTP traffic (port 80) from a specific source (PC1 - 192.168.1.10).
+2.	Block Telnet traffic (port 23) from another source (PC2 - 192.168.1.20).
+3.	Allow all other traffic to ensure no unintended blockage.
+
+Step 1: Configure IP Addresses
+    On PC1 (Allowed Source)
+        IP Address: 192.168.1.10
+        Subnet Mask: 255.255.255.0
+        Gateway: 192.168.1.1
+    On PC2 (Blocked Source)
+        IP Address: 192.168.1.20
+        Subnet Mask: 255.255.255.0
+        Gateway: 192.168.1.1
+
+Step 2: Configure the Router
+1.	Access the router and enable configuration mode:
+        Router> enable
+        Router# configure terminal
+2.	Set up the router interface connected to the switch:
+        Router(config)# interface GigabitEthernet0/0
+        Router(config-if)# ip address 192.168.1.1 255.255.255.0
+        Router(config-if)# no shutdown
+        Router(config-if)# exit
+
+Step 3: Create and Apply the ACL
+1. Allow HTTP (Port 80) from PC1:
+        Router(config)# access-list 100 permit tcp 192.168.1.10 0.0.0.0 any eq 80
+2. Block Telnet (Port 23) from PC2:
+        Router(config)# access-list 100 deny tcp 192.168.1.20 0.0.0.0 any eq 23
+3. Allow All Other Traffic:
+        Router(config)# access-list 100 permit ip any any
+
+4. Apply the ACL to the Router's Interface (Inbound Traffic):
+        Router(config)# interface GigabitEthernet0/0
+        Router(config-if)# ip access-group 100 in
+        Router(config-if)# exit
+        Router(config)# end
+        Router# write memory
+
+Step 4: Testing the ACL
+From PC1 (Allowed HTTP Traffic)
+1.http://192.168.1.1
+  Output :host name unresolved
+From PC2 (Blocked Telnet Traffic)
+
+1.	Open the command prompt and initiated a Telnet session (port 23):
+    telnet 192.168.1.1 23
+    It displayes blocked by foreign host
+Verify ACL Hits on the Router
+Check if the ACL is working by monitoring packet matches:
+    Router# show access-lists 100
+
+    The matches show that router is inspecting traffic and applying the rules.
+
+
+

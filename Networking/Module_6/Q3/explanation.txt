@@ -1,0 +1,46 @@
+The original network address 10.0.0.0/24, which has a subnet mask of 255.255.255.0 (24 bits).
+To divide it into 4 subnets, you need to borrow 2 bits from the host portion of the address his is because 2^2==4, 
+which is the number of subnets you need.
+Borrowing 2 bits from the host portion will increase the subnet prefix from /24 to /26.
+Therefore, the new subnet mask will be /26, which corresponds to 255.255.255.192.
+
+Subnet ranges :
+Now that we have a /26 subnet mask, the network is divided into 4 subnets. The range of IP addresses for each subnet will be:
+
+Subnet 1:
+
+    Network Address: 10.0.0.0/26
+    First IP: 10.0.0.1
+    Last IP: 10.0.0.62
+    Broadcast Address: 10.0.0.63
+    Valid Host Range: 10.0.0.1 to 10.0.0.62
+
+Subnet 2:
+
+    Network Address: 10.0.0.64/26
+    First IP: 10.0.0.65
+    Last IP: 10.0.0.126
+    Broadcast Address: 10.0.0.127
+    Valid Host Range: 10.0.0.65 to 10.0.0.126
+
+Subnet 3:
+
+    Network Address: 10.0.0.128/26
+    First IP: 10.0.0.129
+    Last IP: 10.0.0.190
+    Broadcast Address: 10.0.0.191
+    Valid Host Range: 10.0.0.129 to 10.0.0.190
+
+Subnet 4:
+
+    Network Address: 10.0.0.192/26
+    First IP: 10.0.0.193
+    Last IP: 10.0.0.254
+    Broadcast Address: 10.0.0.255
+    Valid Host Range: 10.0.0.193 to 10.0.0.254
+
+Also set up network with 4 pcs each from different subnet connected to a switch which in turn connected to a router..
+A router is needed since switch cannot route traffic between different subnets.
+When a device want to communicate to another device beyond its subney it forwards to default gateway(router)..I also assigned default gateway fro each pc in diffent subnet
+The connectivity was verified.
+

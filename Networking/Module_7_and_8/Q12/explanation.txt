@@ -1,0 +1,32 @@
+Devices:
+Router (R1) - To configure the ACL.
+PC1 (192.168.1.10) - Allowed traffic (within the range).
+PC2 (192.168.2.10) - Blocked traffic (outside the range).
+Switch - To connect the PCs and the router.
+
+1. Access the Router and Configure Interfaces:
+
+        Router# configure terminal
+    Set up the GigabitEthernet0/0 interface:
+        Router(config)# interface GigabitEthernet0/0
+        Router(config-if)# ip address 192.168.1.1 255.255.255.0
+        Router(config-if)# no shutdown
+        Router(config-if)# exit
+2. Create a Standard ACL to Permit the IP Range:
+Create Standard ACL 10 to allow the 192.168.1.0/24 network:
+
+    Router(config)# access-list 10 permit 192.168.1.0 0.0.0.255
+Explanation:
+
+    access-list 10 → Creates ACL number 10 (Standard ACL range: 1-99).
+    permit → Allow matching traffic.
+    192.168.1.0 → Network Address.
+    0.0.0.255 → Wildcard Mask (Matches 192.168.1.0 - 192.168.1.255).
+
+4. Apply the ACL to the Router Interface:
+Attach the ACL to GigabitEthernet0/0 for incoming traffic:
+Router(config)# interface GigabitEthernet0/0
+Router(config-if)# ip access-group 10 in
+Router(config-if)# exit
+
+We can check by pinging the router from each pc.
