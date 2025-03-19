@@ -33,3 +33,13 @@ Display Filters – Applied after packets are captured to focus on specific pack
     7.	Read captured packets from a file:
     sudo tcpdump -r capture.pcap
     Reads and displays the packets stored in the capture.pcap file.
+
+3.Cisco Packet Tracer
+
+In Cisco Packet Tracer, packet filters are used to monitor, control, and 
+analyze network traffic by allowing or denying packets based on specified criteria. 
+In Cisco Packet Tracer’s Simulation Mode, we can:
+
+    Inspect packet flow and filter protocols (ICMP, TCP, UDP, etc.).
+    Track packets moving through devices (routers, switches).
+    Diagnose packet drops caused by ACLs.

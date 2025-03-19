@@ -1,0 +1,124 @@
+Topology:
+PC1 (VLAN 10) is connected to Switch 1.
+PC2 (VLAN 20) is connected to Switch 2.
+Switch 1 and Switch 2 are connected via a trunk link.
+Only Switch 1 is connected to the router (for inter-VLAN communication).
+
+Step 1: Configure VLANs on Switches
+On Switch 1:
+
+    Switch1> enable
+    Switch1# configure terminal
+
+    ! Create VLAN 10
+    Switch1(config)# vlan 10
+    Switch1(config-vlan)# name DATA_VLAN
+    Switch1(config-vlan)# exit
+
+    ! Assign VLAN 10 to FastEthernet 0/1
+    Switch1(config)# interface FastEthernet 0/1
+    Switch1(config-if)# switchport mode access
+    Switch1(config-if)# switchport access vlan 10
+    Switch1(config-if)# exit
+On Switch 2:
+
+    Switch2> enable
+    Switch2# configure terminal
+
+    ! Create VLAN 20
+    Switch2(config)# vlan 20
+    Switch2(config-vlan)# name VOICE_VLAN
+    Switch2(config-vlan)# exit
+
+    ! Assign VLAN 20 to FastEthernet 0/1
+    Switch2(config)# interface FastEthernet 0/1
+    Switch2(config-if)# switchport mode access
+    Switch2(config-if)# switchport access vlan 20
+    Switch2(config-if)# exit
+
+Step 2: Configure Trunk Ports on Both Switches
+On Switch 1 (Fa0/2):
+
+    Switch1(config)# interface FastEthernet 0/2
+    Switch1(config-if)# switchport mode trunk
+    Switch1(config-if)# switchport trunk encapsulation dot1q
+    Switch1(config-if)# exit
+
+On Switch 2 (Fa0/2):
+
+    Switch2(config)# interface FastEthernet 0/2
+    Switch2(config-if)# switchport mode trunk
+    Switch2(config-if)# switchport trunk encapsulation dot1q
+    Switch2(config-if)# exit
+
+Step 3: Set Up the Router for Inter-VLAN Routing
+On Router:
+
+    Router> enable
+    Router# configure terminal
+
+    ! Enable IP Routing
+    Router(config)# ip routing
+
+    ! Create Subinterface for VLAN 10
+    Router(config)# interface FastEthernet 0/0.10
+    Router(config-if)# encapsulation dot1Q 10
+    Router(config-if)# ip address 192.168.10.1 255.255.255.0
+    Router(config-if)# exit
+
+    ! Create Subinterface for VLAN 20
+    Router(config)# interface FastEthernet 0/0.20
+    Router(config-if)# encapsulation dot1Q 20
+    Router(config-if)# ip address 192.168.20.1 255.255.255.0
+    Router(config-if)# exit
+
+    Router(config)# exit
+    Router# write memory
+
+Step 4: Configure IP Addresses on PCs
+PC1 (VLAN 10 - Connected to Switch 1):
+
+IP Address: 192.168.10.10
+Subnet Mask: 255.255.255.0
+Gateway: 192.168.10.1
+PC2 (VLAN 20 - Connected to Switch 2):
+
+IP Address: 192.168.20.20
+Subnet Mask: 255.255.255.0
+Gateway: 192.168.20.1
+
+We can verfiy the configurations be checking 
+ show interface trunk
+ show vlan brief
+
+ When i pinged pc2 from pc1 it failed.
+ I identified the mistake:
+    Missing VLAN 20 on the trunk:
+
+    show interfaces trunk output only shows VLAN 10 as active on both trunk ports (Fa0/2 and Fa0/3).
+    VLAN 20 should also be present for inter-VLAN routing between VLAN 10 and VLAN 20.
+    Only VLAN 10 traffic is forwarded:
+
+    The output shows only VLAN 10 in the "spanning tree forwarding state."
+    VLAN 20 is missing, meaning traffic from VLAN 20 cannot pass through the trunk.
+     
+    Switch1(config)# interface Fa0/2
+    Switch1(config-if)# switchport trunk allowed vlan 10,20
+    Switch1(config-if)# exit
+
+    Switch1(config)# interface Fa0/3
+    Switch1(config-if)# switchport trunk allowed vlan 10,20
+    Switch1(config-if)# exit
+
+ Also I made sure that both vlans are created on both switches.
+    Switch1(config)# vlan 20
+    Switch1(config-vlan)# name VOICE_VLAN
+    Switch1(config-vlan)# exit
+
+    Switch2(config)# vlan 10
+    Switch2(config-vlan)# name DATA_VLAN
+    Switch2(config-vlan)# exit
+
+After debugging the connection is secured.and verified by ping.
+
+   

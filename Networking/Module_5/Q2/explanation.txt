@@ -1,13 +1,23 @@
+In ARP spoofing, the attacker tricks other devices by associating their MAC address with the Router's IP address (192.168.1.1).
+This redirects traffic to the attacker instead of the router.
+Normally, PC1 sends its traffic to the router (192.168.1.1), and the router forwards it to the internet.
+The attacker sends a fake ARP reply to PC1, claiming:
+"I am 192.168.1.1 (Router)" with MAC: AA:BB:CC:DD:EE:FF.
+PC1 updates its ARP cache and starts sending all traffic meant for the router to the attacker instead.
+
+
+
+
 I have created a network consistig of 1Pc,1 attacker pc, 1 switch and a router.
 I have configured the ip address for the pcs and router.
-To simulate the ARP Spoofing Attack,I tried to Poison PC1’s ARP cache to associate the attacker’s MAC with the router’s IP.
+To simulate the ARP Spoofing Attack,I tried to poison PC1's ARP cache to associate the attacker's MAC with the router's IP.
     arp -s 192.168.1.1 00E0.F76A.A38B
 But Cisco Packet Tracer does not directly support the arp -s command for manually adding static ARP entries.
-So I tried to  Manipulate ARP Cache Using IP Configuration of PC1 by manually changing the gateway’s MAC address:
+So I tried to  Manipulate ARP Cache Using IP Configuration of PC1 by manually changing the gateway's MAC address:
 On PC1 :
 Find the MAC Address of the Attacker PC from its IP configuration.
 Set that MAC address as the Default Gateway MAC in PC1.
-Ping the router’s IP from PC1 
+Ping the router's IP from PC1 
 
 Even after this..the trafficis directed through the router only..ARP spoofing couldn't be simulated
 
@@ -15,7 +25,7 @@ Even after this..the trafficis directed through the router only..ARP spoofing co
 When devices on a network receive a malicious ARP response (due to ARP spoofing or ARP poisoning), their normal communication flow is disrupted. 
 This manipulation allows an attacker to intercept, modify, or block network traffic.
 The attacker sends fake ARP responses to devices on the network. 
-These responses map the attacker’s MAC address to the IP address of a legitimate device (e.g., the router or a target PC).
+These responses map the attacker's MAC address to the IP address of a legitimate device (e.g., the router or a target PC).
 
 Each devices is affected as:
     1.Victim devices:
@@ -24,7 +34,7 @@ Each devices is affected as:
         Connectivity Issues:If the attacker drops packets instead of forwarding them, PC1 may lose access to external networks.
     2.Router:
         Unaware of the Attack: The router still functions normally unless it is also poisoned.
-        Misrouted Responses: Packets meant for PC1 are sent to the attacker if the router’s ARP cache is compromised.    
+        Misrouted Responses: Packets meant for PC1 are sent to the attacker if the router's ARP cache is compromised.    
     3.Attacker :
         Man-in-the-Middle (MITM):Intercepts and optionally forwards packets between PC1 and the router.
         Packet Modification: Alters data (e.g., injecting malicious scripts into web traffic).

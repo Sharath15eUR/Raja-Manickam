@@ -1,5 +1,5 @@
 If the device already has an IP address,so forcing a new DHCP request by releasing and renewing it:
-    On Linux (Kali/Ubuntu):
+    On Linux 
 
     sudo dhclient -r && sudo dhclient
 

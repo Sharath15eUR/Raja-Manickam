@@ -1,0 +1,97 @@
+Testing your localhost (127.0.0.1) using iPerf, we are measuring the performance of the loopback interface on the laptop.
+C:\Users\lenovo\Downloads\iperf3.1.1_32>iperf3.exe -c 127.0.0.1
+Connecting to host 127.0.0.1, port 5201
+[  4] local 127.0.0.1 port 51360 connected to 127.0.0.1 port 5201
+[ ID] Interval           Transfer     Bandwidth
+[  4]   0.00-1.00   sec   997 MBytes  8.36 Gbits/sec
+[  4]   1.00-2.00   sec  1.05 GBytes  9.06 Gbits/sec
+[  4]   2.00-3.00   sec  1.22 GBytes  10.5 Gbits/sec
+[  4]   3.00-4.00   sec   948 MBytes  7.92 Gbits/sec
+[  4]   4.00-5.00   sec   965 MBytes  8.12 Gbits/sec
+[  4]   5.00-6.00   sec   873 MBytes  7.32 Gbits/sec
+[  4]   6.00-7.01   sec  1.03 GBytes  8.72 Gbits/sec
+[  4]   7.01-8.00   sec   832 MBytes  7.07 Gbits/sec
+[  4]   8.00-9.00   sec   886 MBytes  7.43 Gbits/sec
+[  4]   9.00-10.00  sec   897 MBytes  7.52 Gbits/sec
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  4]   0.00-10.00  sec  9.55 GBytes  8.20 Gbits/sec                  sender
+[  4]   0.00-10.00  sec  9.55 GBytes  8.20 Gbits/sec                  receiver
+
+iperf Done.
+
+C:\Users\lenovo\Downloads\iperf3.1.1_32>iperf3.exe -u -c 127.0.0.1 -b 10M
+Connecting to host 127.0.0.1, port 5201
+[  4] local 127.0.0.1 port 56534 connected to 127.0.0.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  4]   0.00-1.01   sec  1.09 MBytes  9.13 Mbits/sec  140
+[  4]   1.01-2.01   sec  1.18 MBytes  9.82 Mbits/sec  151
+[  4]   2.01-3.01   sec  1.19 MBytes  9.98 Mbits/sec  152
+[  4]   3.01-4.01   sec  1.21 MBytes  10.2 Mbits/sec  155
+[  4]   4.01-5.01   sec  1.17 MBytes  9.83 Mbits/sec  150
+[  4]   5.01-6.01   sec  1.20 MBytes  10.0 Mbits/sec  154
+[  4]   6.01-7.00   sec  1.20 MBytes  10.1 Mbits/sec  153
+[  4]   7.00-8.00   sec  1.20 MBytes  10.0 Mbits/sec  153
+[  4]   8.00-9.00   sec  1.20 MBytes  10.0 Mbits/sec  153
+[  4]   9.00-10.01  sec  1.18 MBytes  9.84 Mbits/sec  151
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  4]   0.00-10.01  sec  11.8 MBytes  9.90 Mbits/sec  0.028 ms  2/1512 (0.13%)
+[  4] Sent 1512 datagrams
+
+iperf Done.
+
+C:\Users\lenovo\Downloads\iperf3.1.1_32>iperf3.exe -c 127.0.0.1
+Connecting to host 127.0.0.1, port 5201
+[  4] local 127.0.0.1 port 51635 connected to 127.0.0.1 port 5201
+[ ID] Interval           Transfer     Bandwidth
+[  4]   0.00-1.00   sec   997 MBytes  8.36 Gbits/sec
+[  4]   1.00-2.00   sec   912 MBytes  7.64 Gbits/sec
+[  4]   2.00-3.00   sec  1.18 GBytes  10.2 Gbits/sec
+[  4]   3.00-4.00   sec  1.07 GBytes  9.20 Gbits/sec
+[  4]   4.00-5.01   sec  1.12 GBytes  9.56 Gbits/sec
+[  4]   5.01-6.00   sec  1000 MBytes  8.45 Gbits/sec
+[  4]   6.00-7.00   sec  1.06 GBytes  9.08 Gbits/sec
+[  4]   7.00-8.00   sec   870 MBytes  7.30 Gbits/sec
+[  4]   8.00-9.00   sec   850 MBytes  7.12 Gbits/sec
+[  4]   9.00-10.00  sec   679 MBytes  5.70 Gbits/sec
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  4]   0.00-10.00  sec  9.61 GBytes  8.26 Gbits/sec                  sender
+[  4]   0.00-10.00  sec  9.61 GBytes  8.26 Gbits/sec                  receiver
+
+iperf Done.
+
+C:\Users\lenovo\Downloads\iperf3.1.1_32>iperf3.exe -u -c 127.0.0.1 -b 10M -t 10
+Connecting to host 127.0.0.1, port 5201
+[  4] local 127.0.0.1 port 58895 connected to 127.0.0.1 port 5201
+[ ID] Interval           Transfer     Bandwidth       Total Datagrams
+[  4]   0.00-1.00   sec  1.09 MBytes  9.15 Mbits/sec  140
+[  4]   1.00-2.01   sec  1.20 MBytes  10.0 Mbits/sec  153
+[  4]   2.01-3.01   sec  1.18 MBytes  9.80 Mbits/sec  151
+[  4]   3.01-4.00   sec  1.20 MBytes  10.2 Mbits/sec  154
+[  4]   4.00-5.01   sec  1.19 MBytes  9.95 Mbits/sec  152
+[  4]   5.01-6.01   sec  1.18 MBytes  9.84 Mbits/sec  151
+[  4]   6.01-7.01   sec  1.20 MBytes  10.1 Mbits/sec  154
+[  4]   7.01-8.01   sec  1.20 MBytes  10.1 Mbits/sec  153
+[  4]   8.01-9.01   sec  1.18 MBytes  9.88 Mbits/sec  151
+[  4]   9.01-10.01  sec  1.20 MBytes  9.98 Mbits/sec  153
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datagrams
+[  4]   0.00-10.01  sec  11.8 MBytes  9.90 Mbits/sec  0.036 ms  0/1512 (0%)
+[  4] Sent 1512 datagrams
+
+iperf Done.
+
+
+Jitter :
+    The variation in packet delay between successive packets.
+    Reported in milliseconds (ms) after the test (Jitter: 0.036 ms).
+
+    Low jitter = Consistent and smooth communication (important for VoIP and video streaming).
+    High jitter = Packet arrival is inconsistent, causing lag, audio dropouts, or stuttering.
+
+Packet Loss:
+    Packets sent by the sender but never received by the destination.
+    Displayed as Lost/Total Datagrams.
+    0/1512 (0%) means no packets were lost.

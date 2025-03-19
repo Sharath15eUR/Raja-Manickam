@@ -9,7 +9,13 @@ raajamanickam@raajamanickam-VirtualBox:~/Downloads/new$ ls
 backup_report.log  file2.txt  file3.txt  file4.txt  input.txt  sorted_files.txt
 
 2.Copying the folder to separate machine using Secure shell protocol 
-
+For using SCP the remote machine must have SSH (Secure Shell) enabled and running.
+Installing :
+    sudo apt install openssh-server -y
+After installation, start the SSH service manually:
+    sudo systemctl start ssh
+To ensure SSH starts automatically on boot, enable it:
+    sudo systemctl enable ssh
 raajamanickam@raajamanickam-VirtualBox:$ scp -r ~/Desktop/new raaj@192.168.1.8:/Documents
 raaj@192.168.1.8's password: 
 input.txt                                     100%  155MB  19.0MB/s   00:08    

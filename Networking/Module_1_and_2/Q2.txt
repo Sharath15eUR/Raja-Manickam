@@ -1,3 +1,24 @@
+To perform ftp we need vsftpd (Very Secure FTP Daemon) which is a widely used FTP server on Linux. 
+Step 1: Install vsftpd
+
+     sudo apt update && sudo apt install vsftpd -y
+sudo apt update: Updates the package list.
+sudo apt install vsftpd -y: Installs vsftpd.
+
+Step 2: Start and Enable vsftpd
+Once installed, start the vsftpd service and ensure it starts on boot:
+
+     sudo systemctl start vsftpd
+     sudo systemctl enable vsftpd
+sudo systemctl start vsftpd: Starts the FTP server.
+sudo systemctl enable vsftpd: Enables the FTP service to start on boot.
+
+Step 3: Verify Service Status
+
+     sudo systemctl status vsftpd
+If it is active (running), then your FTP server is ready.
+
+
 1.Using ftp
 
 ┌──(raaj㉿kali)-[~]

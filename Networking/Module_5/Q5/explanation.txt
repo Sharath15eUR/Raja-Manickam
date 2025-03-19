@@ -1,13 +1,4 @@
-To determine the new subnet mask:
-/24 means 24 bits for the network, leaving 8 bits for hosts.
 
-To divide by 4 subnets, we borrow 2 bits from the host portion.
-
-New subnet mask = /26 → 255.255.255.192
-
-Each subnet will have 64 IP addresses (2⁶ = 64).
-
-Valid host IPs = Total IPs - Network and Broadcast (64 - 2 = 62 usable IPs).
 
 Subnet Breakdown:
 
