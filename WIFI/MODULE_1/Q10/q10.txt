@@ -1,0 +1,72 @@
+Wi-Fi Topologies and Their Use Cases
+
+Basic Service Set (BSS) -  Infrastructure Mode
+
+Description:
+A single access point (AP) connects multiple wireless devices to a wired network. Devices communicate through the AP rather than directly with each other.
+
+Use Cases:
+- Home Wi-Fi networks
+- Office Wi-Fi setups
+- Public hotspots (cafes, hotels, airports)
+
+Independent Basic Service Set (IBSS) -  Ad Hoc Mode
+
+Description:
+Devices connect directly to each other without an AP. Works like a peer-to-peer network.
+
+Use Cases:
+- Temporary file sharing between laptops or smartphones
+- Emergency or disaster recovery networks
+- Military or tactical field operations
+
+Extended Service Set (ESS) -  Multi-AP Network
+
+Description:
+Multiple APs are connected through a wired backhaul to provide seamless coverage. Devices can roam between APs without losing connection.
+
+Use Cases:
+- Large offices, universities, and shopping malls
+- Hotels and corporate buildings
+- Public Wi-Fi networks
+
+Mesh Wi-Fi Network
+
+Description:
+Uses multiple APs (called mesh nodes) connected wirelessly to provide extended coverage. APs communicate with each other to dynamically route traffic.
+
+Use Cases:
+- Large homes or offices with weak signal areas
+- Smart cities and IoT-based networks
+- Industrial and campus-wide Wi-Fi setups
+
+Wi-Fi Repeater/Extender Network
+
+Description:
+A repeater or range extender amplifies and retransmits the signal from an existing AP. It helps improve Wi-Fi coverage in areas with weak signals.
+
+Use Cases:
+- Large homes or buildings with Wi-Fi dead zones
+- Warehouses or multi-floor offices
+- Temporary event venues
+
+Wi-Fi Direct (Peer-to-Peer Mode)
+
+Description:
+Allows two devices to connect directly via Wi-Fi without an AP. Uses Wi-Fi Direct protocol to enable high-speed file transfer.
+
+Use Cases:
+- Wireless printing
+- Screen mirroring (e.g., Miracast)
+- File sharing between smartphones, laptops, or smart TVs
+
+Hotspot (Tethering Mode)
+
+Description:
+A device (e.g., smartphone or portable router) shares its internet connection via Wi-Fi. Works like a mobile router.
+
+Use Cases:
+- Providing internet on the go using mobile data
+- Temporary internet access for multiple devices
+- Public Wi-Fi hotspots in cafes, airports, and buses
+

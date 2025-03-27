@@ -1,0 +1,51 @@
+Differences Observed Between 2.4 GHz and 5 GHz Wi-Fi :
+
+Protocol & Wi-Fi Standard
+
+    5 GHz: Uses Wi-Fi 5 (802.11ac)
+
+    2.4 GHz: Uses Wi-Fi 4 (802.11n)
+
+Network Band
+
+    5 GHz: Operates on 5 GHz
+
+    2.4 GHz: Operates on 2.4 GHz
+
+Network Channel
+
+    5 GHz: Channel 157
+
+    2.4 GHz: Channel 8
+
+Link Speed (Receive/Transmit)
+
+    5 GHz: 866/866 Mbps
+
+    2.4 GHz: 243/240 Mbps
+
+    5 GHz provides significantly higher speeds than 2.4 GHz.
+
+Range & Coverage
+
+    5 GHz: Shorter range but higher speed.
+
+    2.4 GHz: Longer range but lower speed.
+
+Interference
+
+    5 GHz: Less interference, as it operates in a less crowded frequency.
+
+    2.4 GHz: More interference from other devices like Bluetooth, microwaves, and older Wi-Fi devices.
+
+IP Address Allocation
+
+    5 GHz: Assigned 192.168.1.7
+
+    2.4 GHz: Assigned 192.168.1.8
+
+    Both are within the same subnet, meaning the router assigns IPs dynamically based on the connected band.
+
+Security
+
+    Both use WPA2-Personal encryption for security.

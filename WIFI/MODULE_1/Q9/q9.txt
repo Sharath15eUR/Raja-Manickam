@@ -1,0 +1,21 @@
+Wi-Fi backhaul refers to the method used to connect access points (APs), routers, or other networking devices to the main network (internet gateway or core network). 
+It is the communication link between the Wi-Fi access points and the internet.
+Backhaul is essential because it determines network speed, stability, and coverage by ensuring that Wi-Fi devices are properly connected to the internet.
+
+Types of Wi-Fi Internet Connectivity Backhaul:
+1.	Wired Backhaul -  Uses physical cables like Ethernet or fiber to connect Access Points (APs) to the router or core network.
+    - Example: Home networks with fiber-optic internet and Ethernet-wired routers.
+2.	Wireless Backhaul -  Uses Wi-Fi links to connect APs without cables, often in mesh networks.
+    - Example: University campuses or large office spaces using wireless mesh backhaul for seamless connectivity.
+3.	Cellular Backhaul -  Uses 4G/5G cellular networks to provide internet access.
+    - Example: Rural areas or mobile hotspots using 4G/5G backhaul for connectivity.
+Your Home/College Wi-Fi Backhaul and Properties:
+•	If you use Fiber Internet at home, then your backhaul type is Wired (Fiber Backhaul)
+    - Properties: High-speed, low latency, stable connection, supports Gigabit speeds.
+•	If your college/university has a large Wi-Fi network with multiple access points, it likely uses Wireless Backhaul (Mesh Network)
+    - Properties: Supports seamless roaming, multiple APs connected wirelessly, flexible deployment.
+
+How Backhaul Affects Wi-Fi Performance
+    A strong backhaul (like fiber or wired Ethernet) provides a stable, high-speed internet connection.
+
+    A weak backhaul (like congested Wi-Fi or cellular networks) may cause high latency, slow speeds, and dropped connections.

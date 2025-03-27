@@ -1,0 +1,21 @@
+Difference Between IEEE and WFA
+1.	Definition & Role
+    -IEEE (Institute of Electrical and Electronics Engineers): A professional organization that develops and maintains Wi-Fi standards (e.g., 802.11a/b/g/n/ac/ax).
+    -WFA (Wi-Fi Alliance): An industry consortium that certifies Wi-Fi devices for interoperability, security, and performance compliance.
+
+2.	Main Function
+    -IEEE: Focuses on defining technical specifications for wireless communication protocols.
+    -WFA: Ensures devices from different manufacturers work together and comply with Wi-Fi standards.
+
+3.	Standardization vs. Certification
+    -IEEE: Creates and updates the 802.11 family of Wi-Fi standards.
+    -WFA: Provides the "Wi-Fi Certified" label to devices that pass testing for interoperability and security compliance.
+
+4.	Regulatory Influence
+    -IEEE: Develops global networking standards, but adoption depends on regulatory bodies (e.g., FCC, ETSI).
+    -WFA: Works with manufacturers to ensure their devices follow IEEE standards and are compatible with Wi-Fi networks.
+
+5.	Example of Work
+    -IEEE: Defined 802.11ax (Wi-Fi 6), setting technical specifications like OFDMA, MU-MIMO, and Target Wake Time.
+    -WFA: Certifies routers, smartphones, and laptops with Wi-Fi 6 certification, ensuring they meet IEEE's standard and are interoperable.
+

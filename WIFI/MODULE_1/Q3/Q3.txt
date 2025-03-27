@@ -1,0 +1,43 @@
+Wi-Fi networks are structured using BSS (Basic Service Set) and ESS (Extended Service Set) to manage connections between devices and access points.
+
+BSS (Basic Service Set) - Single AP Network :
+
+    A BSS (Basic Service Set) is the fundamental unit of a Wi-Fi network that consists of:
+
+        One Access Point (AP)
+
+        Multiple connected Wi-Fi devices 
+
+        A unique BSSID (Basic Service Set Identifier) - The MAC address of the AP
+
+    Types of BSS:
+        1. Infrastructure BSS:
+
+            Devices connect to an Access Point (AP).
+
+            Used in homes, offices, and public Wi-Fi hotspots.
+
+            Example: Your home Wi-Fi router and connected devices.
+
+        2. Independent BSS (IBSS or Ad-hoc Network):
+
+            Devices communicate without an AP (peer-to-peer).
+
+            Used for temporary direct connections (e.g., file sharing).
+
+            Example: Wi-Fi Direct or Bluetooth tethering.
+
+ESS (Extended Service Set) - Multiple APs for Seamless Roaming
+    An ESS (Extended Service Set) is a network of multiple BSSs connected together:
+
+    Uses multiple APs with the same SSID (Wi-Fi network name).
+
+    Devices can roam between APs without reconnecting.
+
+    Used in large areas (e.g., offices, hotels, universities, airports).
+
+    Each AP has a unique BSSID (MAC address), but the same SSID.
+
+    Example of ESS:
+    A university campus Wi-Fi with multiple access points in different buildings.
+    A corporate office Wi-Fi with multiple floors covered by separate APs.

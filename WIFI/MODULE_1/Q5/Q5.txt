@@ -1,0 +1,30 @@
+Differences Between Bridge Mode and Repeater Mode
+
+1. Purpose
+   - Bridge Mode connects two separate networks and allows communication between them while keeping the same subnet.
+   - Repeater Mode extends an existing Wi-Fi network by amplifying and retransmitting the signal to cover a larger area.
+
+2. Where It Is Used
+   - Bridge Mode is used in routers and access points (APs) to link two networks without creating a new one.
+   - Repeater Mode is used in Wi-Fi range extenders and some access points to improve wireless coverage in areas with weak signals.
+
+3. IP Addressing
+   - Bridge Mode does not assign IP addresses; it relies on the main DHCP server of the network.
+   - Repeater Mode does not change IP addressing but extends the existing network without affecting the DHCP configuration.
+
+4. Network Behavior
+   - Bridge Mode works as a transparent link, meaning connected devices communicate as if they were on the same physical network.
+   - Repeater Mode does not create a separate network but strengthens and retransmits the Wi-Fi signal within the same network.
+
+5. Connection Type
+   - Bridge Mode typically requires a wired connection between the main network and the bridge device for optimal performance. However, wireless bridging is also possible.
+   - Repeater Mode is completely wireless and simply picks up and rebroadcasts the Wi-Fi signal.
+
+6. Performance Impact
+   - Bridge Mode maintains full network performance since it does not retransmit data.
+   - Repeater Mode may reduce Wi-Fi speed because the device must receive and retransmit data, leading to increased latency.
+
+7. Best Use Case
+   - Bridge Mode is best for connecting two LANs or different network segments (e.g., linking two office buildings).
+   - Repeater Mode is best for expanding Wi-Fi coverage in homes, offices, or large spaces with weak signal areas.
+

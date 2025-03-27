@@ -1,0 +1,34 @@
+Both 802.11a and 802.11b are wireless communication standards developed by the IEEE (Institute of Electrical and Electronics Engineers) under the 802.11 family of Wi-Fi protocols. 
+These standards define how wireless devices communicate over radio frequencies.
+
+Differences Between 802.11a and 802.11b
+
+1.Frequency
+
+    802.11a operates on the 5 GHz band.
+
+    802.11b operates on the 2.4 GHz band.
+
+2.Speed
+
+    802.11a supports speeds up to 54 Mbps.
+
+    802.11b supports speeds up to 11 Mbps.
+
+3.Range
+
+    802.11a has a shorter range (~50m indoors).
+
+    802.11b has a longer range (~100m indoors).
+
+4.Interference
+
+    802.11a experiences less interference due to the less crowded 5 GHz band.
+
+    802.11b is more prone to interference because 2.4 GHz is shared with many other devices.
+
+5.Adoption
+
+    802.11a is commonly used in business environments.
+
+    802.11b is more popular in home networks.

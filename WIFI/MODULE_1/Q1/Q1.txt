@@ -1,0 +1,33 @@
+Wi-Fi operates at Layer 1 (Physical Layer) and Layer 2 (Data Link Layer) of the OSI (Open Systems Interconnection) model:
+
+1.Physical Layer (Layer 1): Defines the radio frequency (RF) signals, modulation, and transmission methods.
+   
+    Defines frequency bands (e.g., 2.4 GHz, 5 GHz, 6 GHz).
+
+    Handles signal modulation (converting digital data into RF signals).
+
+    Manages transmission power and signal strength.
+
+    Supports multiple transmission standards (802.11a/b/g/n/ac/ax)
+
+
+
+2.Data Link Layer (Layer 2): Handles MAC (Media Access Control) addressing, authentication, encryption, and frame transmission.
+    
+    MAC Sublayer in Wi-Fi (IEEE 802.11)
+        Uses CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance) instead of CSMA/CD (used in wired Ethernet).
+
+        Implements ACK (Acknowledgment) mechanism to confirm data receipt.
+
+        Supports frame retransmission in case of packet loss.
+
+        Uses Wi-Fi MAC addresses to identify devices.
+
+        Handles security mechanisms such as WEP, WPA, WPA2, WPA3.
+
+    LLC Sublayer in Wi-Fi
+        Defines how frames are formatted and delivered.
+
+        Provides error detection and flow control.
+
+        Supports protocol multiplexing (IPv4, IPv6, ARP, etc.).

@@ -1,0 +1,52 @@
+A Wi-Fi Access Point (AP) is a device that allows wireless devices (like laptops, smartphones, and tablets) to connect to a wired network using Wi-Fi. 
+It acts as a bridge between wireless devices and a wired LAN (Local Area Network).
+
+Basic Functions of a Wi-Fi Access Point:
+
+Wireless Signal Transmission (Wireless Portal)
+•	Converts wired network signals into radio signals (RF waves).
+•	Uses 2.4 GHz, 5 GHz, or 6 GHz frequency bands.
+•	Supports various Wi-Fi standards (802.11a/b/g/n/ac/ax).
+
+Connectivity
+•	Acts as a bridge between wired (Ethernet) and wireless networks.
+•	Allows devices like smartphones, laptops, and smart TVs to connect wirelessly.
+
+
+Coverage
+•	Extends Wi-Fi range within an area (home, office, campus).
+•	Uses high-gain antennas to improve signal strength.
+•	Multiple APs can be deployed for larger coverage (ESS networks).
+
+Medium Access (MAC Layer Functions)
+•	Handles Wi-Fi medium access using CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance).
+•	Manages device connections and prioritizes traffic to reduce interference.
+
+Security Management
+Wi-Fi APs ensure network security using:
+•	Encryption protocols:
+    •	WEP (Weak, outdated)
+    •	WPA, WPA2 (Commonly used)
+    •	WPA3 (Most secure, modern standard)
+•	MAC address filtering: Restricts network access to specific devices.
+•	Authentication methods: Uses 802.1X authentication (RADIUS servers) for enterprise security.
+
+DHCP Relay & IP Management
+•	Can relay DHCP requests to an external DHCP server in enterprise networks.
+
+Bandwidth Control & Quality of Service (QoS)
+•	Manages bandwidth per user or device to prevent congestion.
+•	Uses WMM (Wi-Fi Multimedia) to prioritize voice, video, and data traffic.
+•	Ensures stable network performance for streaming, gaming, and VoIP.
+
+Mobility & Roaming Support
+•	Allows seamless roaming between multiple APs in an Extended Service Set (ESS).
+•	Uses fast roaming (802.11r/k/v) for smooth transitions without disconnection.
+
+Virtual Networks (SSID & VLAN Support)
+•	Supports multiple SSIDs (Service Set Identifiers) on the same AP.
+•	Uses VLANs (Virtual LANs) to segment network traffic for security.
+•	Example: Separate SSIDs for guests, employees, and IoT devices.
+
+
+

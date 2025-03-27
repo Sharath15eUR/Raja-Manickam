@@ -1,0 +1,4 @@
+1.Smartphone 
+    Wi-Fi Standard:  Wi-Fi 5 (802.11ac)
+2.Laptop
+    Wi-Fi Standard:  Wi-Fi 5 (802.11ac)
