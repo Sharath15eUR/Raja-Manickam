@@ -1,0 +1,60 @@
+The CAPWAP (Control and Provisioning of Wireless Access Points) protocol uses two logical tunnels between a Lightweight Access Point (LWAP) and a Wireless LAN Controller (WLC): a Control Tunnel and a Data Tunnel.
+ Once these tunnels are established, they must be maintained to ensure continuous connectivity, control, and data flow between the AP and the controller.
+
+1. Initial Tunnel Establishment
+Before tunnel maintenance can occur, the tunnels must be established through the following steps:
+•	DHCP Phase: The AP obtains an IP address using DHCP.
+•	WLC Discovery Phase: The AP discovers the controller through various methods such as broadcast, DNS, or preconfigured IP.
+•	Join Phase: The AP sends a Join Request and receives a Join Response.
+•	CAPWAP Tunnel Establishment:
+    -  Control Tunnel (UDP Port 5246): For management and control communication.
+    -  Data Tunnel (UDP Port 5247): For forwarding client data traffic.
+After successful authentication and provisioning, these tunnels are created.
+
+2. Tunnel Maintenance Mechanisms
+Once established, the CAPWAP tunnel between the AP and WLC is actively maintained using the following mechanisms:
+
+A. Keepalive Messages
+•	The WLC periodically sends Keepalive messages to the AP over the control tunnel.
+•	The AP responds with an acknowledgment.
+•	This ensures both devices are reachable and functioning properly.
+Purpose:
+Detects any loss of connectivity and ensures that the tunnel is alive.
+Interval:
+Keepalives are typically sent every 30 seconds (default; configurable).
+
+B. Echo Request and Response (Control Channel Echo)
+•	Echo Request messages are also exchanged over the control tunnel.
+•	These are used for validating the connection and checking for latency or packet loss.
+•	If an Echo Response is not received within a timeout period, the WLC assumes the AP is unreachable.
+Purpose:
+Provides a low-overhead mechanism for continuous link checking.
+
+C. Retransmission and Timeouts
+•	If control messages (like Join Request, Config Update, Keepalives) are not acknowledged within a specified timeout, the message is retransmitted.
+•	After several failed retransmissions, the WLC considers the AP as “unreachable” and may tear down the tunnel.
+
+D. DTLS Session Maintenance (for Control Tunnel Security)
+•	When DTLS (Datagram Transport Layer Security) is used for the control tunnel, the session must be maintained with proper session keys and handshakes.
+•	If the DTLS session expires or is corrupted, it must be renegotiated to maintain a secure tunnel.
+
+E. Monitoring AP Health and State
+•	The WLC constantly monitors AP health via periodic status updates.
+•	APs report metrics such as CPU load, memory usage, client count, and signal quality.
+•	Based on this, the WLC decides whether to retain or reset the tunnel.
+
+F. Graceful Recovery and Rejoin
+•	If an AP temporarily loses connectivity, it will attempt to rejoin the WLC and re-establish the tunnels.
+•	APs store configuration to minimize downtime when reconnecting.
+
+3. Failures and Tunnel Teardown
+If the CAPWAP tunnel fails due to any of the following:
+•	No response to keepalives or echo requests
+•	Network disconnection
+•	DTLS session timeout or failure
+•	Configuration inconsistency or software crash
+Then:
+•	The WLC will tear down the tunnel.
+•	The AP will revert to the discovery and join phase.
+•	A new CAPWAP session will be created once the controller becomes reachable again.
+

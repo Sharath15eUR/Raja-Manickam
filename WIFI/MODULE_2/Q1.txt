@@ -1,0 +1,65 @@
+What is SplitMAC Architecture?
+
+SplitMAC stands for Split Media Access Control architecture.
+It is a networking model used in wireless LAN (Local Area Network) deployments where the functionalities of the MAC layer in the OSI (Open Systems Interconnection) model are divided between:
+
+    The Access Point (AP)
+
+    The Wireless LAN Controller (WLC)
+
+This model is primarily seen in Lightweight Access Point (LWAP) deployments managed by controllers.
+
+The MAC layer is typically split into two parts:
+
+    Lower MAC (at the AP):
+        These are time-critical and real-time functions that need to be handled immediately by the AP:
+
+            Beacon Generation - Signals the presence of the AP to clients
+
+            Acknowledgements (ACKs) - Quick responses to received data frames
+
+            RTS/CTS (Request to Send / Clear to Send) - Avoids collisions
+
+            MAC-layer Retransmissions - Ensures delivery of frames
+
+            Client Probing - Detects nearby clients
+
+    Upper MAC (at the WLC):
+        These are control-plane and management functions handled centrally by the controller:
+
+            Authentication and Association Handling - Validates client credentials
+
+            Roaming Decisions - Maintains session continuity while moving between APs
+
+            QoS (Quality of Service) Decisions - Ensures priority handling of voice/video traffic
+
+            Security Policy Enforcement - Applies access control and encryption policies
+
+            Load Balancing and RF (Radio Frequency) Management - Distributes client load and controls signal strength
+
+How It Improves AP Performance:
+    Centralized Management:
+
+        Reduces the complexity of APs by offloading processing to the controller.
+        Easier to manage large deployments with centralized configurations and updates.
+
+    Efficient Resource Usage:
+
+        APs focus on time-sensitive tasks like packet forwarding.
+        The controller handles policy enforcement and higher-layer decisions.
+
+    Enhanced Roaming Support:
+
+        Seamless roaming as decisions are handled by the centralized WLC.
+        Better experience for mobile users.
+
+    Improved Scalability:
+
+        Adding more APs is easier since the intelligence resides in the WLC.
+        Ideal for enterprise environments.
+
+    Security Enhancements:
+
+        Centralized authentication and encryption policies.
+        Rogue AP detection and mitigation becomes more efficient.
+

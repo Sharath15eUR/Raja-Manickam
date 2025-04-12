@@ -1,0 +1,39 @@
+1. Sniffer Mode
+Definition:
+In Sniffer Mode, the Access Point (AP) functions like a wireless packet capture device. It captures 802.11 wireless frames over the air and forwards the raw packet data to a remote analyzer tool (like Wireshark) for in-depth analysis.
+Purpose:
+Used for troubleshooting, protocol analysis, and detailed examination of wireless traffic at the MAC layer.
+Operation:
+•	The AP captures all wireless frames on a specific channel.
+•	It encapsulates the raw 802.11 frames in a Remote Packet Capture (RPCAP) format.
+•	These frames are forwarded to a PC running Wireshark or another analyzer tool.
+•	The AP does not serve clients or participate in WLAN operations while in sniffer mode.
+Use Case:
+•	Deep packet inspection
+•	Debugging authentication and association failures
+•	Analyzing wireless protocol behavior
+•	Identifying interference, retransmissions, or rogue devices
+Example:
+A network engineer suspects a security handshake issue during 802.1X authentication. They configure an AP in sniffer mode on the same channel and use Wireshark to capture and analyze the EAP packets.
+
+2. Monitor Mode
+Definition:
+In Monitor Mode, the Access Point scans all channels to detect wireless security threats, rogue APs, and other wireless devices. It operates passively, without serving any clients.
+Purpose:
+Used for wireless intrusion detection, spectrum analysis, rogue AP detection, and RF monitoring.
+Operation:
+•	The AP constantly listens on all available channels (channel scanning).
+•	It reports:
+    -  Rogue APs
+    -  Unauthorized clients
+    -  RF interference sources
+    -  Signal strength levels
+•	The data is sent to the WLC or Wireless Intrusion Prevention System (WIPS) for centralized analysis.
+Use Case:
+•	Wireless intrusion prevention
+•	Identifying unauthorized access points (rogue APs)
+•	Monitoring channel utilization and interference
+•	Performing RF coverage surveys
+Example:
+A hospital Wi-Fi admin wants to ensure no unauthorized APs are active. Several LWAPs are configured in monitor mode to detect and alert the WLC of any unregistered APs broadcasting nearby.
+

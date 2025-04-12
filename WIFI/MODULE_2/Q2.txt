@@ -1,0 +1,125 @@
+CAPWAP Protocol - Control and Provisioning of Wireless Access Points
+1. What is CAPWAP?
+CAPWAP (Control and Provisioning of Wireless Access Points) is a Layer 3 protocol defined in RFC 5415. 
+It enables centralized management of Lightweight Access Points (LWAPs) through a Wireless LAN Controller (WLC). 
+CAPWAP abstracts the control and configuration logic from APs, allowing them to focus on wireless client connectivity while the WLC handles policy, configuration, updates, and security.
+
+Key Objectives:
+    Simplify wireless network deployment and management
+
+    Enable centralized configuration and monitoring
+
+    Ensure secure control communication using DTLS
+
+    Separate control and data planes for better scalability
+
+2. CAPWAP Communication Flow - Detailed Steps
+Step 1: IP Address Allocation for AP
+    Communication: Between AP and DHCP Server
+
+    When powered on, the AP does not have an IP address.
+
+    The AP sends a DHCP Discover broadcast.
+
+    The DHCP server replies with a DHCP Offer.
+
+    The AP sends a DHCP Request.
+
+    The DHCP server responds with a DHCP Acknowledgment (ACK).
+
+    Outcome: The AP obtains a valid IP address.
+
+Step 2: WLC Discovery (AC Discovery)
+    Communication: Between AP and WLC
+
+    The AP sends a Discovery Request (broadcast or unicast depending on configuration).
+
+    The WLC replies with a Discovery Response, containing its identity and capabilities.
+
+    If multiple WLCs respond, the AP selects the optimal one based on configured logic.
+
+    After discovery, the AP initiates a secure handshake.
+
+Step 3: DTLS Handshake
+    Communication: Between AP and WLC
+
+    AP and WLC establish a DTLS (Datagram Transport Layer Security) tunnel over UDP port 5246.
+
+    DTLS ensures:
+
+    Authentication (verifies the AP identity)
+
+    Confidentiality (encrypts control messages)
+
+    Integrity (ensures messages are not tampered with)
+
+    This tunnel secures all subsequent control messages.
+
+Step 4: Join Process
+    Communication: Between AP and WLC
+
+    AP sends a Join Request to the selected WLC.
+
+    The WLC authenticates the AP using MAC address, credentials, or digital certificates.
+
+    If required, the WLC sends firmware image data to the AP to ensure version consistency.
+
+    WLC replies with a Join Response, completing the registration.
+
+Step 5: Configuration Delivery
+    Communication: WLC to AP
+
+    The WLC sends complete configuration data, including:
+
+    SSIDs and WLAN profiles
+
+    Security settings (e.g., WPA2, 802.1X, MAC filtering)
+
+    Radio Frequency (RF) parameters (channel, power levels)
+
+    VLAN mappings and Quality of Service (QoS) policies
+
+    AP sends a Configuration Status Request, and WLC responds with a Configuration Status Response confirming the applied settings.
+
+Step 6: Change State to Operational (RUN State)
+    Communication: Between AP and WLC
+
+    AP sends a Change State Event Request to transition to operational mode.
+
+    WLC responds with a Change State Event Response.
+
+    AP enters the RUN state, becoming fully operational and ready to serve wireless clients.
+
+Step 7: CAPWAP Data Tunnel Establishment
+    Communication: Between AP and WLC
+
+    A separate CAPWAP data tunnel is created over UDP port 5247.
+
+    This tunnel encapsulates and transports 802.11 data frames (wireless client traffic) between AP and WLC.
+
+    Control and data tunnels are kept logically separate to enhance performance and security.
+
+Step 8: Tunnel Maintenance
+    Communication: Ongoing between AP and WLC
+
+    The WLC and AP exchange periodic Keepalive and Echo Request/Response messages.
+
+    These ensure that the CAPWAP tunnels are active and detect communication failures quickly.
+
+    In case of failure, reconnection or fallback procedures are initiated.
+
+Step 9: Configuration Updates
+    Communication: Between AP and WLC
+
+    If there are any changes in policies, security settings, or other configurations:
+
+    The WLC sends a Configuration Update Request.
+
+    The AP applies the changes and responds with a Configuration Update Response.
+
+    This supports dynamic and remote provisioning of APs.
+
+3. Summary
+CAPWAP is a robust and scalable protocol that centralizes the control of wireless networks. 
+By separating control and data planes and securing communication using DTLS, CAPWAP ensures efficient, flexible, and secure management of Access Points. 
+It streamlines operations by allowing Lightweight APs to be dynamically provisioned, updated, and monitored from a central controller without manual configuration.

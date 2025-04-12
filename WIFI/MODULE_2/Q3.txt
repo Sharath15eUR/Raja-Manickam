@@ -1,0 +1,53 @@
+CAPWAP and Its Position in the OSI Model:
+CAPWAP (Control And Provisioning of Wireless Access Points) operates primarily at:
+
+Layer 3 (Network Layer) → because it uses IP addressing to reach Access Points (APs).
+
+Layer 4 (Transport Layer) → because it uses UDP (User Datagram Protocol) for transport.
+
+Partially Layer 2 (Data Link Layer) when encapsulating 802.11 frames in 802.3 Ethernet frames.
+
+Above Layer 4 for management and control functions (such as AP discovery, image upgrade, and configuration).
+
+So, CAPWAP is a Layer 3+ protocol using UDP for transport and providing control and data tunneling functionalities.
+
+Two Tunnels in CAPWAP
+CAPWAP establishes two separate logical tunnels between the Lightweight Access Point (LWAP) and the Wireless LAN Controller (WLC):
+
+- Control Tunnel
+Purpose: Transmits management and control messages such as:
+
+Discovery
+
+Join requests
+
+Configuration updates
+
+Keepalives
+
+Software image download
+
+Transport Protocol: UDP port 5246
+
+Encryption: Protected using DTLS (Datagram Transport Layer Security)
+
+Direction: Bidirectional between AP and WLC
+
+Encapsulation: CAPWAP over UDP over IP over Ethernet
+
+Unicast communication
+
+- Data Tunnel
+Purpose: Carries client data traffic (802.11 frames encapsulated in CAPWAP)
+
+For example: Web traffic, emails, voice/video, etc.
+
+Transport Protocol: UDP port 5247
+
+Encryption: Optional (usually not encrypted by CAPWAP itself)
+
+Direction: Bidirectional between AP and WLC
+
+Encapsulation: Wireless (802.11) frame encapsulated in Ethernet (802.3) using CAPWAP
+
+Unicast communication
