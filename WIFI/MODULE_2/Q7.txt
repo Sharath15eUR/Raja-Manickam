@@ -1,0 +1,29 @@
+What is FlexConnect Mode?
+FlexConnect Mode is a special operational mode for Lightweight Access Points (LWAPs) that allows them to locally switch client traffic and locally authenticate users, even when the WLC is not reachable, making it ideal for branch office deployments with centralized controllers over a WAN.
+In traditional CAPWAP operation:
+•	All client traffic is tunneled from the AP to the WLC over the CAPWAP data tunnel.
+•	This is fine for LAN environments but becomes inefficient or risky over WAN:
+    -   Increases latency and WAN bandwidth usage.
+    -   If the WAN link fails, clients lose connectivity because APs can’t operate independently.
+FlexConnect mode solves this problem by allowing APs to function independently of the controller for most client operations.
+
+How FlexConnect Works:
+Two Key Capabilities of FlexConnect:
+1.	Local Switching:
+    -   The AP forwards client traffic directly to the local LAN, bypassing the CAPWAP data tunnel.
+    -   This avoids unnecessary routing through the WAN and reduces congestion.
+2.	Local Authentication:
+    -   The AP can authenticate clients locally (if configured), using cached credentials or local RADIUS servers.
+    -   If the WLC is temporarily unreachable due to WAN failure, APs can still authenticate known clients.
+Split Tunneling Option:
+•	You can configure some WLANs to be locally switched while others still tunnel back to the WLC.
+•	Example: Guest SSID traffic is tunneled to a central firewall, while corporate user traffic is switched locally.
+
+Modes of Operation in FlexConnect:
+1.	Connected Mode (WLC reachable):
+    -   AP downloads full config from the WLC.
+    -   Can perform both local and central switching depending on configuration.
+2.	Standalone Mode (WLC unreachable):
+    -   AP uses cached configuration.
+    -   Continues to serve clients with local switching and local authentication.
+

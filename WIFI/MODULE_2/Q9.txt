@@ -1,0 +1,33 @@
+
+Local Mode Behavior (Before WLC Failure)
+In Local Mode, the LWAP:
+•	Establishes a CAPWAP control and data tunnel with the WLC.
+•	Forwards all client traffic through the WLC.
+•	Relies on the WLC for:
+    -	Client authentication
+    -	IP address assignment (if using DHCP relay)
+    -	Policy enforcement
+    -	RF management
+    -	Roaming coordination
+
+What Happens When the WLC Goes Down?
+1. Control Tunnel is Lost
+•	The CAPWAP control tunnel between the AP and WLC is terminated.
+•	AP can no longer receive configuration or management commands from the WLC.
+•	The AP cannot update its configuration or serve new clients.
+2. Existing Wireless Clients Are Disconnected
+•	Active clients are disconnected shortly after the WLC becomes unreachable.
+•	The AP stops forwarding client traffic because the CAPWAP data tunnel is also terminated.
+•	There is no local switching in Local Mode — all traffic is supposed to go through the WLC.
+•	Clients will lose access to the network and internet, even though the wireless signal may still be visible.
+3. AP Reboots or Enters Recovery Mode (Depending on Vendor/Config)
+•	Some APs enter a reboot cycle if the WLC is not reachable for a set period.
+•	Others stay up but in an idle state, waiting to reconnect to the WLC.
+
+Why This Happens
+•	Local Mode APs are essentially "thin clients" — they depend on the WLC for real-time decisions and traffic processing.
+•	Without the WLC:
+    -	Authentication fails
+    -	Data cannot be processed
+    -	Client session cannot be maintained
+

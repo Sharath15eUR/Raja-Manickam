@@ -1,0 +1,63 @@
+Challenges of Deploying Autonomous APs in a Large Network (e.g., University)
+1. Lack of Centralized Management
+Explanation:
+•	Each autonomous AP (also called a standalone AP) is managed individually.
+•	No central Wireless LAN Controller (WLC) to apply global policies or monitor the network as a whole.
+Impact:
+•	Manual configuration and monitoring of each AP.
+•	High administrative overhead for network administrators.
+•	Inconsistent configurations may occur (e.g., SSID mismatches, security settings).
+
+2. Inefficient RF Management
+Explanation:
+•	Autonomous APs operate independently with no coordination of radio frequency (RF) settings like:
+-   Channel allocation
+-   Transmit power adjustment
+Impact:
+•	Increased co-channel and adjacent channel interference.
+•	Poor coverage planning leading to dead zones or signal overlaps.
+•	Manual tuning required to maintain performance.
+
+3. Scalability Issues
+Explanation:
+•	Managing more than 50 APs independently becomes impractical.
+•	No support for centralized policy enforcement, load balancing, or client roaming optimizations.
+Impact:
+•	Difficult to expand the network without increasing administrative complexity.
+•	Inefficient use of resources and degraded performance as network grows.
+
+4. No Centralized Security and Policy Control
+Explanation:
+•	Security policies like 802.1X authentication, firewall rules, and user segmentation must be configured on each AP individually.
+Impact:
+•	Inconsistent or outdated security policies across the network.
+•	Higher risk of security breaches and compliance violations.
+•	Difficult to implement role-based access or dynamic VLAN assignments.
+
+5. Roaming Challenges
+Explanation:
+•	Autonomous APs do not support seamless client roaming.
+•	No mechanism for client context sharing or fast handoff between APs.
+Impact:
+•	Session drops and latency during roaming.
+•	Poor user experience for real-time applications (e.g., VoIP, video calls).
+•	Especially problematic in large campuses where mobility is common.
+
+6. Limited Visibility and Troubleshooting
+Explanation:
+•	No centralized logging or performance monitoring.
+•	Each AP must be individually accessed for logs and diagnostics.
+Impact:
+•	Delayed issue detection and response.
+•	Network problems like congestion, interference, or rogue devices are harder to identify.
+•	No single pane of glass for viewing network health.
+
+
+7. Time-Consuming Firmware Management
+Explanation:
+•	Each AP must be manually upgraded with new firmware.
+Impact:
+•	Time-consuming process across dozens of APs.
+•	Higher likelihood of running inconsistent firmware versions.
+•	Increases vulnerability to bugs and security threats.
+
