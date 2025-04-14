@@ -1,0 +1,49 @@
+
+IEEE 802.11 PHY Layer Standards and Modulation Techniques
+
+1. IEEE 802.11 PHY Layer Standards:
+
+- 802.11 (Legacy) (Wi-Fi 1, 1997):
+  The first Wi-Fi standard used Frequency Hopping Spread Spectrum (FHSS) and Direct Sequence Spread Spectrum (DSSS) for signal transmission. It provided basic low data rates (2 Mbps) and was designed for early WLANs.
+
+- 802.11b (Wi-Fi 2, 1999):
+  This standard enhanced the 802.11 by using DSSS with higher data rates. It introduced Complementary Code Keying (CCK) for higher speeds, providing a maximum speed of 11 Mbps. It was the first widely adopted Wi-Fi standard.
+
+- 802.11a (Wi-Fi 3, 1999):
+  This standard used Orthogonal Frequency Division Multiplexing (OFDM) to allow higher data rates (54 Mbps) and work in the 5 GHz band, offering less interference and better performance.
+
+- 802.11g (Wi-Fi 3, 2003):
+  This standard combined OFDM and DSSS for backward compatibility with 802.11b. It offered a maximum speed of 54 Mbps, ensuring compatibility with earlier devices.
+
+- 802.11n (Wi-Fi 4, 2009):
+  Introduced Multiple Input Multiple Output (MIMO) technology, which significantly boosted throughput and data rates. The maximum speed reached 600 Mbps (with MIMO), operating on both 2.4 GHz and 5 GHz bands.
+
+- 802.11ac (Wi-Fi 5, 2013):
+  802.11ac used 256-QAM modulation and wide channels (up to 160 MHz), offering speeds up to 6.9 Gbps with 8x8 MIMO. It primarily operates in the 5 GHz band and introduced beamforming to focus signals on receivers.
+
+- 802.11ax (Wi-Fi 6, 2019):
+  This standard improved network efficiency in crowded environments using Orthogonal Frequency Division Multiple Access (OFDMA) and 1024-QAM. It supports MU-MIMO and offers speeds up to 9.6 Gbps, with better performance in high-density areas.
+
+- 802.11ax (6 GHz) (Wi-Fi 6E, 2021):
+  The 6 GHz band introduced by Wi-Fi 6E offers less congestion and interference, enabling better performance and speeds up to 9.6 Gbps, with the same features as Wi-Fi 6.
+
+- 802.11be (Wi-Fi 7, upcoming):
+  Expected to bring a massive increase in speed (up to 46 Gbps) with 4096-QAM, ultra-low latency, and 320 MHz channels. Wi-Fi 7 will enable faster, higher bandwidth wireless networks.
+
+2. Modulation Techniques in Wi-Fi Standards:
+
+- FHSS (Frequency Hopping Spread Spectrum):
+  Used in the original 802.11 standard, FHSS rapidly switches transmission frequency over different channels to avoid interference. It was primarily used for security and to resist interference.
+
+- DSSS (Direct Sequence Spread Spectrum):
+  DSSS spreads the signal over a wider frequency band using a spreading code. It increases the reliability of the signal by making it more resistant to interference. It was used in earlier 802.11 standards (802.11, 802.11b, 802.11g).
+
+- CCK (Complementary Code Keying):
+  A modulation scheme used with DSSS to provide higher data rates in 802.11b and 802.11g. It increases the performance compared to earlier methods such as DBPSK and DQPSK.
+
+- OFDM (Orthogonal Frequency Division Multiplexing):
+  Used in 802.11a, 802.11g, 802.11n, and 802.11ac, OFDM splits the signal into many smaller sub-signals that are transmitted over different frequencies. This method increases data rates, spectral efficiency, and reduces interference.
+
+- OFDMA (Orthogonal Frequency Division Multiple Access):
+  An advanced version of OFDM, used in 802.11ax and 802.11be, where multiple users are assigned subsets of subcarriers. This provides more efficient use of the spectrum, reduces latency, and is better suited for crowded environments.
+

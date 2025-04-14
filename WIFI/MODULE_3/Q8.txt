@@ -1,0 +1,18 @@
+Both OFDM (Orthogonal Frequency Division Multiplexing) and OFDMA (Orthogonal Frequency Division Multiple Access) are digital modulation techniques used in Wi-Fi,
+ especially in the PHY layer of modern standards. While they are related, they serve different purposes.
+
+OFDM (Orthogonal Frequency Division Multiplexing)
+    Used in: 802.11a, 802.11g, 802.11n, 802.11ac, and 802.11ax.
+    How it works: OFDM splits the data into many smaller sub-carriers (narrow frequency bands), each carrying a portion of the data in parallel.
+    Each transmission is assigned the full channel for a short period.
+    It improves data rates and resistance to interference caused by multipath fading.
+
+    - Analogy: Like sending a large group message by splitting it into many small messages and sending them quickly one after another using the entire road.
+
+OFDMA (Orthogonal Frequency Division Multiple Access)
+    Used in: 802.11ax (Wi-Fi 6) and 802.11be (Wi-Fi 7).
+    How it works: OFDMA builds on OFDM by allowing multiple users to share the same channel at the same time by dividing the subcarriers among them.
+    The channel is split into Resource Units (RUs) - each user gets a portion of subcarriers in the same time slot.
+    This allows simultaneous communication with multiple devices, improving efficiency and reducing latency.
+
+    - Analogy: Like dividing a highway into multiple lanes and letting many cars (users) travel side by side at once.

@@ -1,0 +1,95 @@
+What is PPDU?
+A PPDU (Physical Protocol Data Unit) is the complete frame that is transmitted over the air by the PHY layer in Wi-Fi. 
+It contains everything needed by the receiver to detect, decode, and process the transmission, including synchronization, control info, and the payload.
+
+Different Wi-Fi standards (generations) define different types of PPDUs, based on their capabilities like MIMO, OFDMA, MU-MIMO, channel width, and more.
+
+Types of PPDU and Their Frame Formats
+Each Wi-Fi generation (e.g., 802.11a/n/ac/ax) defines its own PPDU format, mainly differing in the preamble and header fields. Here are the major types:
+
+1. Legacy PPDU (Used in 802.11a/g)
+    This is the simplest format.
+
+    Structure:
+
+    Preamble: Includes Short and Long Training Fields (STF, LTF) to allow synchronization and channel estimation.
+
+    Signal Field: Tells the receiver how the payload is encoded (modulation, data rate, length).
+
+    Payload (Data): The actual data transmitted.
+
+    - No support for MIMO or advanced features.
+
+2. HT PPDU (High Throughput – 802.11n)
+    Introduced MIMO and channel bonding (20/40 MHz).
+
+    Supports optional Short Guard Interval and frame aggregation.
+
+    Structure:
+
+    Legacy fields (for backward compatibility).
+
+    HT-SIG (HT Signal field): Describes MCS (Modulation and Coding Scheme), length, etc.
+
+    HT-STF, HT-LTF: For MIMO support and spatial streams.
+
+    Payload: MAC data.
+
+    - Enables faster speeds and more reliable connections.
+
+3. VHT PPDU (Very High Throughput – 802.11ac)
+    Supports wider channels (up to 160 MHz) and multi-user MIMO (downlink only).
+
+    Higher modulation (up to 256-QAM).
+
+    Structure:
+
+    VHT-SIG-A and VHT-SIG-B: Provide info about number of users, streams, channel width, MCS.
+
+    VHT-STF and multiple VHT-LTFs: For advanced MIMO performance.
+
+    Payload: Data to be sent to one or multiple users.
+
+    - Delivers gigabit speeds and improved downlink performance.
+
+4. HE PPDU (High Efficiency – 802.11ax / Wi-Fi 6)
+    Introduces OFDMA, MU-MIMO (uplink and downlink), BSS Coloring, and Target Wake Time.
+
+    Designed for dense environments like campuses, stadiums, etc.
+
+    Multiple formats:
+
+    HE SU PPDU: For single-user transmission.
+
+    HE MU PPDU: For multi-user downlink.
+
+    HE TB PPDU: Trigger-based uplink multi-user.
+
+    HE ER SU PPDU: Extended range (for long-distance use cases).
+
+    Structure:
+
+    HE-SIG fields to define resource units (RUs), user allocation, MCS.
+
+    HE-STF, HE-LTF for advanced synchronization and channel estimation.
+
+    Data payload.
+
+    - Increases efficiency and reduces latency in crowded networks.
+
+5. EHT PPDU (Extremely High Throughput – 802.11be / Wi-Fi 7)
+    Supports 320 MHz channels, 4096-QAM, and Multi-Link Operation.
+
+    Can send parallel transmissions across multiple frequency bands.
+
+    PPDU types include:
+
+    EHT SU PPDU
+
+    EHT MU PPDU
+
+    EHT TB PPDU
+
+    EHT MLO PPDU (Multi-Link Operation)
+
+    - Provides ultra-high speeds and very low latency.

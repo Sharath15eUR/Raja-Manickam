@@ -1,0 +1,44 @@
+In the IEEE 802.11 Wi-Fi architecture, the PHY (Physical) layer is divided into two key sublayers, and it uses specific formats for transmitting data. Three important terms used in this context are PPDU, PLCP, and PMD.
+
+1. PPDU – Physical Protocol Data Unit
+The PPDU is the entire frame that the physical layer sends over the air.
+
+It includes all parts necessary for synchronization, control, and actual data transmission.
+
+A PPDU consists of:
+
+    Preamble
+
+    PLCP Header
+
+    PHY Payload (data from MAC layer)
+
+-  Think of the PPDU as the final "package" that is transmitted wirelessly.
+
+2. PLCP – Physical Layer Convergence Protocol
+The PLCP is a sublayer of the PHY.
+
+It receives the MAC Protocol Data Unit (MPDU) and adds necessary information (like headers and preamble) to help the receiver process the frame.
+
+Responsibilities:
+
+Adds a PLCP header for rate, length, modulation type, etc.
+
+Ensures synchronization and compatibility with various physical media.
+
+-  It acts like a translator between the MAC layer and the physical radio hardware.
+
+3. PMD – Physical Medium Dependent Sublayer
+The PMD is the lowest sublayer of the PHY.
+
+It is responsible for the actual transmission and reception of signals through the physical medium (air).
+
+Key functions:
+
+Modulation and demodulation of the radio signal.
+
+Handling RF characteristics (frequency, power).
+
+Interfacing with antennas and RF circuitry.
+
+-  This is the layer that interacts directly with the wireless environment.

@@ -1,0 +1,41 @@
+Orthogonal Frequency Division Multiplexing
+
+OFDM is a digital multi-carrier modulation technique used in wireless communications, including Wi-Fi (starting from IEEE 802.11a). 
+Instead of transmitting data over a single high-rate carrier, OFDM splits the signal into multiple smaller sub-signals (subcarriers) 
+ that are transmitted simultaneously over different frequencies, which are mathematically orthogonal to each other.
+
+OFDM significance in WLAN
+
+Improved Spectral Efficiency:
+
+    OFDM allows many subcarriers to overlap without interference due to orthogonality.
+    This increases the data rate while maintaining efficient use of available bandwidth.
+
+Resistance to Multipath Interference:
+
+    Wireless signals often reflect off surfaces, causing delayed copies of the signal (multipath).
+    OFDM handles multipath very well because each subcarrier operates at a lower data rate and with longer symbol duration, 
+    making it less vulnerable to delay spread.
+
+Higher Data Rates:
+
+    With the ability to use higher-order modulation (like 64-QAM or 256-QAM) on each subcarrier, OFDM supports faster transmission of data.
+
+Scalability Across Standards:
+
+    OFDM is used in 802.11a/g/n/ac/ax (Wi-Fi 5 and 6).
+    In 802.11ax (Wi-Fi 6), OFDM evolves into OFDMA, which further improves performance by supporting multi-user access.
+
+Efficient Error Handling:
+
+    OFDM works well with Forward Error Correction (FEC) techniques like convolutional coding and LDPC, which enhance reliability without sacrificing too much throughput.
+
+How OFDM Improves WLAN Performance:
+
+Performance Factor	                                          OFDM Advantage
+
+Interference Handling	                    Orthogonal subcarriers reduce inter-symbol and inter-carrier interference
+Multipath Resilience	                    Long symbol durations and cyclic prefix reduce issues caused by reflected signals
+High Throughput                         	Supports high data rates with parallel transmission of many subcarriers
+Scalability	                                Easy to adapt bandwidth and subcarrier spacing for different environments
+Flexibility in Modulation	                Each subcarrier can use a different modulation scheme (BPSK to 1024-QAM)

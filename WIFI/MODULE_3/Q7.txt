@@ -1,0 +1,46 @@
+The 802.11 PHY (Physical Layer) frame, also called a Physical Protocol Data Unit (PPDU), is the format used to transmit data over the air in Wi-Fi.
+ It is constructed at the physical layer and contains all the necessary components to synchronize, decode, and transmit data between wireless devices.
+
+Although the structure can vary slightly between standards (e.g., 802.11a, 802.11n, 802.11ac, 802.11ax), all PHY layer frames include the following core components:
+
+Key Components of a PHY Layer Frame (PPDU)
+Preamble:
+
+    This is the first part of the frame.
+    It allows the receiver to detect the signal, synchronize with it, and perform channel estimation.
+    It includes:
+
+        Short Training Field (STF) – used for signal detection and automatic gain control.
+
+        Long Training Field (LTF) – used for channel estimation and timing synchronization.
+
+        Signal Field – carries information about the modulation, coding rate, and length of the payload.
+
+Header (PLCP Header):
+
+    PLCP = Physical Layer Convergence Protocol.
+    This tells the receiver how to interpret the payload.
+    It includes:
+
+        Rate, length, modulation type, and coding scheme.
+
+        Sometimes includes service bits and CRC.
+
+Payload/Data Field:
+
+    This is the actual user data passed down from the MAC layer.
+    It includes:
+
+        MAC frame + possible padding and tail bits for encoding.
+
+        Modulated using the modulation scheme defined in the signal field (e.g., BPSK, QPSK, QAM).
+
+
+Variations by Standard:
+802.11a/g: Fixed preamble and header format.
+
+802.11n: Supports HT (High Throughput) format with more LTFs for MIMO.
+
+802.11ac: Adds VHT (Very High Throughput) fields for MU-MIMO and wider channels.
+
+802.11ax: Includes HE (High Efficiency) preamble with support for OFDMA, BSS coloring, and uplink scheduling.

@@ -1,0 +1,19 @@
+A Guard Interval (GI) is a small time gap inserted between data symbols during wireless transmission. 
+Its main role is to prevent interference between symbols caused by delayed signal reflections, 
+a phenomenon known as multipath interference.
+
+In environments like indoor spaces, Wi-Fi signals can bounce off walls or objects.
+ These reflected signals may arrive at the receiver slightly later than the original signal. 
+ Without a guard interval, these delayed versions can interfere with the next symbol, causing errors.
+
+To avoid this, Wi-Fi standards use a guard interval — giving enough time for these echoes to settle before the next symbol begins.
+
+Short Guard Interval (SGI) and Its Benefit
+    A Short Guard Interval (usually 400 nanoseconds) allows more data symbols to be transmitted in the same amount of time, which improves overall efficiency and throughput.
+    It is used in standards like 802.11n, 802.11ac, and 802.11ax.
+    Compared to the standard 800 ns guard interval, SGI can improve data rates by about 10%.
+
+When Is Short GI Useful?
+    In environments with low interference or short distances, SGI performs well and increases speed.
+    In echo-heavy or reflective environments, the longer guard interval may be more stable and reliable.
+

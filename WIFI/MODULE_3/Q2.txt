@@ -1,0 +1,44 @@
+Both DSSS and FHSS are methods used for spreading the signal over a wider frequency range to reduce interference and increase reliability in wireless communication. 
+These techniques are used in wireless communication systems, including early Wi-Fi standards like 802.11b.
+
+1. DSSS (Direct Sequence Spread Spectrum)
+DSSS works by spreading the signal over a wide frequency band. It does this by multiplying the original data signal with a high-frequency "chipping" code (pseudo-random noise or PN sequence),
+ which spreads the data signal over a broader spectrum than the original signal bandwidth.
+
+How it works:
+
+    A data signal (the message or information) is multiplied by a high-frequency chipping code.
+    This code is much higher in frequency than the original signal, causing the signal to spread across a wide range of frequencies.
+    The receiver, knowing the exact chipping code, can reverse the process (de-spread the signal) to recover the original data.
+
+Advantages of DSSS:
+
+    Resistance to interference: The signal is spread over a wide range, making it more resistant to narrowband interference.
+    Improved security: The spreading technique makes it more difficult for unauthorized users to intercept the signal.
+    Better resistance to multipath fading: As the signal is spread over a wide range, multipath signals (signals reflected off surfaces) have less impact.
+
+Disadvantages of DSSS:
+
+    Requires more power: Because the signal is spread across a wide frequency range, DSSS systems may require more power.
+    Bandwidth consumption: DSSS systems can consume more bandwidth compared to narrowband systems.
+
+2. FHSS (Frequency Hopping Spread Spectrum)
+FHSS works by rapidly changing the carrier frequency according to a predetermined sequence or "hop set." In this system, the transmitter hops from one frequency to another in a sequence, 
+making it harder for interference or eavesdroppers to track the signal.
+
+How it works:
+
+    The transmitter and receiver are synchronized to a predetermined hopping sequence.
+    The transmitter switches frequencies (or "hops") at regular intervals, transmitting small bursts of data on each frequency.
+    The receiver hops to the same frequencies at the same times and reassembles the signal.
+
+Advantages of FHSS:
+
+    Resistance to interference: By hopping to different frequencies, FHSS avoids interference from signals that are active on any given frequency.
+    Security: It is harder for attackers to intercept the signal because the frequency changes constantly.
+    Robust against narrowband jamming: Even if interference is present on a particular frequency, the system quickly hops to another, reducing the impact.
+
+Disadvantages of FHSS:
+
+    Lower data rates: The frequency hopping process can limit the available bandwidth at any given moment, resulting in lower data rates.
+    Potential collisions: If multiple devices use the same hopping sequence, collisions can occur, reducing network efficiency.

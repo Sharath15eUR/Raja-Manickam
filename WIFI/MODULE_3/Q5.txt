@@ -1,0 +1,51 @@
+Wi-Fi operates using radio frequency (RF) bands, which are ranges of electromagnetic spectrum allocated for wireless communication. These bands are divided into channels, allowing multiple devices to communicate without interfering with each other.
+
+Main Frequency Bands Used in Wi-Fi:
+Band	    Frequency Range	                        Wi-Fi Standards Using It	                Characteristics
+2.4 GHz	    2.400 -2.4835 GHz	                    802.11b/g/n/ax	                            Longer range, more interference, slower
+5 GHz	    5.150 -5.825 GHz (varies by region)	802.11a/n/ac/ax	                            Faster speeds, less interference, shorter range
+6 GHz	    5.925 -7.125 GHz	                    802.11ax (Wi-Fi 6E), 802.11be (Wi-Fi 7)	    Very high throughput, low interference
+60 GHz	    57 -71 GHz (region-specific)	        802.11ad/ay	                                Ultra-fast for short-range, line-of-sight
+
+2.4 GHz Band:
+    Has 14 channels, each 22 MHz wide, spaced 5 MHz apart.
+    Only channels 1, 6, and 11 are non-overlapping in most regions (important to reduce interference).
+
+        Example:
+
+        Channel 1: 2.412 GHz
+
+        Channel 6: 2.437 GHz
+
+        Channel 11: 2.462 GHz
+
+5 GHz Band:
+    Has many non-overlapping channels, each 20 MHz wide, with options to bond channels to 40/80/160 MHz for higher speeds.
+    Divided into UNII bands (Unlicensed National Information Infrastructure):
+
+        UNII-1 (5.15 -5.25 GHz)
+
+        UNII-2 (5.25 -5.35 GHz)
+
+        UNII-2 Extended (5.47 -5.725 GHz)
+
+        UNII-3 (5.725 -5.825 GHz)
+
+        Example Channels: 36, 40, 44, 48 (UNII-1)
+
+6 GHz Band (Wi-Fi 6E and Wi-Fi 7):
+    Adds up to 59 new 20 MHz channels (depending on the region).
+    Completely free from legacy Wi-Fi devices → low interference.
+    Allows 160 MHz and 320 MHz wide channels for ultra-high speeds.
+
+60 GHz Band (802.11ad/ay):
+    Extremely high frequencies, suitable for short-range use cases like VR or high-speed data transfer.
+    High capacity but poor wall penetration.
+
+Band Comparison:
+Band	    Speed	        Range	    Interference	    Channel Availability
+
+2.4 GHz	    Low–Medium	    Long	    High (crowded)	    3 non-overlapping channels
+5 GHz	    High	        Medium	    Medium	            Many non-overlapping channels
+6 GHz	    Very High	    Medium–Low	Very Low	    Clean, wide channels (Wi-Fi 6E+)
+60 GHz	    Extremely High	Very Short	Very Low	    Used for ultra-fast data transfer

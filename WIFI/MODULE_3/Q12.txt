@@ -1,0 +1,27 @@
+
+
+In Wi-Fi networks, the data rate (physical layer rate) refers to the speed at which bits are transmitted over the air. 
+It is influenced by several physical layer parameters defined by the IEEE 802.11 standard.
+
+Wi-Fi Data Rate Formula:
+
+    Data Rate = (N_SD * N_BPSCS * R * N_SS) / (T_DFT + T_GI)
+
+Where:
+- N_SD      = Number of data subcarriers (e.g., 52 for a 20 MHz channel)
+- N_BPSCS   = Number of coded bits per subcarrier per stream (depends on modulation type)
+- R         = Coding rate (e.g., 1/2, 2/3, 3/4, 5/6)
+- N_SS      = Number of spatial streams (used in MIMO)
+- T_DFT     = OFDM symbol duration (e.g., 3.2 µs)
+- T_GI      = Guard interval duration (e.g., 0.8 µs or 0.4 µs for short GI)
+
+Explanation:
+
+- Modulation Scheme (N_BPSCS): Higher-order modulations like QPSK, 16-QAM, 64-QAM, or 256-QAM can carry more bits per subcarrier.
+- Coding Rate (R): Determines the amount of redundancy. Higher rates provide more efficiency but less error correction.
+- Spatial Streams (N_SS): Using multiple streams in MIMO systems increases total throughput.
+- Guard Interval (T_GI): A short guard interval (e.g., 0.4 µs) reduces symbol spacing, improving throughput.
+- Wider Channels: Allow for more subcarriers (N_SD), increasing the data rate.
+
+This formula allows to calculate the theoretical maximum throughput for different configurations in 802.11 standards (e.g., 802.11n, 802.11ac, 802.11ax).
+
