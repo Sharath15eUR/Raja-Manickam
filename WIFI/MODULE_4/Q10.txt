@@ -1,0 +1,45 @@
+1. A-MSDU (Aggregated MAC Service Data Unit)
+Definition:
+A-MSDU aggregates multiple MSDUs (MAC Service Data Units) into a single MPDU (MAC Protocol Data Unit), allowing them to be transmitted together.
+How It Works:
+•	Each MSDU is a higher-layer data packet (e.g., from IP or TCP).
+•	Multiple MSDUs are combined into the payload of a single MAC frame.
+•	Only one MAC header is used for the whole aggregated payload.
+•	All subframes (MSDUs) must have the same destination address and TID (Traffic Identifier).
+Pros:
+•	Reduces MAC header overhead (only one header per A-MSDU).
+•	Efficient for small packets.
+Cons:
+•	If one MSDU is corrupted, the entire A-MSDU must be retransmitted.
+•	Less robust than A-MPDU.
+
+2. A-MPDU (Aggregated MAC Protocol Data Unit)
+Definition:
+A-MPDU aggregates multiple MPDUs, each with its own MAC header and CRC, into a single PHY-layer transmission unit.
+How It Works:
+•	Each MPDU can carry one MSDU or A-MSDU.
+•	MPDUs are combined and sent together in a single PHY-layer frame.
+•	Each MPDU is separated by a delimiter and has its own FCS.
+•	Uses Block ACK to acknowledge successful MPDUs individually.
+Pros:
+•	More robust: if one MPDU is corrupted, only that MPDU needs retransmission.
+•	Compatible with Block ACK.
+•	Very efficient for high-throughput data.
+Cons:
+•	Slightly more overhead than A-MSDU due to individual MAC headers and FCS.
+
+3. A-MSDU within A-MPDU (Nested Aggregation)
+Definition:
+This is a nested aggregation approach where each MPDU in an A-MPDU contains an A-MSDU instead of a single MSDU.
+Why Use Nested Aggregation?
+•	Combines the benefits of both methods:
+	-	A-MSDU reduces header overhead.
+	-	A-MPDU increases robustness with per-frame retransmissions.
+•	Provides maximum efficiency for high-throughput scenarios.
+Pros:
+•	Highly efficient for large data bursts.
+•	Per-MPDU retransmission while still reducing MAC header overhead within each A-MSDU.
+Cons:
+•	More complex to implement.
+•	Slightly more processing required at both sender and receiver.
+

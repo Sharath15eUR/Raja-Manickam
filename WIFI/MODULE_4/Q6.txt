@@ -1,0 +1,63 @@
+The client association process is the step-by-step procedure by which a wireless client (like a smartphone, laptop, or IoT device) connects to a Wi-Fi network via an Access Point (AP). 
+It is part of the MAC layer management functionality and involves multiple stages to establish a secure, authenticated, and synchronized connection.
+Step 1: Access Point sends ANonce to Client
+•	The AP (router) starts the handshake by generating a random number called ANonce (Authenticator Nonce).
+•	It sends this ANonce to the client.
+Why?
+•	This ANonce will be used later by both the AP and client to generate the same encryption key (PTK).
+•	Sending this early ensures both sides use the same random value for key generation.
+It’s like the AP is saying:
+"Here’s a random number. We’ll both use it to create the same secret code."
+
+Step 2: Client sends SNonce and MIC to Access Point
+•	Now, the client:
+o	Creates its own random number, called SNonce (Supplicant Nonce).
+o	Uses: PMK + ANonce + SNonce + MAC addresses to generate the PTK (a unique session key).
+•	Then the client sends:
+o	The SNonce to the AP.
+o	A special security tag called MIC (Message Integrity Code) to prove that it used the right key.
+Why?
+•	The AP now knows the SNonce.
+•	Since both sides have:
+o	PMK
+o	ANonce
+o	SNonce
+o	MAC addresses
+...they can now independently compute the same PTK.
+It’s like the client is saying:
+"Here’s my part of the random code. I’ve already calculated our final secret key (PTK). Check this MIC to confirm I did it right."
+
+Step 3: Access Point sends GTK and MIC to Client
+•	The AP now calculates its own PTK using all the known inputs.
+•	It checks the MIC received from the client to make sure the PTK matches.
+•	Then, the AP:
+o	Encrypts the GTK (Group Temporal Key) using part of the PTK.
+o	Sends it to the client, along with a new MIC.
+Why?
+•	GTK is the key used for broadcast/multicast messages that all clients must know.
+•	This step securely gives the GTK to the client without exposing it.
+It’s like the AP is saying:
+"We now share the same PTK. Here’s a secure copy of the group key (GTK), encrypted using our PTK."
+
+Step 4: Client sends final confirmation to Access Point
+•	The client installs the PTK and GTK.
+•	It sends a final confirmation message with a MIC to the AP.
+Why?
+•	This confirms that the client has received and installed all keys correctly.
+•	Once this is done, encrypted data communication begins.
+It’s like the client is saying:
+"I got the group key (GTK), and I’m ready to send encrypted data now."
+
+PMK (Pairwise Master Key): Derived from the Pre-Shared Key (in WPA2-Personal) or from the authentication server (in WPA2-Enterprise).
+
+PTK (Pairwise Transient Key): Session-specific key used for data encryption between client and AP.
+
+GTK (Group Temporal Key): Used to encrypt broadcast and multicast traffic.
+
+Nonce: A random number used once per session to ensure freshness and prevent replay attacks.
+
+    ANonce: AP’s nonce.
+
+    SNonce: Supplicant's nonce.
+
+MIC (Message Integrity Code): Used to ensure the integrity of handshake messages.

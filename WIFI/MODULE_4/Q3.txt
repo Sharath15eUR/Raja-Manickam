@@ -1,0 +1,62 @@
+A. Management Plane Functionalities
+The Management Plane handles all functions related to establishing, maintaining, and terminating connections between wireless devices. 
+The MAC layer supports the following management functions:
+    1.	Scanning
+    Actively or passively discovering available Access Points (APs) in the vicinity.
+    2.	Authentication
+    The initial process where a client (station) verifies itself to the AP using open or shared key authentication.
+    3.	Association and Reassociation
+    Allows the station to formally connect to an AP and receive a unique Association ID (AID). Reassociation occurs when a client moves to a different AP within the same ESS.
+    4.	Disassociation
+    Voluntarily ending the association between a client and an AP.
+    5.	Deauthentication
+    Termination of the authentication relationship, often triggered by security policy enforcement.
+    6.	Beacon Transmission
+    Periodic broadcast of beacon frames by the AP to advertise the network and its capabilities.
+    7.	Probe Request and Response
+    Used in active scanning; the client sends a probe request and receives probe responses from APs.
+    8.	Capability Advertisement
+    During management frame exchange, the AP and client advertise supported features such as encryption types, supported rates, etc.
+    9.	Timing Synchronization
+    Maintaining clock synchronization across all stations within the BSS using information in beacons.
+    10.	Power Management Signaling
+    The MAC layer manages transitions between active and power-save modes for clients.
+
+B. Control Plane Functionalities
+The Control Plane supports the delivery and coordination of frame transmissions, including access control, acknowledgment, and synchronization mechanisms.
+    1.	RTS/CTS (Request to Send / Clear to Send)
+    Used to avoid collisions by reserving the channel before transmitting large data frames.
+    2.	Acknowledgment (ACK) Frames
+    Sent in response to received data frames to confirm successful reception.
+    3.	Block ACK
+    Enables acknowledgment of multiple frames in a single control frame, improving efficiency.
+    4.	PS-Poll (Power Save Poll)
+    A control frame sent by clients in power-save mode to request buffered data from the AP.
+    5.	CF-End and CF-End + CF-ACK
+    Used in Point Coordination Function (PCF) mode to indicate the end of the contention-free period.
+    6.	NAV (Network Allocation Vector) Management
+    A virtual carrier sensing mechanism to avoid collision based on the duration field in control frames.
+    7.	Channel Access Coordination (DCF/EDCA/PCF/HCF)
+    Implements various coordination functions to manage how and when a device may transmit, such as:
+    - 	DCF: Distributed Coordination Function
+    - 	EDCA: Enhanced Distributed Channel Access
+    - 	PCF: Point Coordination Function
+    - 	HCF: Hybrid Coordination Function (used in QoS networks)
+
+C. Data Plane Functionalities
+The Data Plane is responsible for the actual transfer of user data between devices over the wireless medium. The MAC layer ensures that this data is transmitted reliably and efficiently.
+    1.	Data Frame Transmission and Reception
+    Handling unicast, multicast, and broadcast data frames between clients and APs.
+    2.	Frame Fragmentation and Reassembly
+    Large frames are broken into smaller fragments to improve reliability and avoid retransmitting the entire frame if an error occurs.
+    3.	QoS Support
+    Data frames can be prioritized using different access categories (voice, video, best-effort, background) to ensure timely delivery for real-time traffic.
+    4.	Encryption and Decryption
+    Ensures confidentiality of data using mechanisms such as WEP, WPA2, or WPA3 at the MAC layer.
+    5.	Retry and Retransmission Logic
+    If no acknowledgment is received for a data frame, the MAC layer automatically retransmits the frame up to a defined limit.
+    6.	Sequence Control
+    Maintains the correct order of data frames using sequence numbers, and avoids duplication.
+    7.	A-MSDU and A-MPDU Aggregation
+    Data frames may be aggregated to reduce overhead and improve throughput.
+

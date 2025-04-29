@@ -1,0 +1,39 @@
+The structure of the MAC header varies depending on the type of frame (Management, Control, or Data), but the most commonly used and widely discussed format is that of a Data Frame. 
+The typical 802.11 Data Frame MAC header consists of multiple fields, and the standard header size is 24 bytes, but it can extend up to 30 or 36 bytes with the inclusion of optional fields.
+The key fields in the 802.11 MAC header and their purposes are as follows:
+1.	Frame Control (2 bytes)
+This is the first field in the MAC header and defines the type of frame (Management, Control, or Data) and how it should be processed. It includes subfields like:
+- 	Protocol Version
+- 	Type and Subtype
+- 	To DS (Distribution System)
+- 	From DS
+- 	More Fragments
+- 	Retry
+- 	Power Management
+- 	More Data
+- 	Protected Frame
+- 	Order
+These subfields control the behavior and direction of the frame.
+2.	Duration/ID (2 bytes)
+    This field indicates the duration of time (in microseconds) the channel will be reserved for the transmission of the current frame and any required acknowledgment. 
+    It is used in setting the Network Allocation Vector (NAV), which helps in virtual carrier sensing.
+3.	Address Fields (6 bytes each)
+There are typically four address fields in the MAC header:
+- 	Address 1: Receiver Address (RA) – the address of the next device to receive the frame.
+- 	Address 2: Transmitter Address (TA) – the MAC address of the device that sent the frame.
+- 	Address 3: BSSID or Destination Address – depending on frame type and direction.
+- 	Address 4: Used in wireless distribution systems (WDS) or mesh networks when both the source and destination are in different BSSs (Basic Service Sets).
+The use of these address fields depends on the direction of the frame (from/to DS bits in the Frame Control field).
+4.	Sequence Control (2 bytes)
+This field is used for frame reassembly and fragmentation. It contains two subfields:
+- 	Fragment Number: Identifies the sequence of fragments in a fragmented frame.
+- 	Sequence Number: Helps in detecting duplicate frames and ensures proper reordering.
+5.	QoS Control (2 bytes – optional)
+Present in QoS Data Frames (for example, in 802.11e). It is used to identify the priority of the frame (traffic category) and for scheduling traffic flows.
+6.	HT Control (4 bytes – optional)
+Present in high-throughput (802.11n and later) frames. It contains information related to beamforming and sounding in MIMO systems.
+7.	Frame Body (variable length)
+This is the payload of the frame and carries the actual data being transmitted between devices. The size varies depending on the type of data or management information being sent.
+8.	FCS – Frame Check Sequence (4 bytes)
+This field is not part of the MAC header but follows the MAC frame. It is used for error detection. It ensures the integrity of the frame by checking for corruption during transmission.
+

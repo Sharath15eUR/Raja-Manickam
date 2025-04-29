@@ -1,0 +1,78 @@
+Explain the concept of Multi-Link Operation (MLO) and its impact on throughput and latency.
+
+Multi-Link Operation (MLO) is a feature introduced in Wi-Fi 7 (802.11be) that allows a single Wi-Fi connection to use multiple frequency bands (2.4 GHz, 5 GHz, and 6 GHz) or multiple channels simultaneously between an access point (router) and a client device (like a smartphone or laptop).
+
+In previous Wi-Fi versions (Wi-Fi 6, 6E), a device could only communicate over one band at a time, even if it was capable of connecting to all of them. With MLO, multiple links can now be used in parallel, just like bonding multiple roads for traffic to flow faster and smoother.
+
+--How MLO Works – A Simple Analogy
+Imagine a person sending boxes of data over roads:
+
+Wi-Fi 6: The person can only use one road at a time (either 2.4, 5, or 6 GHz), even if others are free.
+
+Wi-Fi 7 with MLO: The person can now use multiple roads at once, distributing boxes across them, and even rerouting them in real-time if one road is blocked or slow.
+
+Each "road" corresponds to a frequency band or channel, and each "box" is a data packet.
+
+--Types of MLO Configurations
+There are two main MLO operation types:
+
+1. Link Aggregation (Load Balancing):
+All links (e.g., 5 GHz and 6 GHz) are used simultaneously for sending and receiving data.
+
+Packets are intelligently distributed to improve throughput and reduce bottlenecks.
+
+2. Link Redundancy (Failover):
+If one link becomes congested or fails, the other can take over instantly, ensuring uninterrupted connectivity and lower latency.
+
+Advanced devices may combine both strategies depending on traffic conditions.
+
+--Impact of MLO on Throughput
+Throughput is the actual amount of data transferred per unit time (often measured in Mbps or Gbps).
+
+--How MLO improves throughput:
+
+Parallel Transmission:
+
+Data can flow across multiple channels at once, increasing the volume of data moved.
+For example, if 5 GHz and 6 GHz links are each capable of 1 Gbps, MLO can offer an effective combined throughput of up to 2 Gbps (in ideal conditions).
+
+Avoids Congested Channels:
+
+MLO allows data to shift dynamically between cleaner, faster channels, reducing delays caused by network congestion.
+
+Maximizes Spectrum Use:
+
+Older Wi-Fi versions could not utilize the full spectrum if some parts were occupied.
+
+MLO can mix and match links, squeezing out every bit of available bandwidth.
+
+--Impact of MLO on Latency
+Latency is the time it takes for a data packet to travel from sender to receiver — critical for applications like gaming, video calls, AR/VR, and industrial automation.
+
+--How MLO reduces latency:
+
+Path Optimization:
+
+MLO can instantly choose the fastest link with the least delay to send packets.
+This reduces waiting time compared to Wi-Fi 6, where traffic may be stuck on a slower link.
+
+Faster Recovery from Interference:
+
+If one band becomes unstable or blocked, MLO doesn’t wait — it instantly shifts to another link without needing a new connection handshake.
+
+Low-Latency Scheduling:
+
+By splitting traffic (e.g., real-time vs. background data), MLO prioritizes time-sensitive tasks on low-latency links and defers others.
+
+--Real-World Benefits of MLO
+➤ For Consumers:
+Smoother 4K/8K video streaming with fewer buffers.
+Lag-free cloud gaming with stable latency.
+Seamless video conferencing without drops or choppiness.
+Faster file downloads and uploads, even in congested environments.
+
+➤ For Enterprises & Industry:
+High-throughput, low-latency connections for robotics, remote monitoring, and VR training.
+Better load distribution across access points in busy offices.
+Reliable backups and real-time data syncs in smart factories or healthcare networks.
+

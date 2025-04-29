@@ -1,0 +1,61 @@
+What Will Happen if We Put a Wrong Passphrase During a 4-Way Handshake?
+
+The 4-way handshake is a critical process in Wi-Fi security protocols such as WPA2 and WPA3, used to securely exchange encryption keys between a client (supplicant) and the access point (AP). The handshake relies on the Pairwise Master Key (PMK), which is derived from the passphrase (for WPA2-Personal) or from EAP (for WPA2-Enterprise). If a wrong passphrase is entered during the 4-way handshake, the authentication and encryption process will fail, and the client will be unable to join the network.
+
+
+1. How the 4-Way Handshake Relies on the Passphrase:
+
+In WPA2-Personal (also known as WPA2-PSK, where PSK stands for Pre-Shared Key), the passphrase entered by the client is used to generate the Pairwise Master Key (PMK), which is essential for the entire handshake. Here’s how the process works:
+•The client and access point (AP) both derive the PMK from the passphrase using a key derivation function (like PBKDF2).
+•The PMK is then used to create the Pairwise Transient Key (PTK), which is responsible for securing the data communication between the client and the AP.
+•The 4-way handshake exchanges nonces, and Message Integrity Codes (MICs), using the PMK to establish a secure communication channel.
+
+2. What Happens with a Wrong Passphrase?
+
+If a wrong passphrase is entered, the following sequence of events occurs:
+
+Step 1: PMK Generation Failures
+•When the client attempts to connect to the network and sends the initial messages in the 4-way handshake, it uses the entered passphrase to generate the PMK.
+•If the passphrase is wrong, the generated PMK will not match the PMK stored on the AP, which is derived from the correct passphrase.
+
+Step 2: Incorrect MICs and Mismatched Session Keys
+•The AP and the client both use the PMK to calculate session keys, including the Pairwise Transient Key (PTK).
+•The PTK is used to encrypt the messages exchanged during the 4-way handshake and ensure integrity with the Message Integrity Code (MIC).
+•With a wrong passphrase:
+The client will generate an incorrect PTK.
+When the client sends the MIC to the AP in Message 2 or Message 4, it will be incorrect because the client’s PTK does not match the AP’s PTK.
+The AP will also calculate the PTK incorrectly and detect a mismatch in the MICs sent by the client.
+
+Step 3: Authentication Failure
+•The AP will not be able to verify the client’s identity because the MICs generated using the PTK are incorrect.
+•In Message 2 of the handshake, the AP checks the MIC sent by the client. Since the MIC does not match what the AP expects (due to the wrong passphrase), the AP will reject the handshake.
+•The client will receive an error message indicating that the passphrase is incorrect, and the connection attempt will fail.
+
+3. Resulting Outcomes:
+•Connection Failure: The client will not be able to successfully authenticate with the AP and will not be able to obtain a valid session key.
+
+Message 2 will not be validated by the AP, so the handshake cannot proceed past this step.
+Message 4 (client confirmation) will not be sent correctly, meaning that the secure session cannot be established.
+
+•No Network Access: Since the encryption keys are never generated due to the failure in the handshake, the client will not be able to encrypt or decrypt traffic, resulting in no network access.
+
+4. Security Implications of a Wrong Passphrase:
+•Prevents Unauthorized Access: The fact that the wrong passphrase prevents the 4-way handshake from completing is a security feature that ensures that only clients with the correct passphrase can authenticate and connect to the network.
+•Avoids Security Holes: Without this mechanism, attackers could potentially gain access to a network without the correct credentials.
+•Attack Detection: If a wrong passphrase is entered multiple times, many APs will limit the number of attempts to prevent brute-force attacks, such as dictionary attacks, where an attacker repeatedly tries different passphrases.
+
+5. WPA2 Enterprise Mode vs. WPA2 Personal (PSK):
+•WPA2-PSK (Personal Mode): The wrong passphrase causes an immediate authentication failure during the 4-way handshake, and no further attempts are made.
+•WPA2-Enterprise Mode: If EAP (Extensible Authentication Protocol) is used (which typically requires a username and password or certificates), the failure to authenticate due to incorrect credentials might lead to an EAP failure message.
+
+Conclusion:
+If a wrong passphrase is entered during the 4-way handshake:
+
+The PMK generation will be incorrect for both the client and the access point.
+
+The client and the AP will calculate mismatched session keys and MICs.
+
+Authentication will fail, and the client will be denied network access.
+
+This is a vital security feature that ensures only clients with the correct passphrase can connect to the network, preventing unauthorized access and maintaining network integrity.
+

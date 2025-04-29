@@ -1,0 +1,45 @@
+Both Wi-Fi 6 (802.11ax) and Wi-Fi 6E (802.11ax in 6 GHz) share the same core technology improvements like OFDMA, MU-MIMO, TWT, and 1024-QAM modulation.
+However, they mainly differ based on the frequency bands they operate in, which leads to differences in range, bandwidth, and interference levels.
+Let’s discuss each point in detail:
+
+1. Range
+•	Wi-Fi 6:
+	-	Wi-Fi 6 operates on the 2.4 GHz and 5 GHz bands.
+	-	In the 2.4 GHz band, Wi-Fi 6 can cover a longer range because lower frequencies can travel farther and penetrate obstacles like walls better.
+	-	In the 5 GHz band, range is slightly less than 2.4 GHz because higher frequencies are more easily absorbed by walls and other obstacles.
+•	Wi-Fi 6E:
+	-	Wi-Fi 6E operates exclusively in the 6 GHz band.
+	-	The 6 GHz signals have even shorter range than 5 GHz because:
+            Higher frequency signals attenuate more quickly (lose strength faster).
+            6 GHz signals have more difficulty penetrating walls and barriers.
+	-	Therefore, Wi-Fi 6E typically provides faster speeds but over shorter distances, and may require more access points in large areas for full coverage.
+Summary for Range:
+•	Wi-Fi 6 has better range (especially at 2.4 GHz).
+•	Wi-Fi 6E has shorter range due to higher frequency operation.
+
+2. Bandwidth
+•	Wi-Fi 6:
+	-	The 2.4 GHz and 5 GHz bands have limited available bandwidth.
+	-	In the 5 GHz band, Wi-Fi 6 can use wider channels (up to 160 MHz), but there are fewer non-overlapping 160 MHz channels because the 5 GHz band is relatively crowded.
+	-	Limited spectrum makes it harder to consistently deliver maximum speeds when many devices are connected.
+•	Wi-Fi 6E:
+	-	The 6 GHz band provides a massive 1200 MHz of new spectrum (in countries like the U.S.).
+	-	This allows:
+            Many more 80 MHz and 160 MHz wide channels without overlap.
+            Higher overall bandwidth and higher multi-gigabit speeds consistently.
+	-	Applications needing extreme throughput like 4K/8K video streaming, AR/VR, and massive file transfers benefit heavily from this wider bandwidth.
+Summary for Bandwidth:
+•	Wi-Fi 6 has limited bandwidth due to crowded bands.
+•	Wi-Fi 6E provides much higher bandwidth thanks to the wide 6 GHz band.
+
+3. Interference
+•	Wi-Fi 6:
+	-	The 2.4 GHz band is highly congested because it is shared by many non-Wi-Fi devices (like Bluetooth, microwaves, baby monitors).
+	-	Even the 5 GHz band, although cleaner, still suffers from interference, especially in busy environments like apartments, offices, and public spaces.
+	-	Devices from previous generations (Wi-Fi 4, Wi-Fi 5) also occupy the same bands, causing legacy traffic interference.
+•	Wi-Fi 6E:
+	-	The 6 GHz band is reserved exclusively for Wi-Fi 6E and newer devices.
+	-	There are no older Wi-Fi devices (Wi-Fi 4 or 5) operating in this band, leading to minimal interference.
+	-	The 6 GHz spectrum is clean, uncluttered, and much less crowded.
+	-	This results in more reliable and stable connections with lower chances of collisions and retransmissions.
+

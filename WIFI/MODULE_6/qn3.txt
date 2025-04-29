@@ -1,0 +1,107 @@
+Differences between WEP, WPA, WPA2, and WPA3
+
+A. WEP (Wired Equivalent Privacy)
+Definition:
+WEP is the first security protocol designed to provide a level of security equivalent to a wired network.
+It was introduced in 1997 as part of the original IEEE 802.11 standard for Wi-Fi.
+
+Process:
+Uses a static, pre-shared key (either 40-bit or 104-bit) for both authentication and encryption.
+RC4 (a stream cipher) is used to encrypt the data.
+An Initialization Vector (IV) is added to the encryption to create variations, but the IV is short (24 bits) and easily predictable.
+
+Characteristics:
+• Simple and easy to implement.
+• Extremely vulnerable — attackers can crack WEP keys within minutes using freely available tools.
+• No protection against packet replay attacks.
+• The IV is reused, leading to easy cryptographic attacks.
+• Considered obsolete and insecure today.
+
+Use Cases:
+• Early home and small office Wi-Fi networks (1997–early 2000s).
+• Some very old devices (legacy systems) may still only support WEP.
+• Not recommended for any modern Wi-Fi networks.
+
+B. WPA (Wi-Fi Protected Access)
+Definition:
+WPA was introduced in 2003 as an immediate solution to the weaknesses of WEP.
+It was developed as a temporary standard while WPA2 was being finalized.
+
+Process:
+Still uses RC4 for encryption (like WEP) but with improved key management.
+Introduces TKIP (Temporal Key Integrity Protocol), which dynamically changes keys for each data packet.
+Introduces message integrity checks to prevent packet tampering.
+
+Characteristics:
+• Stronger than WEP but still based on an older encryption method (RC4).
+• Dynamic key generation using TKIP makes it harder to crack.
+• Backward compatible with older hardware that supported WEP.
+• Still vulnerable to certain attacks (e.g., WPA-PSK cracking).
+
+Use Cases:
+• Transitional networks upgrading from WEP.
+• Old routers and devices manufactured between 2003 and 2006.
+• Better than WEP, but still not considered secure today.
+
+C. WPA2 (Wi-Fi Protected Access II)
+Definition:
+WPA2 was introduced in 2004 as the official Wi-Fi security standard, replacing WPA.
+It offers much stronger security by introducing advanced encryption techniques.
+
+Process:
+Uses AES (Advanced Encryption Standard) instead of RC4.
+Supports two modes:
+WPA2-Personal (PSK): For home networks (uses a shared password).
+WPA2-Enterprise: For businesses (uses a RADIUS server for authentication).
+Includes strong message integrity checks and key management.
+
+Characteristics:
+• Highly secure and reliable for most environments.
+• AES encryption makes it very difficult to crack.
+• Widely adopted across all modern Wi-Fi networks.
+• Vulnerable only if users choose weak passwords (dictionary attacks).
+
+Use Cases:
+• Home Wi-Fi networks (using WPA2-Personal).
+• Business networks with centralized authentication (WPA2-Enterprise).
+• Wi-Fi Certified devices must support WPA2 since 2006.
+
+D. WPA3 (Wi-Fi Protected Access III)
+Definition:
+WPA3 was introduced in 2018 to address the shortcomings of WPA2 and to prepare for future wireless security threats.
+
+Process:
+Uses Simultaneous Authentication of Equals (SAE) instead of PSK — making password guessing much harder.
+Offers forward secrecy, meaning even if an attacker gets a key later, past communications remain safe.
+Uses 192-bit cryptographic strength for enterprise environments.
+Improves security for open/public Wi-Fi networks using Opportunistic Wireless Encryption (OWE).
+
+Characteristics:
+• Highly resistant to offline dictionary attacks.
+• Better protection even with weaker passwords.
+• Encrypted communication even in open networks (without passwords).
+• Backward compatible with WPA2 devices (optional in transition modes).
+• Still being adopted gradually across devices and routers.
+
+Use Cases:
+• Modern home networks seeking highest security.
+• Public Wi-Fi spots like airports and cafes (safer open Wi-Fi).
+• Corporate networks needing highest encryption standards.
+
+Key Differences (in Words):
+
+WEP was the original Wi-Fi security method but had major weaknesses and is now obsolete.
+WPA improved upon WEP with TKIP but still used outdated encryption (RC4).
+WPA2 replaced WPA with strong AES encryption and remains the dominant standard today.
+WPA3 is the latest improvement, offering even stronger encryption, better protection against password attacks, and improved security even on public networks.
+
+In simple terms:
+
+WEP = Basic but broken.
+
+WPA = Better than WEP but still not strong enough.
+
+WPA2 = Strong and reliable for most uses.
+
+WPA3 = Best and future-ready security standard.
+

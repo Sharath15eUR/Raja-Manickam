@@ -1,0 +1,54 @@
+Difference Between Authentication and Encryption in Wi-Fi Security
+
+A. Authentication
+Definition:
+Authentication is the process of verifying the identity of a user or device before granting it access to the Wi-Fi network.
+It ensures that only authorized users are allowed to connect to the network, preventing unauthorized access.
+
+Process:
+The client attempts to connect to a Wi-Fi network.
+The Access Point (AP) challenges the client to provide credentials (password, digital certificate, username/password, etc.).
+The credentials are verified either directly (pre-shared key) or through a server like RADIUS (for enterprise networks).
+If the credentials are valid, the client is allowed to associate and authenticate with the network.
+
+Characteristics:
+• Fundamentally about "Who is trying to connect?"
+• Occurs before the device is allowed to access the network’s services.
+• Can use different methods like Open Authentication (no password), WPA/WPA2-PSK (shared password), or 802.1X (individual credentials).
+• Central to protecting the network from unauthorized users.
+
+Use Cases:
+• Home Wi-Fi secured by a password (WPA2-PSK).
+• Office networks requiring employees to log in with unique credentials (Enterprise Authentication).
+• Public Wi-Fi networks where user authentication might be optional (Open Networks).
+
+B. Encryption
+Definition:
+Encryption is the process of scrambling data being transmitted over the Wi-Fi network so that unauthorized people cannot understand it.
+Even if the data is intercepted, encryption ensures that it remains unreadable without the correct decryption key.
+
+Process:
+After authentication, encryption keys are generated between the client and the Access Point.
+Every data packet is encrypted before being transmitted over the air.
+The receiver uses the corresponding key to decrypt and interpret the data.
+If anyone tries to capture the data without the correct key, they will only see random, unreadable information.
+
+Characteristics:
+• Fundamentally about "Is the data safe during transmission?"
+• Occurs after authentication when actual communication begins.
+• Protects sensitive information like passwords, credit card numbers, emails, etc.
+• Uses encryption protocols like WEP, WPA, WPA2, and WPA3.
+
+Use Cases:
+• Encrypting communication during online shopping to protect card details.
+• Ensuring privacy in emails sent over a wireless network.
+• Preventing hackers from reading company files transferred over Wi-Fi.
+
+Key Differences Between Authentication and Encryption (in words):
+Purpose: Authentication is about verifying who is connecting to the network; encryption is about protecting the data that flows over the network.
+Timing: Authentication happens before data transmission (during connection setup); encryption happens after authentication (while sending/receiving data).
+Focus: Authentication controls access to the network; encryption protects privacy of the communication.
+Impact: Without authentication, unauthorized users could connect to the network; without encryption, anyone could intercept and read the transmitted information.
+
+Example: Entering a Wi-Fi password (authentication) vs. the Wi-Fi securing your online messages so no one else can read them (encryption).
+

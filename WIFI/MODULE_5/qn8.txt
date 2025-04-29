@@ -1,0 +1,52 @@
+What is the purpose of 802.11k and v, and how does it aid in roaming?
+
+Roaming refers to the ability of a wireless device (like a smartphone or laptop) to seamlessly switch from one access point (AP) to another within the same Wi-Fi network without losing connection or performance.
+
+In a building with multiple APs, your device needs to determine when and where to switch to the next AP with better signal strength or less congestion. Without optimization, this switch may be delayed or inefficient — causing dropped calls, frozen videos, or lag in real-time apps.
+
+This is where 802.11k and 802.11v come into play.
+
+1. IEEE 802.11k – Radio Resource Measurement (RRM)
+-	Purpose:
+802.11k helps speed up the process of discovering nearby access points (APs) that a client device can connect to during roaming.
+
+-	How it works:
+When roaming becomes necessary, the current AP sends a Neighbor Report to the client device.
+
+This report includes details like:
+
+Nearby APs’ MAC addresses
+Their channels
+Signal strengths
+The client uses this list to scan only the recommended channels rather than scanning the entire Wi-Fi spectrum, which would take more time.
+
+-	Benefits:
+Faster roaming decisions (especially helpful for real-time applications).
+Reduced power usage (because fewer channels are scanned).
+Improved user experience in high-density environments.
+
+
+2. IEEE 802.11v – Wireless Network Management
+-	Purpose:
+802.11v enhances network-assisted client steering, allowing the AP to gently guide a device toward a better access point for roaming.
+
+-	How it works:
+The current AP uses a feature called BSS Transition Management to recommend or suggest a better AP to the client.
+
+This is often based on:
+
+Signal strength
+Load on the AP (congestion)
+Device capabilities
+The AP sends a BSS Transition Request to the client, suggesting a specific AP.
+The client can accept or decline the suggestion.
+
+-	Additional features of 802.11v:
+Client statistics reporting to APs.
+Power saving enhancements (e.g., by telling the client when to sleep or wake).
+Network-assisted roaming decisions, so clients don’t roam too aggressively or too slowly.
+
+-	Benefits:
+Faster and more intelligent handoffs between APs.
+Load balancing – helps prevent overcrowding of one AP.
+Better performance in environments with high device density.

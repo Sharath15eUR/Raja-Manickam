@@ -1,0 +1,54 @@
+In traditional ACK (Acknowledgment), each transmitted frame must be individually acknowledged. This results in a lot of overhead, especially when sending multiple data frames consecutively.
+The Block ACK mechanism allows the receiver to acknowledge multiple data frames in a single acknowledgment frame, reducing protocol overhead and improving throughput.
+Block ACK Working
+1. Setup: Block ACK Agreement
+•	Before using Block ACK, the sender and receiver must agree to use it.
+•	This is done through a Block ACK Request/Response negotiation.
+2. Data Transmission (Burst of Frames)
+•	The sender transmits multiple data frames in sequence (called an A-MPDU – Aggregated MAC Protocol Data Unit).
+•	These can be part of the same Traffic Identifier (TID) (e.g., same QoS category).
+3. Receiver Stores Frames
+•	The receiver receives the frames and buffers them temporarily.
+•	It keeps track of which frames were received correctly and which were missing or corrupted.
+4. Block ACK Request
+•	The sender then sends a Block ACK Request (BAR) to the receiver, asking for an acknowledgment of all previously sent frames.
+5. Block ACK Response
+•	The receiver replies with a Block ACK, which includes:
+	-	A bitmap indicating which frames were received successfully.
+	-	The starting sequence number of the block.
+	-	This lets the sender know which frames need to be retransmitted.
+
+Types of Block ACK
+1. Immediate Block ACK
+•	The Block ACK is sent immediately after receiving the Block ACK Request.
+2. Delayed Block ACK
+•	The receiver waits for a short time before sending the Block ACK.
+•	Useful in power-saving or congested environments.
+
+Structure of Block ACK Frame (Simplified)
+A Block ACK frame contains:
+•	Receiver address
+•	TID
+•	Starting sequence number
+•	Bitmap (64 bits) indicating success/failure of up to 64 frames
+
+Advantages of Block ACK
+1. Higher Throughput
+•	Reduces the number of ACK frames.
+•	More time is used for actual data transmission.
+2. Lower Overhead
+•	Fewer control frames are sent.
+•	Frame aggregation (A-MPDU) becomes more efficient.
+3. Efficient Retransmission
+•	Sender only retransmits the specific frames indicated as missing in the bitmap.
+•	No need to resend the entire burst.
+4. Essential for High-Speed Standards
+•	Used heavily in 802.11n, 802.11ac, and 802.11ax to support high data rates.
+•	Enables frame aggregation, which is a key performance enhancement in modern Wi-Fi.
+
+Use Case Example
+•	A Wi-Fi device sends 20 frames back-to-back.
+•	Instead of waiting for 20 individual ACKs, it sends a Block ACK Request.
+•	The receiver replies with a Block ACK indicating that, for example, frames 3 and 7 were lost.
+•	The sender retransmits only those two frames, saving time and bandwidth.
+

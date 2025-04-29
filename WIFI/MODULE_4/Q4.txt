@@ -1,0 +1,51 @@
+There are two main types of scanning processes:
+
+A. Passive Scanning
+Definition:
+In passive scanning, the client listens silently for beacon frames that are periodically broadcast by APs on different channels.
+Process:
+1.	The client tunes to a channel and waits for a beacon frame from any AP on that channel.
+2.	Beacons contain information such as:
+    - 	SSID (Service Set Identifier)
+    - 	BSSID (MAC address of AP)
+    - 	Supported data rates
+    - 	Security capabilities
+    - 	Channel information
+    - 	Timing information (for synchronization)
+3.	The client collects this information to build a list of available networks.
+4.	It then switches to the next channel and repeats the process until all desired channels have been scanned.
+Characteristics:
+•	No frame transmission from the client.
+•	Stealthy and power-efficient.
+•	Slower than active scanning due to waiting for beacon intervals (typically 100 ms).
+•	Often used in environments where silent scanning is preferred (e.g., for power saving or stealth in monitoring tools).
+Use Cases:
+•	Mobile devices conserving battery.
+•	Devices operating in regulatory domains that prohibit probe requests.
+•	Sniffers or passive network analyzers.
+
+B. Active Scanning
+Definition:
+In active scanning, the client actively sends probe request frames to solicit responses (probe responses) from APs.
+Process:
+1.	The client sends a probe request frame on a specific channel.
+- 	This can include a specific SSID or a broadcast SSID (wildcard).
+2.	All APs on that channel respond with a probe response frame, containing:
+    - 	SSID
+    - 	BSSID
+    - 	Capabilities
+    - 	Security settings
+    - 	Beacon interval
+    - 	Other network details
+3.	The client collects the probe responses.
+4.	It switches to the next channel and repeats the process.
+Characteristics:
+•	Faster than passive scanning since the client initiates communication.
+•	More power-consuming due to active frame transmission.
+•	Allows discovery of hidden SSIDs (APs that do not broadcast beacon SSIDs).
+•	Slightly more bandwidth-intensive due to control traffic.
+Use Cases:
+•	Fast roaming in enterprise networks.
+•	When quick discovery is prioritized over power saving.
+•	Devices needing to find specific networks, including hidden ones.
+

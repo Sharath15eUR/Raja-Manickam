@@ -1,0 +1,52 @@
+Wi-Fi 6 (802.11ax)
+Wi-Fi 6, also known as 802.11ax, is an upgrade over Wi-Fi 5 (802.11ac). The key features of Wi-Fi 6 include:
+1.	OFDMA (Orthogonal Frequency Division Multiple Access):
+	-	Allows multiple devices to use the same channel simultaneously by dividing the channel into smaller sub-channels. 
+        This reduces congestion and improves network efficiency, especially in high-density environments.
+2.	MU-MIMO (Multi-User, Multiple Input, Multiple Output):
+	-	With Wi-Fi 5, MU-MIMO was limited to downstream traffic (router to device).
+         Wi-Fi 6 improves this by supporting both upstream and downstream MU-MIMO, allowing the router to communicate with multiple devices simultaneously.
+3.	1024-QAM (Quadrature Amplitude Modulation):
+	-	Wi-Fi 6 supports 1024-QAM, which increases the data rate by encoding more data per signal. 
+        This leads to a higher throughput compared to Wi-Fi 5, which only supports 256-QAM.
+4.	Target Wake Time (TWT):
+	-	TWT helps IoT devices save power by scheduling when they need to wake up and communicate with the router. 
+        This is particularly useful for devices that don't need to be active all the time, such as smart home devices.
+5.	Increased Speed:
+	-	Wi-Fi 6 offers faster data rates, with theoretical speeds of up to 9.6 Gbps, compared to Wi-Fi 5's maximum of 3.5 Gbps.
+6.	Improved Range:
+	-	Wi-Fi 6 has better range than Wi-Fi 5 due to more efficient use of radio frequency (RF) resources and the ability to operate in the 2.4 GHz and 5 GHz bands.
+
+Wi-Fi 6E
+Wi-Fi 6E is an extension of Wi-Fi 6 that introduces support for the 6 GHz frequency band. 
+While Wi-Fi 6 operates in the 2.4 GHz and 5 GHz bands, Wi-Fi 6E can also operate in the 6 GHz band, offering several key benefits:
+1.	6 GHz Spectrum:
+	-	The 6 GHz band provides additional channels for Wi-Fi, which reduces congestion and interference in crowded environments (e.g., apartments, offices). 
+        This provides more bandwidth for faster speeds and more reliable connections.
+2.	More Channels:
+	-	The 6 GHz band offers up to 1200 MHz of additional spectrum, compared to only 500 MHz in the 5 GHz band. 
+        This additional bandwidth allows for more channels, improving network capacity and performance.
+3.	Lower Latency:
+	-	The 6 GHz band has less interference because it’s less crowded. 
+        As a result, Wi-Fi 6E can offer lower latency, which is beneficial for high-demand applications like gaming and real-time video streaming.
+4.	Backward Compatibility:
+	-	Devices that support Wi-Fi 6E are backward compatible with Wi-Fi 6 and Wi-Fi 5, but they can take advantage of the 6 GHz band when communicating with Wi-Fi 6E-compatible routers.
+
+Wi-Fi 7 (802.11be)
+Wi-Fi 7 is the latest Wi-Fi standard and is designed to offer even higher speeds, lower latency, and better efficiency. Some of the key features of Wi-Fi 7 include:
+1.	320 MHz Channels:
+	-	Wi-Fi 7 supports 320 MHz-wide channels (double the 160 MHz channels in Wi-Fi 6), which allows for much faster data rates and better performance, especially in high-density environments.
+2.	4096-QAM:
+	-	Wi-Fi 7 supports 4096-QAM, further increasing the data rate compared to Wi-Fi 6’s 1024-QAM.
+         This allows for even faster speeds and higher throughput.
+3.	Multi-Link Operation (MLO):
+	-	Wi-Fi 7 introduces Multi-Link Operation (MLO), which allows devices to use multiple channels across different frequency bands (2.4 GHz, 5 GHz, and 6 GHz) simultaneously. 
+        This improves throughput and reduces latency by dynamically selecting the best channels.
+4.	Enhanced MU-MIMO:
+	-	Wi-Fi 7 enhances MU-MIMO technology, supporting up to 16 simultaneous users in both uplink and downlink directions (compared to 8 in Wi-Fi 6), which improves overall network capacity and efficiency.
+5.	Lower Latency:
+	-	Wi-Fi 7 focuses on reducing latency for applications like augmented reality (AR) and virtual reality (VR). 
+        It achieves this by allowing faster transmission of data through wider channels and improved scheduling.
+6.	Faster Speeds:
+	-	Wi-Fi 7 is expected to support speeds up to 30 Gbps, which is significantly faster than Wi-Fi 6’s 9.6 Gbps.
+

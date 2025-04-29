@@ -1,0 +1,77 @@
+1. What are the pillars of Wi-Fi security?
+
+Wireless networks (Wi-Fi) are an important part of modern communication. However, because wireless signals travel through the air, they are more vulnerable to security risks compared to wired networks.
+To protect Wi-Fi networks, four major pillars of security are implemented:
+Authentication, Encryption, Integrity, and Access Control.
+
+These pillars together ensure that the Wi-Fi network remains safe from unauthorized access, data theft, and malicious activities.
+
+1. Authentication
+Authentication verifies the identity of a device or user trying to access the network. Without proper authentication, anyone could join the network and misuse it.
+
+Types of Authentication:
+
+•Open Authentication:
+No authentication is required. Anyone can connect.
+Example: Public Wi-Fi in cafes or airports.
+
+•Pre-Shared Key (PSK):
+A password is shared between all users.
+Example: Home networks where everyone knows the same Wi-Fi password.
+
+•Enterprise Authentication (802.1X):
+Each user has unique credentials (username and password), often verified by a RADIUS server.
+Example: In an office, employees log in individually with their work credentials.
+
+2. Encryption
+Encryption ensures that the data traveling over the wireless network cannot be read or modified by outsiders. Even if someone captures the Wi-Fi traffic, encryption prevents them from understanding the data.
+
+Types of Encryption:
+
+•WEP (Wired Equivalent Privacy):
+An outdated and insecure protocol.
+
+•WPA (Wi-Fi Protected Access):
+Improved security but still vulnerable.
+
+•WPA2 (Wi-Fi Protected Access 2):
+Introduced AES encryption, providing strong protection.
+
+•WPA3:
+The latest and most secure standard, offering better protection even with weak passwords.
+
+Example:
+When shopping online using a secured Wi-Fi network (WPA2 or WPA3), your credit card information is encrypted, keeping it safe from hackers.
+
+3. Integrity
+Integrity guarantees that the information sent over the network remains unchanged during transmission.
+If someone tries to alter a packet during transfer, integrity checks detect and reject the tampered data.
+
+•Mechanisms used for integrity:
+
+•Message Integrity Check (MIC):
+Adds a signature to each message that verifies its originality.
+
+•Cryptographic Hash Functions:
+Algorithms like SHA verify that data hasn’t been modified.
+
+Example:
+When submitting an online exam, integrity ensures that your answers are received exactly as you sent them, without anyone altering them midway.
+
+4. Access Control
+Access control defines who is allowed to connect and what they are allowed to access within the network.
+
+Types of Access Control:
+
+•MAC Address Filtering:
+Allow only devices with specific MAC addresses.
+
+•Captive Portals:
+Require users to accept terms or log in before accessing the internet (common in hotels and airports).
+
+•Role-Based Access:
+Assign different levels of access depending on the user’s role (guest, staff, admin).
+
+Example:
+In a corporate environment, employees can access sensitive files, while guests are only given access to browse the internet.
+

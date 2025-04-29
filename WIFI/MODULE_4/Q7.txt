@@ -1,0 +1,67 @@
+Power saving is essential in wireless networks, especially for battery-operated devices such as smartphones, laptops, tablets, IoT devices, etc.
+The MAC (Medium Access Control) layer of IEEE 802.11 includes mechanisms to reduce power consumption without significantly affecting communication performance.
+
+Objective of MAC Layer Power Saving
+The aim is to:
+•	Let the device sleep (enter low-power mode) when it has nothing to send or receive.
+•	Wake up periodically to check if there is any data buffered at the Access Point (AP).
+•	Receive the buffered data when available, and then go back to sleep.
+This saves battery life while maintaining connectivity and performance.
+
+Basic Power Saving Mechanism in IEEE 802.11 (Legacy Power Save Mode)
+1. PS (Power Save) Bit
+Each wireless client (STA – station) maintains a Power Save (PS) mode flag in its MAC frame header.
+•	PS bit = 0 → Station is in Active mode (always listening).
+•	PS bit = 1 → Station is in Power Save mode (goes to sleep).
+The AP keeps track of the station’s power mode.
+
+2. Beacon Frames and TIM
+•	The AP periodically sends Beacon frames (every 100 ms typically).
+•	Beacon includes a Traffic Indication Map (TIM).
+•	TIM is a bitmap indicating which stations have data buffered at the AP.
+The client wakes up at every Beacon interval, checks the TIM.
+If its bit is set, it stays awake to receive the data.
+Otherwise, it goes back to sleep.
+
+3. PS-Poll Frames
+•	If the TIM shows buffered data for a client, the client sends a PS-Poll frame to the AP.
+•	The AP responds with the data frame or a sequence of data frames.
+•	After receiving all the data, the client goes back to sleep.
+
+Types of Power Saving Mechanisms
+IEEE 802.11 has evolved to include more efficient power-saving schemes in addition to the legacy PS mechanism:
+
+1. Legacy Power Save Mode (802.11 standard)
+•	The oldest and most basic method.
+•	Uses TIM and PS-Poll to manage sleep and wake cycles.
+•	Works well but can be inefficient in high-latency networks or for high-throughput devices.
+
+2. Automatic Power Save Delivery (APSD) – 802.11e
+There are two types under APSD:
+a) U-APSD (Unscheduled APSD)
+•	Used in Wi-Fi Multimedia (WMM).
+•	Instead of polling using PS-Poll frames, the station sends a trigger frame (like a QoS data packet).
+•	The AP then delivers multiple queued frames.
+Advantage: Reduces frame exchanges, thus more efficient.
+b) S-APSD (Scheduled APSD)
+•	Used when traffic is periodic (e.g., VoIP).
+•	The client and AP agree on a fixed schedule for data transmission.
+•	The client wakes up only at scheduled times.
+Advantage: Very efficient for real-time applications.
+
+3. Power Save Multi-Poll (PSMP) – 802.11n
+•	Introduced to improve power efficiency in high-throughput networks.
+•	Uses PSMP frames that define precise sleep/wake schedules.
+•	Reduces the overhead of individual PS-Poll or trigger frames.
+Advantage: More power-efficient for multiple stations.
+
+4. Target Wake Time (TWT) – 802.11ax (Wi-Fi 6)
+•	Advanced and most efficient power-saving method.
+•	The AP and station negotiate specific wake-up times.
+•	The client wakes up only at the agreed-upon time, communicates, and then sleeps.
+Use case: Perfect for IoT and battery-powered sensors that don’t need constant communication.
+Benefits:
+•	Reduces channel contention.
+•	Optimizes power consumption.
+•	Improves battery life.
+

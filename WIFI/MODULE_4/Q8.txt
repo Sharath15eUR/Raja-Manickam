@@ -1,0 +1,43 @@
+Main MAC Access Methodologies in IEEE 802.11
+1. DCF (Distributed Coordination Function)
+DCF is the default MAC mechanism in IEEE 802.11. It is based on:
+CSMA/CA – Carrier Sense Multiple Access with Collision Avoidance.
+How it works:
+1.	Carrier Sensing:
+	-	Device first listens to the channel (called Clear Channel Assessment or CCA).
+	-	If the channel is idle for a Distributed Interframe Space (DIFS) duration, it proceeds to transmit.
+2.	Backoff Mechanism:
+	-	If the channel is busy, the device waits until it's free.
+	-	Then it waits a random backoff time (selected from a Contention Window) before retrying.
+3.	Collision Avoidance:
+	-	Since it can’t detect collisions during transmission, it avoids them using random delays.
+	-	Uses ACK (Acknowledgment) frames to confirm successful transmission.
+4.	Optional RTS/CTS (Request to Send / Clear to Send):
+	-	Used to avoid hidden node problems.
+	-	RTS/CTS exchanges reserve the channel before data is sent.
+Key Features:
+•	Decentralized
+•	Suitable for ad-hoc or infrastructure networks
+•	Used in both data and management frames
+
+2. PCF (Point Coordination Function)
+PCF is an optional, centralized MAC mechanism, defined in the original IEEE 802.11 standard.
+It uses a central coordinator (usually the AP) to control when devices transmit.
+How it works:
+•	The AP acts as the Point Coordinator.
+•	It defines a Contention-Free Period (CFP) where it polls each station and grants it permission to send.
+•	This avoids collisions but is rarely implemented in practice.
+Key Features:
+•	Enables contention-free service.
+•	Supports real-time or delay-sensitive traffic (e.g., voice/video).
+•	Not commonly used in modern Wi-Fi due to complexity.
+
+3. Hybrid Coordination Function (HCF) – from 802.11e
+HCF combines the benefits of DCF and PCF. It was introduced in the 802.11e amendment for Quality of Service (QoS).
+HCF includes:
+a) EDCA (Enhanced Distributed Channel Access)
+•	Extension of DCF.
+•	Adds traffic categories (TCs) with different priorities (e.g., voice, video, best effort).
+•	Each TC has its own contention parameters (AIFS, CWmin, CWmax).
+High-priority traffic (like voice) gets shorter wait times and better access to the channel.
+

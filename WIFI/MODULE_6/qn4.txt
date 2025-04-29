@@ -1,0 +1,45 @@
+Why is WEP Considered Insecure Compared to WPA2 or WPA3?
+
+A. Introduction
+Wired Equivalent Privacy (WEP) was the first security protocol designed to secure wireless networks. It aimed to provide security comparable to wired networks.
+However, WEP has multiple weaknesses that make it highly vulnerable to attacks. Modern protocols like WPA2 and WPA3 were introduced to fix these vulnerabilities and offer stronger protection.
+
+B. Reasons Why WEP is Insecure
+1. Weak Encryption Algorithm
+WEP uses the RC4 encryption algorithm, but it is implemented poorly.
+The way WEP applies RC4 makes it predictable and vulnerable to attacks.
+In contrast, WPA2 and WPA3 use the AES encryption algorithm, which is much stronger and currently considered very secure.
+
+2. Small Initialization Vector (IV)
+In WEP, each packet is given a 24-bit Initialization Vector (IV) to add randomness.
+However, 24 bits is too small, meaning that IV values are repeated very quickly in a busy network.
+Attackers can capture packets with repeated IVs and analyze them to easily find the network key.
+On the other hand, WPA2 and WPA3 use longer, more complex nonce values that do not repeat easily, making this type of attack impractical.
+
+3. Static and Shared Keys
+WEP uses a single static key for all communication. This key stays the same until the network administrator manually changes it.
+If an attacker manages to capture enough packets, they can break the key and gain full access to the network.
+In contrast, WPA2 and WPA3 use dynamic keys, where a unique key is generated for each user session. This process, called key management, significantly enhances security.
+
+4. No Protection Against Replay Attacks
+WEP does not have strong methods to protect against replay attacks.
+Attackers can capture and resend packets to trick the network into accepting fake or duplicate packets.
+WPA2 introduced Message Integrity Codes (MIC) to protect against such attacks, and WPA3 offers even stronger protections with features like Protected Management Frames (PMF).
+
+5. Easily Cracked with Free Tools
+Because of all these weaknesses, WEP can be broken very easily using free tools like Aircrack-ng.
+In many cases, it takes only a few minutes for an attacker to crack a WEP network by simply capturing a few thousand packets.
+WPA2 is much harder to crack if strong passwords are used, and WPA3 is designed to resist even more powerful attacks, including offline dictionary attacks.
+
+C. How WPA2 and WPA3 Fix These Problems
+Compared to WEP:
+
+Encryption Strength: WEP uses weak RC4 encryption, while WPA2 and WPA3 use strong AES encryption.
+Key Management: WEP uses a static key for all users; WPA2 and WPA3 generate dynamic session keys for each connection.
+Initialization Vector Size: WEP’s 24-bit IV is very small; WPA2 and WPA3 use much longer and more secure values.
+Protection Against Attacks: WEP lacks strong protection against replay and forgery attacks; WPA2 and WPA3 include strong security mechanisms to prevent such exploits.
+Resistance to Cracking: WEP can be cracked easily in minutes; WPA2 and WPA3 are significantly more resistant, especially when strong passwords are used.
+
+In short, WEP is insecure because of its poor encryption, static key use, small IV size, lack of strong integrity checks, and vulnerability to easy attacks.
+Today, using WEP is considered extremely dangerous, and networks must use stronger protocols like WPA2 or preferably WPA3 to ensure proper Wi-Fi security.
+WPA2 and WPA3 have addressed WEP’s weaknesses by offering robust encryption, dynamic key exchange, and protection against modern attack techniques, making them far more reliable for securing wireless networks.

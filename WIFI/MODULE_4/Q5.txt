@@ -1,0 +1,42 @@
+The stages of client association includes five main stages:
+1. Scanning Phase (Discovery)
+Before a client can associate, it must discover available networks. This is done using either:
+•	Passive Scanning: The client listens for beacon frames sent periodically by APs.
+•	Active Scanning: The client sends probe request frames and receives probe response frames from APs.
+At the end of this phase, the client builds a list of available Wi-Fi networks.
+
+2. Authentication Phase
+Once the client selects an AP to connect with, it initiates authentication, which is a simple identity check at this stage (in basic open-system or shared-key authentication).
+There are two types of authentication in 802.11 (at this layer):
+•	Open System Authentication:
+    - 	No password exchange at this stage.
+    - 	The AP allows any device to authenticate.
+    - 	Commonly used in modern networks along with upper-layer security (like WPA2/WPA3).
+•	Shared Key Authentication (deprecated):
+    - 	Uses a pre-shared WEP key for challenge-response authentication.
+    - 	Considered insecure and rarely used today.
+Frames exchanged:
+•	Authentication Request (from client to AP)
+•	Authentication Response (from AP to client)
+
+3. Association Phase
+After successful authentication, the client must associate with the AP to begin data communication.
+•	Association is the process of allocating resources at the AP for the client.
+•	The client sends an Association Request frame.
+    - 	Contains information like supported data rates, capabilities, SSID, etc.
+•	The AP responds with an Association Response frame.
+    - 	Confirms acceptance and provides an Association ID (AID) to identify the client.
+If successful, the client is now logically connected to the AP and can begin data communication.
+
+4. 802.1X / WPA2/3 Authentication (Optional – Higher Layer)
+In secure networks (e.g., WPA2-Enterprise or WPA3), additional authentication is performed using the 802.1X framework, which includes:
+•	EAP (Extensible Authentication Protocol) for flexible, secure credential exchange.
+•	RADIUS server for identity verification.
+•	Once successful, a 4-Way Handshake is used to establish encryption keys.
+This ensures the connection is secure and encrypted.
+
+5. DHCP and IP Configuration (Layer 3 Process)
+Although not part of the 802.11 MAC layer, the final step for network communication is:
+•	Client sends a DHCP Discover request to get an IP address.
+•	Once it receives a lease (IP address, gateway, DNS), the client is fully connected to the network.
+

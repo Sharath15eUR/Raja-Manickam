@@ -1,0 +1,25 @@
+The MAC (Medium Access Control) layer is a crucial component of the Data Link Layer, which is the second layer in the OSI (Open Systems Interconnection) model.
+ The Data Link Layer is subdivided into two sublayers: the Logical Link Control (LLC) sublayer and the Medium Access Control (MAC) sublayer. 
+ The MAC sublayer is responsible for controlling how devices in a network gain access to the medium and transmit data.
+The MAC layer plays a vital role in wireless communication systems such as Wi-Fi (IEEE 802.11), where multiple devices share the same communication medium. 
+Unlike in wired networks where a dedicated path exists between the sender and the receiver, wireless networks rely on a shared medium (radio waves). 
+Therefore, a mechanism is needed to control how and when each device can use the medium to prevent collisions and ensure efficient use of available bandwidth. 
+
+
+Some of the main functions of the MAC layer are as follows:
+1.	Medium Access Control: It determines when a device is allowed to access the shared communication medium. 
+    It uses contention-based mechanisms such as Carrier Sense Multiple Access with Collision Avoidance (CSMA/CA) to manage this access in wireless networks.
+2.	Addressing: The MAC layer is responsible for frame-level addressing. 
+    It attaches a source and destination MAC address to each frame, allowing data to be properly directed across the network.
+3.	Frame Construction and Parsing: The MAC layer constructs frames that include headers, payload, and trailers. 
+    These frames carry control information necessary for successful delivery, including sequence control and frame type.
+4.	Error Detection: It adds a Frame Check Sequence (FCS) at the end of each frame to detect errors that may have occurred during transmission. 
+    However, it does not correct errors; it simply discards corrupted frames.
+5.	Acknowledgment and Retransmission: In IEEE 802.11 networks, after receiving a frame, the receiver sends an acknowledgment (ACK) back to the sender. 
+    If the ACK is not received, the sender retransmits the frame.
+6.	Power Management: The MAC layer includes mechanisms to support power-saving modes, allowing devices to conserve battery life by entering sleep states and waking periodically to receive data.
+7.	Security and Authentication: It participates in the initiation of secure communication through processes such as authentication and key management. 
+    For example, it handles message exchanges involved in WPA2/WPA3 authentication protocols.
+8.	Quality of Service (QoS): The MAC layer can prioritize traffic to support applications that require low latency and high reliability, such as voice and video calls. 
+    This is done using Enhanced Distributed Channel Access (EDCA) mechanisms.
+

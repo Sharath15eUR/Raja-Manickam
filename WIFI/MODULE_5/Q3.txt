@@ -1,0 +1,26 @@
+Target Wake Time is a feature that allows a device and the Wi-Fi access point (router) to negotiate and schedule specific times when the device will wake up to send or receive data.
+Instead of having devices always listening to the Wi-Fi channel and constantly checking if there is any data for them (which consumes a lot of battery power), TWT pre-arranges exact times for communication. 
+This lets the device sleep most of the time and only wake up when needed.
+How TWT Works
+•	The access point and the device agree on a schedule (wake time).
+•	Between these wake times, the device can remain in a low-power sleep mode.
+•	When the agreed time comes, the device wakes up, quickly exchanges data, and then goes back to sleep.
+This scheduling optimizes the power usage and reduces channel congestion because fewer devices are awake and competing for the channel at the same time.
+Benefits of Target Wake Time (TWT) for IoT Devices
+1.	Significant Power Savings:
+	-	IoT devices like smart sensors, smart locks, thermostats, and health trackers often have small batteries.
+	-	Constantly keeping the Wi-Fi radio on drains battery quickly. TWT allows these devices to sleep for long periods, only waking up when necessary, drastically extending their battery life.
+2.	Improved Network Efficiency:
+	-	In dense IoT environments (like smart homes or smart factories), thousands of devices may be connected to the same access point.
+	-	If every device tries to access the channel randomly, it causes collisions and re-transmissions, which reduce overall efficiency.
+	-	TWT ensures that devices wake up at different, scheduled times, avoiding collisions and reducing network congestion.
+3.	Reduced Latency for Scheduled Communication:
+	-	Since devices know exactly when they are scheduled to communicate, data transmission becomes more predictable and efficient.
+	-	For time-sensitive applications (like alarms or critical monitoring devices), this predictability ensures data is sent and received quickly when needed.
+4.	Better Scalability for IoT Deployments:
+	-	TWT allows Wi-Fi networks to support a much larger number of devices because each device does not need to be active all the time.
+	-	This makes Wi-Fi 6 ideal for large-scale IoT applications, such as smart cities, industrial IoT, smart grids, and healthcare monitoring systems.
+5.	Flexible Scheduling:
+	-	Devices can negotiate different wake schedules depending on their needs.
+	-	For example, a temperature sensor might wake up every 10 minutes, while a security camera might wake up more frequently or stay awake longer during certain times.
+

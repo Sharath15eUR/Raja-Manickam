@@ -1,0 +1,48 @@
+Why was WPA2 Introduced?
+
+Wireless Protected Access 2 (WPA2) was introduced in 2004 by the Wi-Fi Alliance as the successor to WPA (Wireless Protected Access).
+The main reason for introducing WPA2 was to address the security weaknesses of previous wireless encryption methods, especially WEP (Wired Equivalent Privacy) and even some early limitations in WPA.
+WPA2 aimed to provide stronger encryption, better authentication, and higher network security for both personal and enterprise Wi-Fi networks.
+
+Reasons for Introducing WPA2
+
+1. To Fix the Security Flaws of WEP
+WEP, the original security protocol for Wi-Fi, had major vulnerabilities.
+Its encryption could be cracked easily because of weak key management, small initialization vectors, and poor message integrity.
+Attackers could capture wireless traffic and crack WEP keys in just a few minutes.
+Even though WPA was introduced as a quick fix, it was still based on older RC4 encryption, which wasn't considered fully future-proof.
+Thus, WPA2 was needed to completely replace WEP and build a much stronger security foundation.
+
+2. Stronger Encryption with AES
+One of the biggest changes WPA2 introduced was the use of the Advanced Encryption Standard (AES) instead of RC4.
+AES is a government-approved, strong encryption method used even in sensitive fields like banking and defense.
+By adopting AES, WPA2 offered much more powerful data protection than what WEP and WPA could provide.
+AES uses complex mathematical functions and longer keys, making it extremely difficult for hackers to break the encryption, even with modern computing power.
+
+3. Improved Integrity Checking
+In WEP and even in WPA, attackers could sometimes manipulate packets without detection.
+WPA2 introduced a protocol called CCMP (Counter Mode Cipher Block Chaining Message Authentication Code Protocol).
+CCMP provides data confidentiality and data integrity by ensuring that packets cannot be altered or tampered with during transmission.
+This made Wi-Fi communication not only encrypted but also protected against modification attacks.
+
+4. Enhanced Security for Enterprise Networks
+Another important reason for WPA2's introduction was to provide strong enterprise-grade authentication.
+WPA2 supports 802.1X authentication using a RADIUS server, allowing businesses and organizations to verify the identity of users before allowing them to connect to the network.
+This prevents unauthorized users from accessing sensitive data and internal resources.
+In simple terms, WPA2 allowed networks to authenticate users individually, rather than everyone sharing a single network password.
+
+5. Meeting Growing Security Demands
+As the number of wireless devices (laptops, smartphones, tablets) exploded, the need for stronger wireless security became urgent.
+WEP and WPA were not strong enough to handle the increased risks from hackers and cybercriminals.
+WPA2 was designed to meet the growing demand for secure wireless communications at homes, businesses, and public places.
+
+6. Standardization Requirement
+The IEEE 802.11i standard was developed to define how wireless security should work properly.
+WPA2 is the Wi-Fi Alliance’s implementation of the full IEEE 802.11i standard.
+It made Wi-Fi security standardized and globally accepted, ensuring compatibility across different devices and brands.
+
+In summary, WPA2 was introduced to provide robust, reliable, and future-ready wireless security.
+It fixed the serious flaws of WEP and WPA by introducing AES encryption, better integrity protection, strong authentication methods, and compliance with global security standards.
+Today, WPA2 remains a widely trusted protocol, although WPA3 is the latest version offering even more advanced security features.
+WPA2 represented a critical step forward in making Wi-Fi safe for everyday personal, professional, and commercial use.
+
