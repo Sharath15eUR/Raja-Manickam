@@ -1,6 +1,6 @@
 Both Wi-Fi 6 (802.11ax) and Wi-Fi 6E (802.11ax in 6 GHz) share the same core technology improvements like OFDMA, MU-MIMO, TWT, and 1024-QAM modulation.
 However, they mainly differ based on the frequency bands they operate in, which leads to differences in range, bandwidth, and interference levels.
-Let’s discuss each point in detail:
+
 
 1. Range
 •	Wi-Fi 6:
