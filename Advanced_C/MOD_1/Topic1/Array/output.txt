@@ -1,0 +1,4 @@
+┌──(raaj㉿kali)-[/media/…/Advanced_C/MOD_1/Topic1/Array]
+└─$ ./array
+Original array: 3 8 5 6 7 2 4 
+Rearranged array: 8 6 2 4 3 5 7 
