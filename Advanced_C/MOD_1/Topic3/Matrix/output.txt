@@ -1,0 +1,8 @@
+PS E:\GIT\Raja-Manickam\Advanced_C\MOD_1_2\Topic3\Matrix\output> & .\'matrix.exe'
+Enter matrix size n: 3
+Enter sorted matrix (each row and column increasing):
+1 4 7
+2 5 9
+3 6 10
+Enter key to search: 2
+Key 2 found at position (1, 0)

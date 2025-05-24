@@ -1,0 +1,18 @@
+PS E:\GIT\Raja-Manickam\Advanced_C\MOD_1_2\Topic1\output> & .\'calendar.exe' 
+Enter number of days to input tasks for (Max 7): 2
+Enter day name (e.g., Monday): Monday
+Enter number of tasks for Monday (Max 3): 2
+Enter task 1: wake up
+Enter task 2: bath
+Enter day name (e.g., Monday): Tuesday
+Enter number of tasks for Tuesday (Max 3): 2
+Enter task 1: eat
+Enter task 2: sleep
+
+Weekly Tasks:
+Monday:
+  - wake up
+  - bath
+Tuesday:
+  - eat
+  - sleep

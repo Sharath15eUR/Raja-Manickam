@@ -4,7 +4,7 @@ The 802.11 PHY (Physical Layer) frame, also called a Physical Protocol Data Unit
 Although the structure can vary slightly between standards (e.g., 802.11a, 802.11n, 802.11ac, 802.11ax), all PHY layer frames include the following core components:
 
 Key Components of a PHY Layer Frame (PPDU)
-Preamble:
+:
 
     This is the first part of the frame.
     It allows the receiver to detect the signal, synchronize with it, and perform channel estimation.

@@ -1,0 +1,256 @@
+1. Child Process – fork()
+The fork() system call in Unix/Linux is used to create a new process. 
+The newly created process is called the child process, and the process that called fork() is the parent process. 
+The child process is a duplicate of the parent process, except for the returned value.
+
+    pid_t fork(void);
+
+Return Values:
+
+    Returns zero (0) in the child process.
+
+    Returns child's PID (positive integer) in the parent process.
+
+    Returns -1 on failure.
+
+Working:
+    When a process calls fork(), the operating system:
+
+        Creates a copy of the parent process.
+
+        Allocates a new process ID to the child.
+
+        Duplicates the address space (heap, stack, data) of the parent.
+
+        Copies file descriptors (pointing to the same underlying file).
+
+        Both processes resume execution from the same point after the fork() call.
+
+Example:
+
+    #include <stdio.h>
+    #include <unistd.h>
+
+    int main() {
+        pid_t pid = fork();
+
+        if (pid == 0)
+            printf("Child process (PID = %d)\n", getpid());
+        else if (pid > 0)
+            printf("Parent process (PID = %d)\n", getpid());
+        else
+            perror("Fork failed");
+
+        return 0;
+    }
+Use Cases:
+
+    Shell command execution
+
+    Background processes (daemons)
+
+    Process-based concurrency
+
+    Multiprocessing servers
+
+2. Handling Common Signals
+
+A signal is a limited form of inter-process communication used in Unix/Linux systems.
+It notifies a process that a specific event has occurred.
+
+Common Signals:
+
+    SIGINT (2): Interrupt (e.g., Ctrl+C)
+
+    SIGTERM (15): Termination request
+
+    SIGKILL (9): Force kill (cannot be caught or ignored)
+
+    SIGSEGV (11): Segmentation fault
+
+    SIGALRM (14): Alarm clock signal
+
+Default Actions:
+
+    Some signals terminate the process.
+
+    Some can be caught and handled.
+
+    Some cannot be caught (e.g., SIGKILL and SIGSTOP).
+
+Example:
+
+    #include <stdio.h>
+    #include <signal.h>
+    #include <unistd.h>
+
+    void handle_sigint(int sig) {
+        printf("Caught signal %d\n", sig);
+    }
+
+    int main() {
+        signal(SIGINT, handle_sigint);  // Register signal handler
+
+        while (1) {
+            printf("Running...\n");
+            sleep(1);
+        }
+
+        return 0;
+    }
+Explanation:
+
+    The handler function handle_sigint() is called when SIGINT is received.
+
+    The signal() function registers this handler.
+
+    Use sigaction() for more robust handling (supports flags and masks).
+
+
+3. Exploring Different Kernel Crashes
+
+A kernel crash (kernel panic in Linux) is a safety measure taken by an operating system's kernel upon detecting an internal fatal error from which it cannot safely recover.
+
+Common Causes:
+
+    Dereferencing null or invalid pointers
+
+    Memory corruption (buffer overflows, double free)
+
+    Accessing freed memory
+
+    Device driver bugs
+
+    Faulty kernel modules or incorrect parameters
+
+    Improper synchronization (deadlocks or race conditions)
+
+    Kernel Crash Symptoms:
+
+    Freezing system
+
+    Reboot loop
+
+    Panic messages on the screen
+
+    Dumped logs in /var/log/ or /var/crash/
+
+Example of Kernel Panic (seen via dmesg):
+
+Kernel panic - not syncing: Fatal exception in interrupt
+
+Debugging Tools:
+
+    dmesg: Displays kernel logs
+
+    journalctl -k: Shows kernel messages
+
+    crash: GDB-like tool for analyzing kernel core dumps
+
+    kdump: Kernel feature to capture crash dumps
+
+    valgrind: Detects memory issues in user-space programs
+
+
+4. Time Complexity
+
+Time complexity is a computational concept that describes the amount of time an algorithm takes to complete as a function of the size of its input (n).
+It helps compare algorithm performance independently of hardware and implementation.
+
+Notation (Big-O):
+
+O(1) – Constant time: array access
+
+O(log n) – Logarithmic time: binary search
+
+O(n) – Linear time: simple loop
+
+O(n log n) – Merge sort, quicksort average case
+
+O(n^2) – Bubble sort, insertion sort
+
+O(2^n) – Recursive Fibonacci
+
+O(n!) – Brute-force permutations
+
+Examples:
+
+    // O(n) time complexity
+    for (int i = 0; i < n; i++) {
+        printf("%d\n", i);
+    }
+
+    // O(n^2) time complexity
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d, %d\n", i, j);
+        }
+    }
+Best, Worst, Average Cases:
+Each algorithm may have different time complexities depending on the case (e.g., quicksort worst case is O(n²)).
+
+Space Complexity:
+Closely related; measures how much memory an algorithm uses.
+
+5. Locking Mechanism – Mutex and Spinlock
+Mutex (Mutual Exclusion):
+Used to avoid race conditions in multi-threaded programs by locking shared resources.
+
+Characteristics:
+
+If thread A locks a mutex, thread B must wait.
+
+Thread B is blocked (put to sleep) until the mutex is available.
+
+Preferred for long critical sections.
+
+Code Example:
+
+
+    pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
+
+    pthread_mutex_lock(&lock);
+    // critical section
+    pthread_mutex_unlock(&lock);
+
+Advantages:
+
+    Simple, prevents race conditions
+
+    Efficient for long tasks
+
+    Disadvantages:
+
+    Involves context switch overhead
+
+Spinlock:
+    Also used for mutual exclusion, but instead of sleeping, the thread keeps checking in a loop.
+
+    Characteristics:
+
+    Uses CPU cycles while waiting
+
+    No context switch; good for very short tasks
+
+    Common in kernel development and low-latency scenarios
+
+Code Example:
+
+pthread_spinlock_t spin;
+
+    pthread_spin_init(&spin, 0);
+    pthread_spin_lock(&spin);
+    // critical section
+    pthread_spin_unlock(&spin);
+
+Advantages:
+
+    Faster for short locks
+
+    Avoids context switches
+
+Disadvantages:
+
+    Wasteful if lock is held for long
+
+    Consumes CPU unnecessarily
